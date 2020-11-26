@@ -76,16 +76,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             m_anim.SetBool("Wire", true);
-            m_rb.AddForce(Vector3.up * m_power, ForceMode.Impulse);
+            //m_rb.AddForce(Vector3.up * m_power, ForceMode.Impulse);
         }
     }
-    //void LateUpdate()
-    //{
-    //    // 水平方向の速度を求めて Animator Controller のパラメーターに渡す
-    //    Vector3 horizontalVelocity = m_rb.velocity;
-    //    horizontalVelocity.y = 0;
-    //    m_anim.SetFloat("Speed", horizontalVelocity.magnitude);
-    //}
+   
     void LateUpdate()
     {
         if (m_anim)
