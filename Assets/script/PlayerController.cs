@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>接地判定の際、中心 (Pivot) からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 1.1f;
     [SerializeField] float m_power = 5.0f;
+    public float m_GravityMultiplier = 0.98f;
     Rigidbody m_rb;
     Animator m_anim;
 
@@ -23,8 +24,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // 方向の入力を取得し、方向を求める
-        float v = Input.GetAxisRaw("Vertical");
-        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical2");
+        float h = Input.GetAxisRaw("Horizontal2");
         //float trigger = Input.GetAxis("Wire");
 
         // 入力方向のベクトルを組み立てる
