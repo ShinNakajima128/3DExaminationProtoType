@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class SphereController : MonoBehaviour
 {
-    Rigidbody m_rb;
-    [SerializeField] GameObject m_exprosion;
-
-    void Start()
-    {
-        m_rb = gameObject.GetComponent<Rigidbody>();
-    }
+   
+    [SerializeField] GameObject m_Explosion;
 
     private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(m_exprosion);
+        Instantiate(m_Explosion, this.transform.position,this.transform.rotation);
+        Debug.Log(m_Explosion.transform.position);
         Destroy(this.gameObject);
     }
 }

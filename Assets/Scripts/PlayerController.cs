@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         //}
 
         // ジャンプの入力を取得し、接地している時に押されていたらジャンプする
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump"))
         {
             m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
             m_anim.SetBool("Jump", true);
@@ -85,16 +85,16 @@ public class PlayerController : MonoBehaviour
     {
         if (m_anim)
         {
-            if (IsGrounded())
+            if (true)
             {
                 Vector3 velo = m_rb.velocity;
                 velo.y = 0;
                 m_anim.SetFloat("Speed", velo.magnitude);
             }
-            else
-            {
-                m_anim.SetFloat("Speed", 0f);
-            }
+            //else
+            //{
+            //    m_anim.SetFloat("Speed", 0f);
+            //}
         }
     }
 
