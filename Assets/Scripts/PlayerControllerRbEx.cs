@@ -2,8 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+/// <summary>
+/// Rigidbody を使ってプレイヤーを動かすコンポーネント
+/// 入力を受け取り、それに従ってオブジェクトを動かす。
+/// PlayerControllerRb との違いは以下の通り。
+/// 1. Rigidbody.AddForce() ではなく Rigidbody.velocity で動かしている（※１）
+/// 2. World 座標系ではなく、カメラの座標系に対して動かしている（※２）
+/// 3. 方向転換時に Quartenion.Slerp() を使って滑らかに方向転換している
+/// （※１）AddForce() 動かすことは問題ではなく、挙動や実装を比較するために変えている。
+/// （※２）World 座標系で動かすと、カメラの回転に対応できないため
+/// </summary>
+[RequireComponent(typeof(Rigidbody))]
+public class PlayerControllerRbEx : MonoBehaviour
 {
+    /// <summary>動く速さ</summary>
     [SerializeField] float m_movingSpeed = 5f;
     /// <summary>ターンの速さ</summary>
     [SerializeField] float m_turnSpeed = 3f;
@@ -11,23 +23,53 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float m_jumpPower = 5f;
     /// <summary>接地判定の際、中心 (Pivot) からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 1.1f;
-    [SerializeField] float m_power = 5.0f;
-    public float m_GravityMultiplier = 0.98f;
 
     Rigidbody m_rb;
     Animator m_anim;
 
-    private void Start()
+    void Start()
     {
         m_rb = GetComponent<Rigidbody>();
         m_anim = GetComponent<Animator>();
     }
+
     void Update()
+    {
+        PlayerMove();
+    }
+
+    void LateUpdate()
+    {
+        if (m_anim)
+        {
+            if (true)
+            {
+                Vector3 velo = m_rb.velocity;
+                velo.y = 0;
+                m_anim.SetFloat("Speed", velo.magnitude);
+            } 
+        }
+    }
+
+    /// <summary>
+    /// 地面に接触しているか判定する
+    /// </summary>
+    /// <returns></returns>
+    bool IsGrounded()
+    {
+        // Physics.Linecast() を使って足元から線を張り、そこに何かが衝突していたら true とする
+        Vector3 start = this.transform.position;   // start: オブジェクトの中心
+        Vector3 end = start + Vector3.down * m_isGroundedLength;  // end: start から真下の地点
+        Debug.DrawLine(start, end); // 動作確認用に Scene ウィンドウ上で線を表示する
+        bool isGrounded = Physics.Linecast(start, end); // 引いたラインに何かがぶつかっていたら true とする
+        return isGrounded;
+    }
+
+    void PlayerMove()
     {
         // 方向の入力を取得し、方向を求める
         float v = Input.GetAxisRaw("LstickV");
         float h = Input.GetAxisRaw("LstickH");
-        //float trigger = Input.GetAxis("Wire");
 
         // 入力方向のベクトルを組み立てる
         Vector3 dir = Vector3.forward * v + Vector3.right * h;
@@ -52,16 +94,12 @@ public class PlayerController : MonoBehaviour
             m_rb.velocity = velo;   // 計算した速度ベクトルをセットする
         }
 
-        //if (dir.x != 0)
-        //{
-        //    m_anim.SetBool("Move", true);
-        //}
-        //else
-        //{
-        //    m_anim.SetBool("Move", false);
-        //}
-
         // ジャンプの入力を取得し、接地している時に押されていたらジャンプする
+        if (Input.GetButtonDown("Jump"))
+        {
+            m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
@@ -80,36 +118,4 @@ public class PlayerController : MonoBehaviour
             m_anim.SetBool("Wire", true);
         }
     }
-   
-    void LateUpdate()
-    {
-        if (m_anim)
-        {
-            if (true)
-            {
-                Vector3 velo = m_rb.velocity;
-                velo.y = 0;
-                m_anim.SetFloat("Speed", velo.magnitude);
-            }
-            //else
-            //{
-            //    m_anim.SetFloat("Speed", 0f);
-            //}
-        }
-    }
-
-    /// <summary>
-    /// 地面に接触しているか判定する
-    /// </summary>
-    /// <returns></returns>
-    bool IsGrounded()
-    {
-        //Physics.Linecast() を使って足元から線を張り、そこに何かが衝突していたら true とする
-        Vector3 start = this.transform.position;   // start: オブジェクトの中心
-        Vector3 end = start + Vector3.down * m_isGroundedLength;  // end: start から真下の地点
-        Debug.DrawLine(start, end); // 動作確認用に Scene ウィンドウ上で線を表示する
-        bool isGrounded = Physics.Linecast(start, end); // 引いたラインに何かがぶつかっていたら true とする
-        return isGrounded;
-    }
 }
-
