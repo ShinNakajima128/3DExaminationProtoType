@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
         // 方向の入力を取得し、方向を求める
         float v = Input.GetAxisRaw("LstickV");
         float h = Input.GetAxisRaw("LstickH");
-        //float trigger = Input.GetAxis("Wire");
 
         // 入力方向のベクトルを組み立てる
         Vector3 dir = Vector3.forward * v + Vector3.right * h;
@@ -110,6 +109,10 @@ public class PlayerController : MonoBehaviour
         Debug.DrawLine(start, end); // 動作確認用に Scene ウィンドウ上で線を表示する
         bool isGrounded = Physics.Linecast(start, end); // 引いたラインに何かがぶつかっていたら true とする
         return isGrounded;
+    }
+    void PlayerMove()
+    {
+
     }
 }
 

@@ -95,12 +95,7 @@ public class PlayerControllerRbEx : MonoBehaviour
         }
 
         // ジャンプの入力を取得し、接地している時に押されていたらジャンプする
-        if (Input.GetButtonDown("Jump"))
-        {
-            m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
-        }
-
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump")&& IsGrounded())
         {
             m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
             m_anim.SetBool("Jump", true);

@@ -392,6 +392,22 @@ MonoBehaviour:
   m_Clips: []
   m_Markers:
     m_Objects: []
+--- !u!114 &-1020156401917729698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: 06d6fb89d483e1f49a7fff05df9b12d0
+    defaultValue: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,22 +431,6 @@ MonoBehaviour:
     m_Framerate: 60
   m_DurationMode: 0
   m_MarkerTrack: {fileID: -2882538678830394968}
---- !u!114 &2686255364521355473
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  DisplayName: 
-  VirtualCamera:
-    exposedName: 0a8553f93b967254e9322de627fc694a
-    defaultValue: {fileID: 0}
 --- !u!114 &5496231771930656935
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -474,7 +474,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 0.75
+    m_BlendOutDuration: 0.6833333333333336
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -534,15 +534,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM vcam1
   - m_Version: 1
-    m_Start: 4.25
+    m_Start: 4.316666666666666
     m_ClipIn: 0
-    m_Asset: {fileID: 2686255364521355473}
+    m_Asset: {fileID: -1020156401917729698}
     m_Duration: 5
     m_TimeScale: 1
     m_ParentTrack: {fileID: 8108899164086210767}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.75
+    m_BlendInDuration: 0.6833333333333336
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -583,6 +583,6 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam2
+    m_DisplayName: CM FreeLook1
   m_Markers:
     m_Objects: []
