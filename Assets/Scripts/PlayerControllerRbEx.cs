@@ -36,6 +36,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     void Update()
     {
         PlayerMove();
+        playerAnimation();
     }
 
     void LateUpdate()
@@ -94,21 +95,31 @@ public class PlayerControllerRbEx : MonoBehaviour
             m_rb.velocity = velo;   // 計算した速度ベクトルをセットする
         }
 
-        // ジャンプの入力を取得し、接地している時に押されていたらジャンプする
-        if (Input.GetButtonDown("Jump")&& IsGrounded())
+        
+        
+    }
+    void playerAnimation()
+    {
+        float tri = Input.GetAxisRaw("Wire");
+
+        //Aボタンの入力を取得し、接地している時に押されていたらジャンプする
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
             m_anim.SetBool("Jump", true);
         }
+        //Xボタンが押されたら
         if (Input.GetButtonDown("Attack1") && IsGrounded())
         {
             m_anim.SetBool("Attack1", true);
         }
+        //Yボタンが押されたら
         if (Input.GetButtonDown("Attack2") && IsGrounded())
         {
             m_anim.SetBool("Attack2", true);
         }
-        if (Input.GetButtonDown("Fire2"))
+        //R1ボタンが押されたら
+        if (Input.GetKey(KeyCode.JoystickButton5))
         {
             m_anim.SetBool("Wire", true);
         }
