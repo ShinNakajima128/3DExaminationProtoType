@@ -119,7 +119,7 @@ public class PlayerControllerRbEx : MonoBehaviour
             m_anim.SetBool("Attack2", true);
         }
         //R1ボタンが押されたら
-        if (Input.GetKey(KeyCode.JoystickButton5))
+        if (Input.GetKey(KeyCode.Joystick1Button5))
         {
             m_anim.SetBool("Wire", true);
         }

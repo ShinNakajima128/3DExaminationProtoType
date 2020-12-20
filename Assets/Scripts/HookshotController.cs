@@ -9,31 +9,42 @@ public class HookshotController : MonoBehaviour
     [SerializeField] float m_hookshotSpeed = 5f;
     Rigidbody m_rb;
     Vector3 hookshotPosition;
+    State state;
+    enum State
+    {
+        Normal,
+        HookshotFlyingPlayer
+    }
     
     
     private void Awake()
     {
-        m_rb = GetComponent<Rigidbody>();  
+        m_rb = GetComponent<Rigidbody>();
+        state = State.Normal;
     }
     void Update()
     {
-       
-        HookshotStart();
-        HookshotMovement();
+        switch (state)
+        {
+            default:
+            case State.Normal:
+                HookshotStart();
+                break;
+            case State.HookshotFlyingPlayer:
+                HookshotMovement();
+                break;
+        }
     }
 
     void HookshotStart()
     {
-        if (Input.GetKey(KeyCode.JoystickButton5))
+        if (Input.GetKey(KeyCode.Joystick1Button5))
         {
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit Hit))
             {
                 debugHitPointTransform.position = Hit.point;
                 hookshotPosition = Hit.point;
-            }
-            else
-            {
-                debugHitPointTransform.position = playerCamera.transform.forward * m_maxWireDistance;
+                state = State.HookshotFlyingPlayer;
             }
         }
     }
@@ -42,6 +53,7 @@ public class HookshotController : MonoBehaviour
         Vector3 hookshotDir = (hookshotPosition - transform.position).normalized;
 
         //プレイヤーをhit.pointへ飛ばす
-        m_rb.MovePosition(hookshotDir * m_hookshotSpeed * Time.deltaTime);
+        m_rb.MovePosition(hookshotDir);
+        //m_rb.MovePosition(hookshotDir * m_hookshotSpeed * Time.deltaTime);
     }
 }
