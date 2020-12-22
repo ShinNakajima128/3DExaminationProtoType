@@ -110,9 +110,5 @@ public class PlayerController : MonoBehaviour
         bool isGrounded = Physics.Linecast(start, end); // 引いたラインに何かがぶつかっていたら true とする
         return isGrounded;
     }
-    void PlayerMove()
-    {
-
-    }
 }
 

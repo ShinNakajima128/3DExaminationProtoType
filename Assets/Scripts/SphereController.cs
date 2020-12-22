@@ -10,7 +10,6 @@ public class SphereController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Instantiate(m_Explosion, this.transform.position,this.transform.rotation);
-        Debug.Log(m_Explosion.transform.position);
         Destroy(this.gameObject);
     }
 }
