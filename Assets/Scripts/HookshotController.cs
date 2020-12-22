@@ -8,9 +8,10 @@ public class HookshotController : MonoBehaviour
     [SerializeField] Camera m_playerCamera;
     [SerializeField] float m_maxWireDistance = 10f;
     [SerializeField] float m_hookshotSpeed = 5f;
-    Rigidbody m_rb;
-    LineRenderer m_line = null;
-    Vector3 hookshotPosition;
+    private Rigidbody m_rb;
+    private SpringJoint m_joint;
+    private LineRenderer m_line;
+    private Vector3 hookshotPosition;
     State state;
     enum State
     {
@@ -22,8 +23,10 @@ public class HookshotController : MonoBehaviour
     private void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
+        m_joint = GetComponent<SpringJoint>();
         m_line = GetComponent<LineRenderer>();
         state = State.Normal;
+        
     }
     void Update()
     {
@@ -39,8 +42,9 @@ public class HookshotController : MonoBehaviour
                 m_line.enabled = false;
                 break;
             case State.HookshotFlyingPlayer:
+
                 m_line.enabled = true;
-                //HookshotMovement();
+                HookshotMovement();
                 break;
         }
     }

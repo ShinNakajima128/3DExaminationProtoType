@@ -23,10 +23,12 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] float m_jumpPower = 5f;
     /// <summary>接地判定の際、中心 (Pivot) からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 1.1f;
-
+    [SerializeField] int m_maxJumpCount = 2;
+    [SerializeField] GameObject m_deathEffect;
     Rigidbody m_rb;
     Animator m_anim;
-
+    int m_jumpCount;
+    
     void Start()
     {
         m_rb = GetComponent<Rigidbody>();
@@ -35,8 +37,12 @@ public class PlayerControllerRbEx : MonoBehaviour
 
     void Update()
     {
-        PlayerMove();
-        playerAnimation();
+        if (IsGrounded())
+        {
+            PlayerMove();
+            playerAnimation();
+        }
+        
     }
 
     void LateUpdate()
@@ -94,19 +100,22 @@ public class PlayerControllerRbEx : MonoBehaviour
             velo.y = m_rb.velocity.y;   // ジャンプした時の y 軸方向の速度を保持する
             m_rb.velocity = velo;   // 計算した速度ベクトルをセットする
         }
-
-        
-        
     }
     void playerAnimation()
     {
-        float tri = Input.GetAxisRaw("Wire");
-
-        //Aボタンの入力を取得し、接地している時に押されていたらジャンプする
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        //Aボタンの入力を取得し、接地している時か、1回目のジャンプ中に押されていたらジャンプする
+        if (Input.GetButtonDown("Jump"))
         {
-            m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
-            m_anim.SetBool("Jump", true);
+            if (IsGrounded())
+            {
+                JumpMove();
+                m_jumpCount = 1;
+            }
+            else if (m_jumpCount < m_maxJumpCount)
+            {
+                JumpMove();
+                m_jumpCount++;
+            }
         }
         //Xボタンが押されたら
         if (Input.GetButtonDown("Attack1") && IsGrounded())
@@ -122,6 +131,21 @@ public class PlayerControllerRbEx : MonoBehaviour
         if (Input.GetKey(KeyCode.Joystick1Button5))
         {
             m_anim.SetBool("Wire", true);
+        }
+    }
+    void JumpMove()
+    {
+        m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
+        m_anim.SetBool("Jump", true);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("DeathZone"))
+        {
+            Instantiate(m_deathEffect, this.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            //this.transform.position = 
         }
     }
 }
