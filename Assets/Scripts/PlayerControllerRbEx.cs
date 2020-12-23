@@ -156,13 +156,14 @@ public class PlayerControllerRbEx : MonoBehaviour
     //        this.transform.position = m_startPosition.transform.position;
     //    }
     //}
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("DeathZone"))
-        {
-            Instantiate(m_deathEffect, this.transform.position, Quaternion.identity);
-            AudioSource.PlayClipAtPoint(m_vanishSfx, this.transform.position);
-            this.gameObject.SetActive(false);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("DeathZone"))
+    //    {
+    //        Instantiate(m_deathEffect, this.transform.position, Quaternion.identity);
+    //        AudioSource.PlayClipAtPoint(m_vanishSfx, this.transform.position);
+    //        this.gameObject.SetActive(false);
+    //    }
+    //}
+    
 }
