@@ -25,10 +25,12 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] float m_isGroundedLength = 1.1f;
     [SerializeField] int m_maxJumpCount = 2;
     [SerializeField] GameObject m_deathEffect;
+    [SerializeField] GameObject m_startPosition;
+    [SerializeField] AudioClip m_vanishSfx = null;
     Rigidbody m_rb;
     Animator m_anim;
     int m_jumpCount;
-    
+
     void Start()
     {
         m_rb = GetComponent<Rigidbody>();
@@ -37,24 +39,24 @@ public class PlayerControllerRbEx : MonoBehaviour
 
     void Update()
     {
+       
         if (IsGrounded())
         {
             PlayerMove();
             playerAnimation();
         }
-        
     }
 
     void LateUpdate()
     {
         if (m_anim)
         {
-            if (true)
+            if (IsGrounded())
             {
                 Vector3 velo = m_rb.velocity;
                 velo.y = 0;
                 m_anim.SetFloat("Speed", velo.magnitude);
-            } 
+            }
         }
     }
 
@@ -118,15 +120,15 @@ public class PlayerControllerRbEx : MonoBehaviour
             }
         }
         //Xボタンが押されたら
-        if (Input.GetButtonDown("Attack1") && IsGrounded())
-        {
-            m_anim.SetBool("Attack1", true);
-        }
-        //Yボタンが押されたら
-        if (Input.GetButtonDown("Attack2") && IsGrounded())
-        {
-            m_anim.SetBool("Attack2", true);
-        }
+        //if (Input.GetButtonDown("Attack1") && IsGrounded())
+        //{
+        //    m_anim.SetBool("Attack1", true);
+        //}
+        ////Yボタンが押されたら
+        //if (Input.GetButtonDown("Attack2") && IsGrounded())
+        //{
+        //    m_anim.SetBool("Attack2", true);
+        //}
         //R1ボタンが押されたら
         if (Input.GetKey(KeyCode.Joystick1Button5))
         {
@@ -139,13 +141,28 @@ public class PlayerControllerRbEx : MonoBehaviour
         m_anim.SetBool("Jump", true);
     }
 
-    private void OnCollisionEnter(Collision other)
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.CompareTag("DeathZone"))
+    //    {
+    //        m_timer = 0;
+
+    //        Instantiate(m_deathEffect, this.transform.position, Quaternion.identity);
+    //        this.gameObject.SetActive(false);
+    //    }
+    //    if (m_timer >= 2)
+    //    {
+    //        this.gameObject.SetActive(true);
+    //        this.transform.position = m_startPosition.transform.position;
+    //    }
+    //}
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("DeathZone"))
         {
             Instantiate(m_deathEffect, this.transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-            //this.transform.position = 
+            AudioSource.PlayClipAtPoint(m_vanishSfx, this.transform.position);
+            this.gameObject.SetActive(false);
         }
     }
 }
