@@ -140,30 +140,4 @@ public class PlayerControllerRbEx : MonoBehaviour
         m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
         m_anim.SetBool("Jump", true);
     }
-
-    //private void OnCollisionEnter(Collision other)
-    //{
-    //    if (other.gameObject.CompareTag("DeathZone"))
-    //    {
-    //        m_timer = 0;
-
-    //        Instantiate(m_deathEffect, this.transform.position, Quaternion.identity);
-    //        this.gameObject.SetActive(false);
-    //    }
-    //    if (m_timer >= 2)
-    //    {
-    //        this.gameObject.SetActive(true);
-    //        this.transform.position = m_startPosition.transform.position;
-    //    }
-    //}
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("DeathZone"))
-    //    {
-    //        Instantiate(m_deathEffect, this.transform.position, Quaternion.identity);
-    //        AudioSource.PlayClipAtPoint(m_vanishSfx, this.transform.position);
-    //        this.gameObject.SetActive(false);
-    //    }
-    //}
-    
 }

@@ -7,7 +7,8 @@ public class RespawnController : MonoBehaviour
     [SerializeField] GameObject m_respawnPoint;
     [SerializeField] GameObject m_deathEffect;
     [SerializeField] AudioClip m_vanishSfx = null;
-    //[SerializeField] float m_respawnWaitTime = 4.0f;
+    [SerializeField] AudioClip m_respawnSfx = null;
+    [SerializeField] float m_respawnWaitTime = 4.0f;
     private GameObject m_player;
     private bool isRespawn = false;
     private float m_timer;
@@ -21,12 +22,13 @@ public class RespawnController : MonoBehaviour
         if (isRespawn)
         {
             m_timer += Time.deltaTime;
-            if (m_timer >= 4.0f)
+            if (m_timer >= m_respawnWaitTime)
             {
                 m_timer = 0;
                 isRespawn = false;
                 m_player.SetActive(true);
                 m_player.transform.position = m_respawnPoint.transform.position;
+                AudioSource.PlayClipAtPoint(m_respawnSfx, m_player.transform.position);
             }
         }
         
