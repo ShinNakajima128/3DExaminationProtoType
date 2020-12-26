@@ -11,7 +11,7 @@ public class SphereController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Instantiate(m_explosion, this.transform.position,this.transform.rotation);
-        AudioSource.PlayClipAtPoint(m_explosionSfx, this.transform.position);
+        AudioSource.PlayClipAtPoint(m_explosionSfx, collision.transform.position);
         Destroy(this.gameObject);
     }
 }

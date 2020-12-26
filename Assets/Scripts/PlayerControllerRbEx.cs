@@ -24,9 +24,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     /// <summary>接地判定の際、中心 (Pivot) からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 1.1f;
     [SerializeField] int m_maxJumpCount = 2;
-    [SerializeField] GameObject m_deathEffect;
-    [SerializeField] GameObject m_startPosition;
-    [SerializeField] AudioClip m_vanishSfx = null;
+    [SerializeField] AudioClip m_jumpSfx = null;
     Rigidbody m_rb;
     Animator m_anim;
     int m_jumpCount;
@@ -39,10 +37,10 @@ public class PlayerControllerRbEx : MonoBehaviour
 
     void Update()
     {
-       
+        PlayerMove();
+
         if (IsGrounded())
         {
-            PlayerMove();
             playerAnimation();
         }
     }
@@ -137,6 +135,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     }
     void JumpMove()
     {
+        AudioSource.PlayClipAtPoint(m_jumpSfx, this.transform.position);
         m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
         m_anim.SetBool("Jump", true);
     }
