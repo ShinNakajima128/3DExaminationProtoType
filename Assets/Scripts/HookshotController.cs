@@ -40,11 +40,11 @@ public class HookshotController : MonoBehaviour
             default:
             case State.Normal:
                 HookshotStart();
-                m_line.enabled = false;
+                //m_line.enabled = false;
                 break;
             case State.HookshotFlyingPlayer:
 
-                m_line.enabled = true;
+                //m_line.enabled = true;
                 HookshotMovement();
                 break;
         }
@@ -55,9 +55,9 @@ public class HookshotController : MonoBehaviour
     /// </summary>
     void HookshotStart()
     {
-        if (Input.GetKey(KeyCode.Joystick1Button5))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
         {
-            if (Physics.Raycast(m_playerCamera.transform.position, m_playerCamera.transform.forward, out RaycastHit Hit))
+            if (Physics.Raycast(m_playerCamera.transform.position, m_playerCamera.transform.forward, out RaycastHit Hit, m_maxWireDistance))
             {
                 m_debugHitPointTransform.position = Hit.point;
                 hookshotPosition = Hit.point;

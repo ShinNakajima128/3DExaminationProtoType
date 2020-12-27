@@ -7,10 +7,14 @@ public class LeftHookshotController : MonoBehaviour
     [SerializeField] LayerMask whatIsHookshot;
     [SerializeField] Transform m_muzzle;
     [SerializeField] Transform m_camera;
+    [SerializeField] Transform m_player;
+    [SerializeField] AudioClip m_flyingSfx = null;
+    [SerializeField] AudioClip m_hookHitSfx = null;
+    [SerializeField] float m_maxDistance = 100f;
     LineRenderer lr;
     SpringJoint joint;
     Vector3 hookPoint;
-    float maxDistance = 100f;
+    
 
     void Awake()
     {
@@ -21,9 +25,9 @@ public class LeftHookshotController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Joystick1Button4))
         {
-            StartHookshot();
+            StartHookshot();   
         }
-        if (Input.GetKeyUp(KeyCode.Joystick1Button4))
+        else if (Input.GetKeyUp(KeyCode.Joystick1Button4))
         {
             StopHookshot();
         }
@@ -38,21 +42,24 @@ public class LeftHookshotController : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast( m_camera.position, m_camera.forward, out hit, maxDistance, whatIsHookshot))
+        if (Physics.Raycast( m_camera.position, m_camera.forward, out hit, m_maxDistance, whatIsHookshot))
         {
+            AudioSource.PlayClipAtPoint(m_hookHitSfx, m_player.position);
             hookPoint = hit.point;
-            joint = this.gameObject.AddComponent<SpringJoint>();
+            joint = m_player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = hookPoint;
 
-            float distanceFromPoint = Vector3.Distance(this.transform.position, hookPoint);
+            AudioSource.PlayClipAtPoint(m_flyingSfx, m_player.position);
+
+            float distanceFromPoint = Vector3.Distance(m_player.position, hookPoint);
 
             joint.minDistance = distanceFromPoint * 0.8f;
-            joint.maxDistance = distanceFromPoint * 0.25f;
+            joint.maxDistance = distanceFromPoint * 0.3f;
 
-            joint.spring = 4.5f;
-            joint.damper = 7f;
-            joint.massScale = 4.5f;
+            joint.spring = 10.0f;
+            joint.damper = 1.0f;
+            joint.massScale = 6.0f;
 
             lr.positionCount = 2;
         }

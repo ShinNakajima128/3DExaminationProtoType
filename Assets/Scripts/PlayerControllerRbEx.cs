@@ -110,6 +110,7 @@ public class PlayerControllerRbEx : MonoBehaviour
             {
                 JumpMove();
                 m_jumpCount = 1;
+                Debug.Log(IsGrounded());
             }
             else if (m_jumpCount < m_maxJumpCount)
             {
@@ -128,7 +129,7 @@ public class PlayerControllerRbEx : MonoBehaviour
         //    m_anim.SetBool("Attack2", true);
         //}
         //R1ボタンが押されたら
-        if (Input.GetKey(KeyCode.Joystick1Button5))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
         {
             m_anim.SetBool("Wire", true);
         }
