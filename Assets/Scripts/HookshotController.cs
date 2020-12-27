@@ -70,7 +70,7 @@ public class HookshotController : MonoBehaviour
     /// </summary>
     void HookshotMovement()
     {
-        m_line.SetPosition(0, m_muzzle.transform.position);
+        m_line.SetPosition(0, m_muzzle.position);
         m_line.SetPosition(1, hookshotPosition);
         AudioSource.PlayClipAtPoint(m_flyingSfx, hookshotPosition);
         m_rb.transform.position = Vector3.Lerp(m_rb.transform.position, hookshotPosition, Time.deltaTime * m_hookshotSpeed);
