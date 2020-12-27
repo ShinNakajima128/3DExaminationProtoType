@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &3359839273192158482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875011620334783137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8565216, y: 5.4785156, z: 1.9286346}
+  m_Center: {x: -0.0656662, y: 0.03366089, z: -0.116249084}
 --- !u!1 &875011620619755304
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +23,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875011620619755311}
   m_Layer: 0
-  m_Name: GoalObject
+  m_Name: GoalObjectPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,6 +102,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 915256f108662ca4c824163fc343f185, type: 3}
+--- !u!1 &875011620334783137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 121502, guid: 915256f108662ca4c824163fc343f185,
+    type: 3}
+  m_PrefabInstance: {fileID: 875011620334800959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &875011620334688941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 412306, guid: 915256f108662ca4c824163fc343f185,
