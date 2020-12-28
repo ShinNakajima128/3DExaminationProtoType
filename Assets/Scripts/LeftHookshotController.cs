@@ -14,20 +14,24 @@ public class LeftHookshotController : MonoBehaviour
     LineRenderer lr;
     SpringJoint joint;
     Vector3 hookPoint;
+    HookshotController hookshotController;
     
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
+        hookshotController = GetComponent<HookshotController>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Joystick1Button4))
         {
+            hookshotController.enabled = false;
             StartHookshot();   
         }
         else if (Input.GetKeyUp(KeyCode.Joystick1Button4))
         {
+            hookshotController.enabled = true;
             StopHookshot();
         }
     }
