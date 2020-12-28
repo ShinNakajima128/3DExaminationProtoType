@@ -5,7 +5,7 @@ public class HookshotController : MonoBehaviour
 {
     [SerializeField] Transform m_muzzle;
     [SerializeField] Camera m_playerCamera;
-    [SerializeField] float m_maxWireDistance = 10f;
+    [SerializeField] float m_maxWireDistance = 100f;
     [SerializeField] float m_hookshotSpeed = 5f;
     [SerializeField] AudioClip m_flyingSfx = null;
     private Rigidbody m_rb;

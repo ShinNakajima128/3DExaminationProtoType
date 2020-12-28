@@ -26,11 +26,13 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] AudioClip m_jumpSfx = null;
     Rigidbody m_rb;
     Animator m_anim;
+    AudioSource audioSource;
 
     void Start()
     {
         m_rb = GetComponent<Rigidbody>();
         m_anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -112,7 +114,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     }
     void JumpMove()
     {
-        AudioSource.PlayClipAtPoint(m_jumpSfx, this.transform.position);
+        audioSource.PlayOneShot(m_jumpSfx);
         m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
         m_anim.SetBool("Jump", true);
     }

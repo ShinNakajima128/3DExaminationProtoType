@@ -9,13 +9,15 @@ public class RespawnController : MonoBehaviour
     [SerializeField] AudioClip m_vanishSfx = null;
     [SerializeField] AudioClip m_respawnSfx = null;
     [SerializeField] float m_respawnWaitTime = 4.0f;
-    private GameObject m_player;
+    private GameObject player;
+    private AudioSource audioSource;
     private bool isRespawn = false;
     private float m_timer;
 
     private void Start()
     {
-        m_player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -26,9 +28,10 @@ public class RespawnController : MonoBehaviour
             {
                 m_timer = 0;
                 isRespawn = false;
-                m_player.SetActive(true);
-                m_player.transform.position = m_respawnPoint.transform.position;
-                AudioSource.PlayClipAtPoint(m_respawnSfx, m_player.transform.position);
+                player.SetActive(true);
+                player.transform.position = m_respawnPoint.transform.position;
+                //audioSource.PlayOneShot(m_respawnSfx);
+                AudioSource.PlayClipAtPoint(m_respawnSfx, m_respawnPoint.transform.position);
             }
         }
         
