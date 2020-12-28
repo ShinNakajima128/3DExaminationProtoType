@@ -15,7 +15,6 @@ public class LeftHookshotController : MonoBehaviour
     SpringJoint joint;
     Vector3 hookPoint;
     
-
     void Awake()
     {
         lr = GetComponent<LineRenderer>();

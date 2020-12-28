@@ -28,7 +28,6 @@ public class StartCameraController : MonoBehaviour
     }
     void MoveTowards(Vector3 target)
     {
-        //this.transform.position = Vector3.Slerp(this.transform.position, target, Time.deltaTime * m_moveSpeed);
         Vector3 dir = (target - this.transform.position).normalized;
         this.transform.Translate(dir * m_moveSpeed * Time.deltaTime);
     }

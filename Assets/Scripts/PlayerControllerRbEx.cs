@@ -23,11 +23,9 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] float m_jumpPower = 5f;
     /// <summary>接地判定の際、中心 (Pivot) からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 1.1f;
-    [SerializeField] int m_maxJumpCount = 2;
     [SerializeField] AudioClip m_jumpSfx = null;
     Rigidbody m_rb;
     Animator m_anim;
-    int m_jumpCount;
 
     void Start()
     {
@@ -109,29 +107,7 @@ public class PlayerControllerRbEx : MonoBehaviour
             if (IsGrounded())
             {
                 JumpMove();
-                m_jumpCount = 1;
-                Debug.Log(IsGrounded());
             }
-            else if (m_jumpCount < m_maxJumpCount)
-            {
-                JumpMove();
-                m_jumpCount++;
-            }
-        }
-        //Xボタンが押されたら
-        //if (Input.GetButtonDown("Attack1") && IsGrounded())
-        //{
-        //    m_anim.SetBool("Attack1", true);
-        //}
-        ////Yボタンが押されたら
-        //if (Input.GetButtonDown("Attack2") && IsGrounded())
-        //{
-        //    m_anim.SetBool("Attack2", true);
-        //}
-        //R1ボタンが押されたら
-        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
-        {
-            m_anim.SetBool("Wire", true);
         }
     }
     void JumpMove()

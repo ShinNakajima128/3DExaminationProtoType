@@ -20,7 +20,6 @@ public class HookshotController : MonoBehaviour
         HookshotFlyingPlayer
     }
     
-    
     private void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
