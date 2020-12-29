@@ -25,7 +25,6 @@ public class TitleManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(m_timer);
         if (Input.anyKeyDown && m_pressAnyButtonText.activeSelf == true)
         {
             audioSource.PlayOneShot(m_decisionSfx);

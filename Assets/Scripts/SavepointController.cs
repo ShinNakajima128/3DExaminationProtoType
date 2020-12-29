@@ -27,10 +27,11 @@ public class SavepointController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            Instantiate(m_bButton, other.transform.position, Quaternion.identity);
             if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
                 audioSource.PlayOneShot(m_touchSfx);
-                Instantiate(m_touchEffect, this.transform.position, Quaternion.identity);
+                Instantiate(m_touchEffect, other.transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(m_touchSfx, this.transform.position);
                 RC.m_respawnPoint = m_newRespawnPoint;
             }
