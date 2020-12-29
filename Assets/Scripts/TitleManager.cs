@@ -8,7 +8,7 @@ public class TitleManager : MonoBehaviour
     [SerializeField] GameObject m_pressAnyButtonText = null;
     [SerializeField] GameObject m_menuText = null;
     [SerializeField] AudioClip m_decisionSfx = null;
-    [SerializeField] AudioClip m_backSfx = null;
+    [SerializeField] AudioClip m_loadSfx = null;
     [SerializeField] float m_SceneLoadTime = 2f;
     [SerializeField] GameObject m_fadeController;
     bool isLoadStarted = false;
@@ -36,14 +36,14 @@ public class TitleManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump")) 
             {
-                audioSource.PlayOneShot(m_backSfx);
+                audioSource.PlayOneShot(m_decisionSfx);
                 m_pressAnyButtonText.SetActive(true);
                 m_menuText.SetActive(false);
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
                 FC.isFadeOut = true;
-                audioSource.PlayOneShot(m_decisionSfx);
+                audioSource.PlayOneShot(m_loadSfx);
                 isLoadStarted = true;
             }
         }

@@ -8,7 +8,7 @@ public class FadeController : MonoBehaviour
     public bool isFadeOut = false;
     public bool isFadeIn = false;
 
-    float fadeSpeed = 0.02f;
+    float fadeSpeed = 0.01f;
     float red, green, blue, alfa;
     Image fadeImage;
 

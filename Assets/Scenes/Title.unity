@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_pressAnyButtonText: {fileID: 497755399}
   m_menuText: {fileID: 485736083}
   m_decisionSfx: {fileID: 8300000, guid: ef3235d9984426649a2654b25a0bc9aa, type: 3}
-  m_backSfx: {fileID: 8300000, guid: ef3235d9984426649a2654b25a0bc9aa, type: 3}
+  m_loadSfx: {fileID: 8300000, guid: cf49b137eaedb4c46af19ac4087ddde2, type: 3}
   m_SceneLoadTime: 2
   m_fadeController: {fileID: 944786049}
 --- !u!4 &1881508753

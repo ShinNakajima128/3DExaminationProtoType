@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class RespawnController : MonoBehaviour
 {
-    [SerializeField] GameObject m_respawnPoint;
+   
     [SerializeField] GameObject m_deathEffect;
     [SerializeField] AudioClip m_vanishSfx = null;
     [SerializeField] AudioClip m_respawnSfx = null;
     [SerializeField] float m_respawnWaitTime = 4.0f;
+    public GameObject m_respawnPoint;
     private GameObject player;
     private AudioSource audioSource;
     private bool isRespawn = false;
@@ -30,7 +31,6 @@ public class RespawnController : MonoBehaviour
                 isRespawn = false;
                 player.SetActive(true);
                 player.transform.position = m_respawnPoint.transform.position;
-                //audioSource.PlayOneShot(m_respawnSfx);
                 AudioSource.PlayClipAtPoint(m_respawnSfx, m_respawnPoint.transform.position);
             }
         }
