@@ -23,14 +23,13 @@ public class SavepointController : MonoBehaviour
     {
 
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            audioSource.PlayOneShot(m_touchSfx);
-
             if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
+                audioSource.PlayOneShot(m_touchSfx);
                 Instantiate(m_touchEffect, this.transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(m_touchSfx, this.transform.position);
                 RC.m_respawnPoint = m_newRespawnPoint;
