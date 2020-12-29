@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HookTarget
   - DeathZone
+  - Stage
   layers:
   - Default
   - TransparentFX
