@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        m_UI.SetActive(true);
         m_menuUI.SetActive(false);
     }
 
@@ -24,7 +23,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Xが押されました");
             m_UI.SetActive(false);
             m_menuUI.SetActive(true);
-            
+
             if (Input.GetKeyDown(KeyCode.JoystickButton2))
             {
                 m_UI.SetActive(true);

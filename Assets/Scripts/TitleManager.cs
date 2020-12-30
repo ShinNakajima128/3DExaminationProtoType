@@ -53,7 +53,7 @@ public class TitleManager : MonoBehaviour
             if (m_timer >= m_SceneLoadTime)
             {
                 m_timer = 0;
-                SceneManager.LoadScene("Tutorial");
+                SceneManager.LoadScene("Stage1");
             }
         }
     }

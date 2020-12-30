@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2089421854606526659}
   - component: {fileID: 2089421854606526658}
   m_Layer: 0
-  m_Name: floor1
-  m_TagString: Untagged
+  m_Name: SmallFloor
+  m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089421854606526661}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.030823, y: 26.972103, z: -135.49522}
   m_LocalScale: {x: 18, y: 3, z: 10}
   m_Children: []
