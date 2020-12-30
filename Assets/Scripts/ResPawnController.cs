@@ -15,12 +15,12 @@ public class RespawnController : MonoBehaviour
     private bool isRespawn = false;
     private float m_timer;
 
-    private void Start()
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         audioSource = GetComponent<AudioSource>();
     }
-    private void Update()
+    void Update()
     {
         if (isRespawn)
         {
@@ -33,6 +33,10 @@ public class RespawnController : MonoBehaviour
                 player.transform.position = m_respawnPoint.transform.position;
                 AudioSource.PlayClipAtPoint(m_respawnSfx, m_respawnPoint.transform.position);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+        {
+            player.transform.position = m_respawnPoint.transform.position;
         }
         
     }

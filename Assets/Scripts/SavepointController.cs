@@ -8,7 +8,6 @@ public class SavepointController : MonoBehaviour
     [SerializeField] GameObject m_respawnSystem;
     [SerializeField] GameObject m_newRespawnPoint;
     [SerializeField] GameObject m_touchEffect;
-    [SerializeField] Image m_bButton;
     [SerializeField] AudioClip m_touchSfx;
     RespawnController RC;
     AudioSource audioSource;
@@ -27,7 +26,6 @@ public class SavepointController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Instantiate(m_bButton, other.transform.position, Quaternion.identity);
             if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
                 audioSource.PlayOneShot(m_touchSfx);
