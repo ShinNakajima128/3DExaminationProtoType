@@ -31,12 +31,17 @@ public class LeftHookshotController : MonoBehaviour
     {
         ReticleHitAnim();
        
-        if (Input.GetKeyDown(KeyCode.Joystick1Button4))
+        if (Input.GetKeyDown(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = false;
-            StartHookshot();   
+            StartHookshot();
+
+            //if (Input.GetKeyDown(KeyCode.JoystickButton5))
+            //{
+            //    GetComponent<Rigidbody>().AddForce(m_player.forward * 10, ForceMode.Impulse);
+            //}
         }
-        else if (Input.GetKeyUp(KeyCode.Joystick1Button4))
+        else if (Input.GetKeyUp(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = true;
             StopHookshot();
@@ -99,7 +104,7 @@ public class LeftHookshotController : MonoBehaviour
                 m_reticle.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
         }
-        else if (Physics.Raycast(m_camera.position, m_camera.forward, out reticleHit, 200f))
+        else if (Physics.Raycast(m_camera.position, m_camera.forward, out reticleHit, 300f))
         {
             string hittag = reticleHit.collider.tag;
 

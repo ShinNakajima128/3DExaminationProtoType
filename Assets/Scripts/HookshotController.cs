@@ -50,7 +50,7 @@ public class HookshotController : MonoBehaviour
     /// </summary>
     void HookshotStart()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
+        if (Input.GetKeyDown(KeyCode.JoystickButton5))
         {
             if (Physics.Raycast(m_playerCamera.transform.position, m_playerCamera.transform.forward, out RaycastHit Hit, m_maxWireDistance))
             {
