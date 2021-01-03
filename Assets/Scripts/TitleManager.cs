@@ -39,7 +39,7 @@ public class TitleManager : MonoBehaviour
                 m_pressAnyButtonText.SetActive(true);
                 m_menuText.SetActive(false);
             }
-            else if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+            else if (Input.GetKeyDown(KeyCode.JoystickButton1))
             {
                 FC.isFadeOut = true;
                 audioSource.PlayOneShot(m_loadSfx);
