@@ -33,7 +33,7 @@ public class TitleManager : MonoBehaviour
         }
         else if (m_pressAnyButtonText.activeSelf == false)
         {
-            if (Input.GetButtonDown("Jump")) 
+            if (Input.GetButtonDown("A")) 
             {
                 audioSource.PlayOneShot(m_decisionSfx);
                 m_pressAnyButtonText.SetActive(true);

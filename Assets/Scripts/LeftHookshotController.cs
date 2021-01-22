@@ -35,11 +35,6 @@ public class LeftHookshotController : MonoBehaviour
         {
             hookshotController.enabled = false;
             StartHookshot();
-
-            //if (Input.GetKeyDown(KeyCode.JoystickButton5))
-            //{
-            //    GetComponent<Rigidbody>().AddForce(m_player.forward * 10, ForceMode.Impulse);
-            //}
         }
         else if (Input.GetKeyUp(KeyCode.JoystickButton4))
         {

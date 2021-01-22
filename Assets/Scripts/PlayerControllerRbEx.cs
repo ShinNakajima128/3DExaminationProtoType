@@ -104,7 +104,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     void playerAnimation()
     {
         //Aボタンの入力を取得し、接地している時か、1回目のジャンプ中に押されていたらジャンプする
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("A"))
         {
             if (IsGrounded())
             {
