@@ -61,7 +61,7 @@ public class HookshotController : MonoBehaviour
         else
         {
             m_line.positionCount = 0;
-            m_rb.useGravity = true;
+            //m_rb.useGravity = true;
         }
     }
     /// <summary>
@@ -69,11 +69,11 @@ public class HookshotController : MonoBehaviour
     /// </summary>
     void HookshotMovement()
     {
-        m_rb.useGravity = false;
+        //m_rb.useGravity = false;
         m_line.SetPosition(0, m_muzzle.position);
         m_line.SetPosition(1, hookshotPosition);
         AudioSource.PlayClipAtPoint(m_flyingSfx, hookshotPosition);
-        m_rb.transform.position = Vector3.Lerp(m_rb.transform.position, hookshotPosition, Time.deltaTime * m_hookshotSpeed);
+        //m_rb.transform.position = Vector3.Lerp(m_rb.transform.position, hookshotPosition, Time.deltaTime * m_hookshotSpeed);
         state = State.Normal;
     }
 }

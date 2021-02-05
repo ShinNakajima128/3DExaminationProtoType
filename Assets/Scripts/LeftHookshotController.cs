@@ -13,40 +13,42 @@ public class LeftHookshotController : MonoBehaviour
     [SerializeField] AudioClip m_hookHitSfx = null;
     [SerializeField] float m_maxDistance = 40f;
     [SerializeField] GameObject m_reticle;
+    [SerializeField] float m_pushPower = 10f;
     SpringJoint joint;
     Image reticleImage;
     LineRenderer lr;
     Vector3 hookPoint;
     HookshotController hookshotController;
     RaycastHit reticleHit;
-
+    Rigidbody m_rb;
 
     void Start()
     {
         lr = GetComponent<LineRenderer>();
         hookshotController = GetComponent<HookshotController>();
         reticleImage = m_reticle.GetComponent<Image>();
+        m_rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
         ReticleHitAnim();
-       
+
         if (Input.GetKeyDown(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = false;
             StartHookshot();
-            Debug.Log(joint.maxDistance);
         }
         else if (Input.GetKeyUp(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = true;
             StopHookshot();
+            m_rb.useGravity = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.JoystickButton5))
+        if (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.Joystick1Button5))
         {
-            joint.maxDistance = 1.0f;
-            Debug.Log(joint.maxDistance);
+            m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, 0.5f);
+            m_rb.useGravity = false;
         }
     }
 
@@ -59,7 +61,7 @@ public class LeftHookshotController : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast( m_camera.position, m_camera.forward, out hit, m_maxDistance, whatIsHookshot))
+        if (Physics.Raycast(m_camera.position, m_camera.forward, out hit, m_maxDistance, whatIsHookshot))
         {
             AudioSource.PlayClipAtPoint(m_hookHitSfx, m_player.position);
             hookPoint = hit.point;
@@ -72,11 +74,11 @@ public class LeftHookshotController : MonoBehaviour
             float distanceFromPoint = Vector3.Distance(m_player.position, hookPoint);
 
             joint.minDistance = 0.2f;
-            joint.maxDistance = distanceFromPoint;
+            joint.maxDistance = distanceFromPoint * 0.8f;
 
-            joint.spring = 0.5f;
+            joint.spring = 1.0f;
             joint.damper = 1.0f;
-            joint.massScale = 10.0f;
+            joint.massScale = 6.0f;
 
             lr.positionCount = 2;
         }
