@@ -9,13 +9,16 @@ public class SavepointController : MonoBehaviour
     [SerializeField] GameObject m_newRespawnPoint;
     [SerializeField] GameObject m_touchEffect;
     [SerializeField] AudioClip m_touchSfx;
+    [SerializeField] Image bottonImage;
     RespawnController RC;
     AudioSource audioSource;
+    
 
     void Start()
     {
         RC = m_respawnSystem.GetComponent<RespawnController>();
         audioSource = GetComponent<AudioSource>();
+        
     }
 
     void Update()
@@ -26,6 +29,8 @@ public class SavepointController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            bottonImage.enabled = true;
+
             if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
                 audioSource.PlayOneShot(m_touchSfx);
@@ -33,6 +38,10 @@ public class SavepointController : MonoBehaviour
                 AudioSource.PlayClipAtPoint(m_touchSfx, this.transform.position);
                 RC.m_respawnPoint = m_newRespawnPoint;
             }
+        }
+        else
+        {
+            bottonImage.enabled = false;
         }
     }
 }

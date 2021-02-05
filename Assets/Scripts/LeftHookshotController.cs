@@ -13,9 +13,9 @@ public class LeftHookshotController : MonoBehaviour
     [SerializeField] AudioClip m_hookHitSfx = null;
     [SerializeField] float m_maxDistance = 40f;
     [SerializeField] GameObject m_reticle;
+    SpringJoint joint;
     Image reticleImage;
     LineRenderer lr;
-    SpringJoint joint;
     Vector3 hookPoint;
     HookshotController hookshotController;
     RaycastHit reticleHit;
@@ -35,11 +35,18 @@ public class LeftHookshotController : MonoBehaviour
         {
             hookshotController.enabled = false;
             StartHookshot();
+            Debug.Log(joint.maxDistance);
         }
         else if (Input.GetKeyUp(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = true;
             StopHookshot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton5))
+        {
+            joint.maxDistance = 1.0f;
+            Debug.Log(joint.maxDistance);
         }
     }
 
@@ -60,16 +67,16 @@ public class LeftHookshotController : MonoBehaviour
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = hookPoint;
 
-            AudioSource.PlayClipAtPoint(m_flyingSfx, m_player.position);
+            //AudioSource.PlayClipAtPoint(m_flyingSfx, m_player.position);
 
             float distanceFromPoint = Vector3.Distance(m_player.position, hookPoint);
 
-            joint.minDistance = distanceFromPoint * 0.8f;
-            joint.maxDistance = distanceFromPoint * 0.3f;
+            joint.minDistance = 0.2f;
+            joint.maxDistance = distanceFromPoint;
 
-            joint.spring = 10.0f;
+            joint.spring = 0.5f;
             joint.damper = 1.0f;
-            joint.massScale = 6.0f;
+            joint.massScale = 10.0f;
 
             lr.positionCount = 2;
         }
