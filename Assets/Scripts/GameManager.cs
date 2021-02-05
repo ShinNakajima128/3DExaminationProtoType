@@ -10,25 +10,47 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject m_UI;
     [SerializeField] GameObject m_menuUI;
+    State menuState;
+    int stateCount;
+
+    enum State
+    {
+        Restart,
+        StageSelect,
+        Exit
+    }
 
     void Start()
     {
-        m_menuUI.SetActive(false);
+        //m_menuUI.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.JoystickButton2))
+        if (m_UI.activeSelf == true && Input.GetKeyDown(KeyCode.JoystickButton2))
         {
             Debug.Log("Xが押されました");
             m_UI.SetActive(false);
-            m_menuUI.SetActive(true);
+            m_menuUI.GetComponent<Canvas>().enabled = true;
+        }
+        else if (m_UI.activeSelf == false && Input.GetKeyDown(KeyCode.JoystickButton2))
+        {
+            m_UI.SetActive(true);
+            m_menuUI.GetComponent<Canvas>().enabled = false;
+        }
+    }
 
-            if (Input.GetKeyDown(KeyCode.JoystickButton2))
-            {
-                m_UI.SetActive(true);
-                m_menuUI.SetActive(false);
-            }
+    private void FixedUpdate()
+    {
+        switch (menuState)
+        {
+            default:
+            case State.Restart:
+                break;
+            case State.StageSelect:
+                break;
+            case State.Exit:
+                break;
         }
     }
 }
