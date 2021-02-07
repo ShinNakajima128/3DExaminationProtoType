@@ -34,13 +34,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("Xが押されました");
             audioSource.PlayOneShot(m_menuSfx);
             m_UI.SetActive(false);
-            m_menuUI.GetComponent<Canvas>().enabled = true;  
+            m_menuUI.SetActive(true); 
         }
         else if (!m_UI.activeSelf && Input.GetKeyDown(KeyCode.JoystickButton2))
         {
             audioSource.PlayOneShot(m_menuSfx);
             m_UI.SetActive(true);
-            m_menuUI.GetComponent<Canvas>().enabled = false;
+            m_menuUI.SetActive(false);
         }
     }
 

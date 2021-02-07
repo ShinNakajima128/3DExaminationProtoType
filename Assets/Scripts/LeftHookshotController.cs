@@ -47,7 +47,7 @@ public class LeftHookshotController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.Joystick1Button5))
         {
-            m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, 0.5f);
+            m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, 0.2f);
             m_rb.useGravity = false;
         }
     }
