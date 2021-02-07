@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject m_UI;
     [SerializeField] GameObject m_menuUI;
+    [SerializeField] GameObject m_fadeController;
+    [SerializeField] AudioClip m_MenuSfx;
+    FadeController FC;
+    AudioSource audioSource;
+    bool isLoadStarted = false;
     State menuState;
     int stateCount;
 
@@ -22,19 +27,27 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //m_menuUI.SetActive(false);
+        FC = m_fadeController.GetComponent<FadeController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        if (m_UI.activeSelf == true && Input.GetKeyDown(KeyCode.JoystickButton2))
+        if (m_UI.activeSelf && Input.GetKeyDown(KeyCode.JoystickButton2))
         {
             Debug.Log("Xが押されました");
+            audioSource.PlayOneShot(m_MenuSfx);
             m_UI.SetActive(false);
             m_menuUI.GetComponent<Canvas>().enabled = true;
+
+            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+            {
+                menuState = State.Restart;
+            }
         }
-        else if (m_UI.activeSelf == false && Input.GetKeyDown(KeyCode.JoystickButton2))
+        else if (!m_UI.activeSelf && Input.GetKeyDown(KeyCode.JoystickButton2))
         {
+            audioSource.PlayOneShot(m_MenuSfx);
             m_UI.SetActive(true);
             m_menuUI.GetComponent<Canvas>().enabled = false;
         }
@@ -46,11 +59,28 @@ public class GameManager : MonoBehaviour
         {
             default:
             case State.Restart:
+                Restart();
                 break;
             case State.StageSelect:
+                StageSelect();
                 break;
             case State.Exit:
+                GameExit();
                 break;
         }
+    }
+    void Restart()
+    {
+
+    }
+
+    void StageSelect()
+    {
+
+    }
+
+    private void GameExit()
+    {
+        
     }
 }
