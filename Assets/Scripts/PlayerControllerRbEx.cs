@@ -24,6 +24,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     /// <summary>接地判定の際、中心 (Pivot) からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 1.1f;
     [SerializeField] AudioClip m_jumpSfx = null;
+    int m_jumpCount = 0;
     Rigidbody m_rb;
     Animator m_anim;
     AudioSource audioSource;
@@ -69,6 +70,7 @@ public class PlayerControllerRbEx : MonoBehaviour
         Vector3 end = start + Vector3.down * m_isGroundedLength;  // end: start から真下の地点
         Debug.DrawLine(start, end); // 動作確認用に Scene ウィンドウ上で線を表示する
         bool isGrounded = Physics.Linecast(start, end); // 引いたラインに何かがぶつかっていたら true とする
+        m_jumpCount = 0;
         return isGrounded;
     }
 
@@ -108,7 +110,11 @@ public class PlayerControllerRbEx : MonoBehaviour
         {
             if (IsGrounded())
             {
-                JumpMove();
+                if (m_jumpCount <= 1)
+                {
+                    JumpMove();
+                    m_jumpCount = 2;
+                }
             }
         }
     }
