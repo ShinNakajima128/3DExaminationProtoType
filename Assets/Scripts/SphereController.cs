@@ -13,6 +13,6 @@ public class SphereController : MonoBehaviour
     {
         Instantiate(m_explosion, this.transform.position,this.transform.rotation);
         AudioSource.PlayClipAtPoint(m_explosionSfx, collision.transform.position);
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 /// <summary>
 /// Rigidbody を使ってプレイヤーを動かすコンポーネント
@@ -24,6 +25,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     /// <summary>接地判定の際、中心 (Pivot) からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 1.1f;
     [SerializeField] AudioClip m_jumpSfx = null;
+    [SerializeField] CinemachineVirtualCamera m_goalCamera;
     int m_jumpCount = 0;
     Rigidbody m_rb;
     Animator m_anim;
@@ -43,6 +45,14 @@ public class PlayerControllerRbEx : MonoBehaviour
         if (IsGrounded())
         {
             playerAnimation();
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+        {
+            m_goalCamera.Priority = 11;
+        }
+        if (Input.GetKeyUp(KeyCode.Joystick1Button3))
+        {
+            m_goalCamera.Priority = 9;
         }
     }
 

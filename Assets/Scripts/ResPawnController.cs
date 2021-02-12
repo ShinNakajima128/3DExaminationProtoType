@@ -34,10 +34,10 @@ public class RespawnController : MonoBehaviour
                 AudioSource.PlayClipAtPoint(m_respawnSfx, m_respawnPoint.transform.position);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
-        {
-            player.transform.position = m_respawnPoint.transform.position;
-        }
+        //if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+        //{
+        //    player.transform.position = m_respawnPoint.transform.position;
+        //}
         
     }
     private void OnCollisionEnter(Collision collision)
