@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject m_fadeController;
     [SerializeField] AudioClip m_menuSfx;
     [SerializeField] AudioClip m_selectSfx;
+    [SerializeField] GameObject m_player;
+    PlayerControllerRbEx PCRE;
     FadeController FC;
     AudioSource audioSource;
     float m_timer;
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
         FC = m_fadeController.GetComponent<FadeController>();
         audioSource = GetComponent<AudioSource>();
         FC.isFadeIn = true;
+        PCRE = m_player.gameObject.GetComponent<PlayerControllerRbEx>();
     }
 
     void Update()
@@ -34,13 +37,15 @@ public class GameManager : MonoBehaviour
             Debug.Log("Xが押されました");
             audioSource.PlayOneShot(m_menuSfx);
             m_UI.SetActive(false);
-            m_menuUI.SetActive(true); 
+            m_menuUI.SetActive(true);
+            PCRE.m_playerOperation = false;
         }
         else if (!m_UI.activeSelf && Input.GetKeyDown(KeyCode.JoystickButton2))
         {
             audioSource.PlayOneShot(m_menuSfx);
             m_UI.SetActive(true);
             m_menuUI.SetActive(false);
+            PCRE.m_playerOperation = true;
         }
     }
 
@@ -77,7 +82,7 @@ public class GameManager : MonoBehaviour
         }
         else if (loadType == 2)
         {
-            SceneManager.LoadScene("Stage2");
+            SceneManager.LoadScene("Stage1");
         }
         else if (loadType == 3)
         {

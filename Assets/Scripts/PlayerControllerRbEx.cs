@@ -27,6 +27,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] AudioClip m_jumpSfx = null;
     [SerializeField] CinemachineVirtualCamera m_goalCamera;
     int m_jumpCount = 0;
+    public bool m_playerOperation = true;
     Rigidbody m_rb;
     Animator m_anim;
     AudioSource audioSource;
@@ -37,22 +38,30 @@ public class PlayerControllerRbEx : MonoBehaviour
         m_anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
     }
+    public bool PlayerOperation
+    {
+        get { return m_playerOperation; }
+        set { m_playerOperation = value; }
+    }
 
     void Update()
     {
-        PlayerMove();
+        if (m_playerOperation)
+        {
+            PlayerMove();
 
-        if (IsGrounded())
-        {
-            playerAnimation();
-        }
-        if (Input.GetKeyDown(KeyCode.Joystick1Button3))
-        {
-            m_goalCamera.Priority = 11;
-        }
-        if (Input.GetKeyUp(KeyCode.Joystick1Button3))
-        {
-            m_goalCamera.Priority = 9;
+            if (IsGrounded())
+            {
+                playerAnimation();
+            }
+            if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+            {
+                m_goalCamera.Priority = 11;
+            }
+            if (Input.GetKeyUp(KeyCode.Joystick1Button3))
+            {
+                m_goalCamera.Priority = 9;
+            }
         }
     }
 

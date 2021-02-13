@@ -21,6 +21,7 @@ public class LeftHookshotController : MonoBehaviour
     HookshotController hookshotController;
     RaycastHit reticleHit;
     Rigidbody m_rb;
+    bool winderState = false;
 
     void Start()
     {
@@ -36,20 +37,23 @@ public class LeftHookshotController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = false;
-            StartHookshot();
+            StartHookshot();    
         }
         else if (Input.GetKeyUp(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = true;
             StopHookshot();
             m_rb.useGravity = true;
+            
         }
 
-        if (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.Joystick1Button5))
+        if (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.Joystick1Button5) && winderState)
         {
+            //AudioSource.PlayClipAtPoint(m_flyingSfx, m_player.position);
             m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, 0.2f);
             m_rb.useGravity = false;
         }
+        
     }
 
     private void LateUpdate()
@@ -81,10 +85,12 @@ public class LeftHookshotController : MonoBehaviour
             joint.massScale = 6.0f;
 
             lr.positionCount = 2;
-        }
+            winderState = true;
+        } 
     }
     void StopHookshot()
     {
+        winderState = false;
         lr.positionCount = 0;
         Destroy(joint);
     }
