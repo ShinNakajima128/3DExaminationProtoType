@@ -11,14 +11,12 @@ public class RespawnController : MonoBehaviour
     [SerializeField] float m_respawnWaitTime = 4.0f;
     public GameObject m_respawnPoint;
     private GameObject player;
-    private AudioSource audioSource;
     private bool isRespawn = false;
     private float m_timer;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -34,10 +32,6 @@ public class RespawnController : MonoBehaviour
                 AudioSource.PlayClipAtPoint(m_respawnSfx, m_respawnPoint.transform.position);
             }
         }
-        //if (Input.GetKeyDown(KeyCode.Joystick1Button3))
-        //{
-        //    player.transform.position = m_respawnPoint.transform.position;
-        //}
         
     }
     private void OnCollisionEnter(Collision collision)
