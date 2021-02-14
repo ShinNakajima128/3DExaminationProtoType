@@ -21,7 +21,9 @@ public class LeftHookshotController : MonoBehaviour
     HookshotController hookshotController;
     RaycastHit reticleHit;
     Rigidbody m_rb;
+    AudioSource audioSource;
     bool winderState = false;
+    bool audioOneshot = true;
 
     void Start()
     {
@@ -29,6 +31,7 @@ public class LeftHookshotController : MonoBehaviour
         hookshotController = GetComponent<HookshotController>();
         reticleImage = m_reticle.GetComponent<Image>();
         m_rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -37,21 +40,27 @@ public class LeftHookshotController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = false;
-            StartHookshot();    
+            StartHookshot();
+            m_rb.useGravity = true;
         }
         else if (Input.GetKeyUp(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = true;
             StopHookshot();
             m_rb.useGravity = true;
+            audioOneshot = true;
             
         }
 
         if (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.Joystick1Button5) && winderState)
         {
-            //AudioSource.PlayClipAtPoint(m_flyingSfx, m_player.position);
+            if (audioOneshot)
+            {
+                AudioSource.PlayClipAtPoint(m_flyingSfx, m_rb.transform.position);
+            }
             m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, 0.2f);
             m_rb.useGravity = false;
+            audioOneshot = false;
         }
         
     }
