@@ -9,43 +9,43 @@ public class SavepointController : MonoBehaviour
     [SerializeField] GameObject m_newRespawnPoint;
     [SerializeField] GameObject m_touchEffect;
     [SerializeField] AudioClip m_touchSfx;
-    [SerializeField] Image bottonImage;
+    [SerializeField] GameObject m_saveObjectUI = null;
     RespawnController RC;
     AudioSource audioSource;
+    bool isCheckPoint = false;
+    float m_timer;
 
 
     void Start()
     {
         RC = m_respawnSystem.GetComponent<RespawnController>();
         audioSource = GetComponent<AudioSource>();
-        bottonImage.enabled = false;
+        m_saveObjectUI.SetActive(false);
     }
 
     void Update()
     {
-        if (bottonImage.enabled && Input.GetKeyDown(KeyCode.Joystick1Button1))
+        if (isCheckPoint)
         {
-            Debug.Log("Bが押されました");
-            audioSource.PlayOneShot(m_touchSfx);
-            Instantiate(m_touchEffect, transform.position, Quaternion.identity);
-            //AudioSource.PlayClipAtPoint(m_touchSfx, this.transform.position);
-            RC.m_respawnPoint = m_newRespawnPoint;
+            m_timer += Time.deltaTime;
+            Debug.Log(m_timer);
+            m_saveObjectUI.SetActive(true);
+            
+            if (m_timer >= 3)
+            {
+                m_saveObjectUI.SetActive(false);
+                isCheckPoint = false;
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.tag == "Player")
         {
-            bottonImage.enabled = true;
+            isCheckPoint = true;
+            RC.m_respawnPoint = m_newRespawnPoint;
             Debug.Log("プレイヤーが範囲に入った");
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        bottonImage.enabled = false;
-        Debug.Log("プレイヤーが範囲から出た");
     }
 }
