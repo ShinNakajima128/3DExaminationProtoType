@@ -43,12 +43,16 @@ public class GameManager : MonoBehaviour
         {
             m_timeUI.enabled = false;
         }
+        if (m_currentTime <= 30.0f)
+        {
+            m_timeUI.color = new Color(1.0f, 0, 0, 1.0f);
+        }
         if (m_currentTime <= 0.0f)
         {
             m_currentTime = 0.0f;
         }
 
-        m_timeUI.text = $"残り時間：{m_currentTime.ToString("F2")}";
+        m_timeUI.text = $"残り時間：{m_currentTime:F1}";
 
         //Xボタンが押されたらメニューを開き、ゲームを一時停止する
         if (m_UI.activeSelf && Input.GetKeyDown(KeyCode.JoystickButton2))
@@ -84,7 +88,7 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(m_selectSfx);
         FC.isFadeOut = true;
         loadType = 1;
-        StartCoroutine(loadTimer());
+        StartCoroutine(LoadTimer());
     }
 
     public void StageSelect()
@@ -99,21 +103,21 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(m_selectSfx);
         FC.isFadeOut = true;
         loadType = 1;
-        StartCoroutine(loadTimer());
+        StartCoroutine(LoadTimer());
     }
     public void Stage2()
     {
         audioSource.PlayOneShot(m_selectSfx);
         FC.isFadeOut = true;
         loadType = 2;
-        StartCoroutine(loadTimer());
+        StartCoroutine(LoadTimer());
     }
     public void GameExit()
     {
         audioSource.PlayOneShot(m_selectSfx);
         FC.isFadeOut = true;
         loadType = 3;
-        StartCoroutine(loadTimer());
+        StartCoroutine(LoadTimer());
     }
 
     public void Tutorial()
@@ -121,11 +125,11 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(m_selectSfx);
         FC.isFadeOut = true;
         loadType = 4;
-        StartCoroutine(loadTimer());
+        StartCoroutine(LoadTimer());
     }
 
     //Sceneの遷移を2秒遅らせる
-    IEnumerator loadTimer()
+    IEnumerator LoadTimer()
     {
         yield return new WaitForSeconds(2.0f);
 
