@@ -17,10 +17,7 @@ public class GameManager : MonoBehaviour
     PlayerControllerRbEx PCRE;
     FadeController FC;
     AudioSource audioSource;
-    float m_timer;
-    int m_SceneLoadTime = 2;
     int loadType;
-    bool isLoadStarted = false;
 
     void Start()
     {

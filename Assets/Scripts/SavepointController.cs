@@ -10,16 +10,17 @@ public class SavepointController : MonoBehaviour
     [SerializeField] GameObject m_onCheckPointEffect;
     [SerializeField] AudioClip m_checkSfx;
     [SerializeField] GameObject m_saveObjectUI = null;
+    [SerializeField] GameObject m_prevGem = null;
+    [SerializeField] GameObject m_afterGem = null;
     RespawnController RC;
-    AudioSource audioSource;
     bool isCheckPoint = false;
+    bool isResPawnUpdate = false;
     float m_timer;
 
 
     void Start()
     {
         RC = m_respawnSystem.GetComponent<RespawnController>();
-        audioSource = GetComponent<AudioSource>();
         m_saveObjectUI.SetActive(false);
         m_onCheckPointEffect.SetActive(false);
     }
@@ -41,13 +42,16 @@ public class SavepointController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !isResPawnUpdate)
         {
             AudioSource.PlayClipAtPoint(m_checkSfx, other.transform.position);
+            m_prevGem.SetActive(false);
+            m_afterGem.SetActive(true);
             m_onCheckPointEffect.SetActive(true);
             isCheckPoint = true;
             RC.m_respawnPoint = m_newRespawnPoint;
             Debug.Log("プレイヤーが範囲に入った");
+            isResPawnUpdate = true;
         }
     }
 }

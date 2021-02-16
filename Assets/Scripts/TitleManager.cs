@@ -8,17 +8,14 @@ public class TitleManager : MonoBehaviour
 {
     [SerializeField] GameObject m_pressAnyButtonText = null;
     [SerializeField] GameObject m_menu = null;
-    [SerializeField] Button m_menufirstSelect = null;
+    [SerializeField] Button m_menuFirstButton = null;
     [SerializeField] GameObject m_stageSelectMenu = null;
-    [SerializeField] Button m_startMenufirstSelect = null;
+    [SerializeField] Button m_stagemenuFirstButton = null;
     [SerializeField] AudioClip m_decisionSfx = null;
     [SerializeField] AudioClip m_loadSfx = null;
-    [SerializeField] float m_SceneLoadTime = 2f;
     [SerializeField] GameObject m_fadeController;
-    bool isLoadStarted = false;
     FadeController FC;
     AudioSource audioSource;
-    private float m_timer;
     int loadType = 0;
 
     private void Start()
@@ -26,6 +23,9 @@ public class TitleManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         FC = m_fadeController.GetComponent<FadeController>();
         FC.isFadeIn = true;
+        m_menu.SetActive(true);
+        m_menuFirstButton.Select();
+        m_menu.SetActive(false);   
     }
 
     void Update()
@@ -35,40 +35,15 @@ public class TitleManager : MonoBehaviour
             audioSource.PlayOneShot(m_decisionSfx);
             m_pressAnyButtonText.SetActive(false);
             m_menu.SetActive(true);
-            m_menufirstSelect.Select();
+            m_menuFirstButton.Select();
         }
         if (m_stageSelectMenu.activeSelf && Input.GetButtonDown("A"))
         {
             audioSource.PlayOneShot(m_decisionSfx);
             m_stageSelectMenu.SetActive(false);
             m_menu.SetActive(true);
-            m_menufirstSelect.Select();
+            m_menuFirstButton.Select();
         }
-        //else if (m_pressAnyButtonText.activeSelf == false)
-        //{
-        //    if (Input.GetButtonDown("A")) 
-        //    {
-        //        audioSource.PlayOneShot(m_decisionSfx);
-        //        m_pressAnyButtonText.SetActive(true);
-        //        m_menuText.SetActive(false);
-        //    }
-        //    else if (Input.GetKeyDown(KeyCode.JoystickButton1))
-        //    {
-        //        FC.isFadeOut = true;
-        //        audioSource.PlayOneShot(m_loadSfx);
-        //        isLoadStarted = true;
-        //    }
-        //}
-        //if (isLoadStarted)
-        //{
-        //    m_timer += Time.deltaTime;
-
-        //    if (m_timer >= m_SceneLoadTime)
-        //    {
-        //        m_timer = 0;
-        //        SceneManager.LoadScene("Stage1");
-        //    }
-        //}
     }
     public void GameStart()
     {
@@ -82,7 +57,7 @@ public class TitleManager : MonoBehaviour
         audioSource.PlayOneShot(m_decisionSfx);
         m_menu.SetActive(false);
         m_stageSelectMenu.SetActive(true);
-        m_startMenufirstSelect.Select();
+        m_stagemenuFirstButton.Select();
     }
     public void GameExit()
     {

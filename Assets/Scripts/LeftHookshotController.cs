@@ -56,7 +56,7 @@ public class LeftHookshotController : MonoBehaviour
         {
             if (audioOneshot)
             {
-                AudioSource.PlayClipAtPoint(m_flyingSfx, m_rb.transform.position);
+                //AudioSource.PlayClipAtPoint(m_flyingSfx, m_rb.transform.position);
             }
             m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, 0.2f);
             m_rb.useGravity = false;
@@ -81,8 +81,6 @@ public class LeftHookshotController : MonoBehaviour
             joint = m_player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = hookPoint;
-
-            //AudioSource.PlayClipAtPoint(m_flyingSfx, m_player.position);
 
             float distanceFromPoint = Vector3.Distance(m_player.position, hookPoint);
 

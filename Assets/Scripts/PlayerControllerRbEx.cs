@@ -129,11 +129,12 @@ public class PlayerControllerRbEx : MonoBehaviour
         {
             if (IsGrounded())
             {
-                if (m_jumpCount <= 1)
-                {
-                    JumpMove();
-                    m_jumpCount = 2;
-                }
+                JumpMove();
+                //if (m_jumpCount <= 1)
+                //{
+                //    JumpMove();
+                //    m_jumpCount = 2;
+                //}
             }
         }
     }
