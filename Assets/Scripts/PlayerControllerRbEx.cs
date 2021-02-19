@@ -26,8 +26,6 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] float m_isGroundedLength = 1.1f;
     [SerializeField] AudioClip m_jumpSfx = null;
     [SerializeField] CinemachineVirtualCamera m_goalCamera;
-    [SerializeField] float m_playerBurstPower = 50.0f;
-    int m_burstCount = 0;
     public bool m_playerOperation = true;
     Rigidbody m_rb;
     Animator m_anim;
@@ -63,12 +61,6 @@ public class PlayerControllerRbEx : MonoBehaviour
             {
                 m_goalCamera.Priority = 9;
             }
-            //if (Input.GetKeyDown(KeyCode.Joystick1Button1) && m_burstCount == 0)
-            //{
-            //    m_rb.AddForce(Vector3.forward * m_playerBurstPower * 100, ForceMode.Impulse);
-            //    m_rb.AddForce(Vector3.up * m_playerBurstPower, ForceMode.Impulse);
-            //    m_burstCount = 1;
-            //}
         }
     }
 
@@ -96,7 +88,6 @@ public class PlayerControllerRbEx : MonoBehaviour
         Vector3 end = start + Vector3.down * m_isGroundedLength;  // end: start から真下の地点
         Debug.DrawLine(start, end); // 動作確認用に Scene ウィンドウ上で線を表示する
         bool isGrounded = Physics.Linecast(start, end); // 引いたラインに何かがぶつかっていたら true とする
-        m_burstCount = 0;
         return isGrounded;
     }
 

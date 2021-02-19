@@ -11,7 +11,6 @@ public class ClearSceneManager : MonoBehaviour
     [SerializeField] GameObject m_stageSelectMenuUI;
     [SerializeField] Button m_stageSelectButton;
     [SerializeField] PlayableDirector m_director;
-    bool isEnd = false;
     int m_state = 0;
 
 
@@ -21,7 +20,6 @@ public class ClearSceneManager : MonoBehaviour
         {
             m_clearMenuUI.SetActive(true);
             m_menuButton.Select();
-            isEnd = true;
             m_state = 1;
         }
     }

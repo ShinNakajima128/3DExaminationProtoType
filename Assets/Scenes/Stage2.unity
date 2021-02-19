@@ -9275,7 +9275,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 06c9a1968f2cf97418e3ae8c68bc9c15, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.501
+  m_Volume: 0.128
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10925,6 +10925,11 @@ PrefabInstance:
       propertyPath: m_isGroundedLength
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2717266377219155303, guid: c6f010e8519d72849ac1f8745b58c9b3,
+        type: 3}
+      propertyPath: m_jumpSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 650f4f4346ebd844e895df2175a60493, type: 3}
     - target: {fileID: 8099752779811446926, guid: c6f010e8519d72849ac1f8745b58c9b3,
         type: 3}
       propertyPath: m_ReceiveShadows
@@ -12028,6 +12033,11 @@ PrefabInstance:
       propertyPath: m_saveObjectUI
       value: 
       objectReference: {fileID: 1180710162}
+    - target: {fileID: 4238493468739407391, guid: addfc6aae09b370438bf1e6bc511b3d5,
+        type: 3}
+      propertyPath: m_checkSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: bec3ee5ceb069d041ac39e90b02d4553, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: addfc6aae09b370438bf1e6bc511b3d5, type: 3}
 --- !u!1001 &5151947331981127387
@@ -12258,7 +12268,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_respawnSfx
       value: 
-      objectReference: {fileID: 8300000, guid: 7b85d6c407039b7488ee729e942c55da, type: 3}
+      objectReference: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
     - target: {fileID: 7338977121516994117, guid: 2408f11729f9ff74d8294af290d37097,
         type: 3}
       propertyPath: m_LocalPosition.x
