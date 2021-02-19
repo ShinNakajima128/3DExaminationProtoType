@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
             audioSource.PlayOneShot(m_menuSfx);
             m_UI.SetActive(false);
             m_menuUI.SetActive(true);
-            m_menuFirstButton.Select();
+            //m_menuFirstButton.Select();
         }
         else if (m_menuUI.activeSelf && Input.GetKeyDown(KeyCode.JoystickButton2))
         {
@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
     //Sceneの遷移を2秒遅らせる
     IEnumerator LoadTimer()
     {
+        Time.timeScale = 1f;
         yield return new WaitForSeconds(2.0f);
 
         if (loadType == 1)
