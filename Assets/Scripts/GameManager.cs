@@ -51,7 +51,10 @@ public class GameManager : MonoBehaviour
         }
         if (m_currentTime <= 0.0f)
         {
-            m_currentTime = 0.0f;
+            m_UI.SetActive(false);
+            loadType = 6;
+            FC.isFadeOut = true;
+            StartCoroutine(LoadTimer());
         }
 
         m_timeUI.text = $"残り時間：{m_currentTime:F1}";
@@ -163,6 +166,10 @@ public class GameManager : MonoBehaviour
         else if (loadType == 5)
         {
             SceneManager.LoadScene("ClearScene");
+        }
+        else if (loadType == 6)
+        {
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 }

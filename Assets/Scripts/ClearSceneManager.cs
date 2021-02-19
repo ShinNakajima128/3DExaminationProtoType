@@ -14,10 +14,6 @@ public class ClearSceneManager : MonoBehaviour
     bool isEnd = false;
     int m_state = 0;
 
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
