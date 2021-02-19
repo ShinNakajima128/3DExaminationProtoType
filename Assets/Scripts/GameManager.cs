@@ -83,7 +83,10 @@ public class GameManager : MonoBehaviour
 
         if (!m_GoalObject.activeSelf)
         {
-            m_clearDictor.SetActive(true);
+            m_UI.SetActive(false);
+            FC.isFadeOut = true;
+            loadType = 5;
+            StartCoroutine(LoadTimer());
         }
     }
 
@@ -156,6 +159,10 @@ public class GameManager : MonoBehaviour
         else if (loadType == 4)
         {
             SceneManager.LoadScene("Tutorial");
+        }
+        else if (loadType == 5)
+        {
+            SceneManager.LoadScene("ClearScene");
         }
     }
 }
