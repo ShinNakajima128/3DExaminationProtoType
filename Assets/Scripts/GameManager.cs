@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,9 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip m_menuSfx;
     [SerializeField] AudioClip m_selectSfx;
     [SerializeField] GameObject m_GoalObject = null;
-    [SerializeField] float m_gameTime = 120.0f;
+    [SerializeField] float m_gameTime = 60.0f;
     [SerializeField] Text m_timeUI = null;
-    [SerializeField] GameObject m_clearDictor = null;
     FadeController FC;
     AudioSource audioSource;
     int loadType;
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
             audioSource.PlayOneShot(m_menuSfx);
             m_UI.SetActive(false);
             m_menuUI.SetActive(true);
-            //m_menuFirstButton.Select();
+            m_menuFirstButton.Select();
         }
         else if (m_menuUI.activeSelf && Input.GetKeyDown(KeyCode.JoystickButton2))
         {
