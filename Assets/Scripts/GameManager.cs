@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject m_GoalObject = null;
     [SerializeField] float m_gameTime = 120.0f;
     [SerializeField] Text m_timeUI = null;
+    [SerializeField] GameObject m_clearDictor = null;
     FadeController FC;
     AudioSource audioSource;
     int loadType;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        ///制限時間を表示し、残り30秒を切ったら文字を赤くする
         if (m_UI.activeSelf)
         {
             m_timeUI.enabled = true;
@@ -77,6 +79,11 @@ public class GameManager : MonoBehaviour
             m_stageSelectMenuUI.SetActive(false);
             m_menuUI.SetActive(true);
             m_menuFirstButton.Select();
+        }
+
+        if (!m_GoalObject.activeSelf)
+        {
+            m_clearDictor.SetActive(true);
         }
     }
 
