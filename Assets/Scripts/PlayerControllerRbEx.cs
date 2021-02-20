@@ -28,6 +28,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] AudioClip m_jumpSfx = null;
     [SerializeField] CinemachineVirtualCamera m_goalCamera;
     [SerializeField] Transform m_itemThrowPoint = null;
+    [SerializeField] AudioClip m_getItemSfx = null;
     ItemBase m_holdingItem = null;
     public bool m_playerOperation = true;
     Rigidbody m_rb;
@@ -63,6 +64,20 @@ public class PlayerControllerRbEx : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Joystick1Button3))
             {
                 m_goalCamera.Priority = 9;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+        {
+            if (m_holdingItem)
+            {
+                Debug.Log("アイテムを使います");
+                m_holdingItem.Use();    // 変数 m_holdingItem が ItemBase 型であり、その Use() を呼んでいることに着目すること。ここで多態性を利用している。
+                //RefreshInventory();
+            }
+            else
+            {
+                Debug.Log("アイテムを持っていません");
             }
         }
     }
@@ -151,6 +166,7 @@ public class PlayerControllerRbEx : MonoBehaviour
             {
                 m_holdingItem.Throw(m_itemThrowPoint.position);
             }
+            AudioSource.PlayClipAtPoint(m_getItemSfx, Camera.main.transform.position);
             item.Get();
             m_holdingItem = item;
             //RefreshInventory();

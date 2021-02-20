@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class AddTimeItem : ItemBase
 {
+    [SerializeField] GameManager GM = null;
 
-    void Start()
+    public override void Use()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        Debug.Log("制限時間が増加しました");
+        base.Use();
     }
 }

@@ -5,13 +5,9 @@ using UnityEngine;
 public class KeyItem : ItemBase
 {
     
-    void Start()
+    public override void Use()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        Debug.Log("鍵を使用しました");
+        base.Use();
     }
 }

@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class HighJumpItem : ItemBase
 {
-    void Start()
+    public override void Use()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        Debug.Log("高くジャンプしました");
+        base.Use();
     }
 }
