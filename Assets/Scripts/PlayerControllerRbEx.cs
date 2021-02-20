@@ -24,8 +24,11 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] float m_jumpPower = 5f;
     /// <summary>接地判定の際、中心 (Pivot) からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 1.1f;
+    /// <summary> ジャンプ時のSE</summary>
     [SerializeField] AudioClip m_jumpSfx = null;
     [SerializeField] CinemachineVirtualCamera m_goalCamera;
+    [SerializeField] Transform m_itemThrowPoint = null;
+    ItemBase m_holdingItem = null;
     public bool m_playerOperation = true;
     Rigidbody m_rb;
     Animator m_anim;
@@ -136,5 +139,21 @@ public class PlayerControllerRbEx : MonoBehaviour
         audioSource.PlayOneShot(m_jumpSfx);
         m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
         m_anim.SetBool("Jump", true);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // アイテムに衝突したらそれを取得する
+        ItemBase item = collision.gameObject.GetComponent<ItemBase>();
+        if (item)
+        {
+            if (m_holdingItem)
+            {
+                m_holdingItem.Throw(m_itemThrowPoint.position);
+            }
+            item.Get();
+            m_holdingItem = item;
+            //RefreshInventory();
+        }
     }
 }

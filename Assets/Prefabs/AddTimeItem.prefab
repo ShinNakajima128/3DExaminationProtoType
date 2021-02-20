@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3165301737675013362}
   - component: {fileID: 3165301737676925356}
   - component: {fileID: 7772487770194686771}
+  - component: {fileID: 6968190791375855707}
   m_Layer: 0
   m_Name: AddTimeItem
   m_TagString: Item
@@ -112,3 +113,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421a9bbe0b7a2514fbd38a951f06ef6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_sfx: {fileID: 0}
+--- !u!65 &6968190791375855707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3165301737677123564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.834548, y: 3.834534, z: 3.8345618}
+  m_Center: {x: 0, y: 0, z: 0}

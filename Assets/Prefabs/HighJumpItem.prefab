@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2695643777868645995}
   - component: {fileID: 2695643777870664505}
   - component: {fileID: 7348177243151333385}
+  - component: {fileID: 391468352360265811}
   m_Layer: 0
   m_Name: HighJumpItem
   m_TagString: Item
@@ -112,3 +113,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b2889ed159fed41a5fc3956a6bf133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &391468352360265811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695643777870730613}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.834548, y: 3.834534, z: 3.8345618}
+  m_Center: {x: 0, y: 0, z: 0}
