@@ -9,11 +9,10 @@ public class LeftHookshotController : MonoBehaviour
     [SerializeField] Transform m_muzzle;
     [SerializeField] Transform m_camera;
     [SerializeField] Transform m_player;
-    [SerializeField] AudioClip m_flyingSfx = null;
+    //[SerializeField] AudioClip m_flyingSfx = null;
     [SerializeField] AudioClip m_hookHitSfx = null;
     [SerializeField] float m_maxDistance = 40f;
     [SerializeField] GameObject m_reticle;
-    [SerializeField] float m_pushPower = 10f;
     SpringJoint joint;
     Image reticleImage;
     LineRenderer lr;
@@ -21,7 +20,7 @@ public class LeftHookshotController : MonoBehaviour
     HookshotController hookshotController;
     RaycastHit reticleHit;
     Rigidbody m_rb;
-    AudioSource audioSource;
+
     bool winderState = false;
     bool audioOneshot = true;
 
@@ -31,7 +30,6 @@ public class LeftHookshotController : MonoBehaviour
         hookshotController = GetComponent<HookshotController>();
         reticleImage = m_reticle.GetComponent<Image>();
         m_rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -41,13 +39,13 @@ public class LeftHookshotController : MonoBehaviour
         {
             hookshotController.enabled = false;
             StartHookshot();
-            m_rb.useGravity = true;
+            //m_rb.useGravity = true;
         }
         else if (Input.GetKeyUp(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = true;
             StopHookshot();
-            m_rb.useGravity = true;
+            //m_rb.useGravity = true;
             audioOneshot = true;
             
         }
@@ -56,10 +54,11 @@ public class LeftHookshotController : MonoBehaviour
         {
             if (audioOneshot)
             {
-                //AudioSource.PlayClipAtPoint(m_flyingSfx, m_rb.transform.position);
+                //AudioSource.PlayClipAtPoint(m_flyingSfx, Camera.main.transform.position);
             }
+            m_rb.velocity = new Vector3(0f, 0f, 0f);
             m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, 0.2f);
-            m_rb.useGravity = false;
+            //m_rb.useGravity = false;
             audioOneshot = false;
         }
         

@@ -10,6 +10,7 @@ public class HighJumpItem : ItemBase
     public override void Use()
     {
         Debug.Log("高くジャンプしました");
+        m_player.velocity = new Vector3(0f, 0f, 0f);
         m_player.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
         base.Use();
     }

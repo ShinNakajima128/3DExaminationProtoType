@@ -11,8 +11,12 @@ public class SphereController : MonoBehaviour
    
     private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(m_explosion, this.transform.position,this.transform.rotation);
-        AudioSource.PlayClipAtPoint(m_explosionSfx, collision.transform.position);
-        this.gameObject.SetActive(false);
+        if (collision.gameObject.CompareTag("KeyItem"))
+        {
+            Instantiate(m_explosion, this.transform.position, this.transform.rotation);
+            AudioSource.PlayClipAtPoint(m_explosionSfx, collision.transform.position);
+            this.gameObject.SetActive(false);
+        }
     }
+            
 }

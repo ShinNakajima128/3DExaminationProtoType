@@ -8,6 +8,7 @@ TagManager:
   - DeathZone
   - Stage
   - Item
+  - KeyItem
   layers:
   - Default
   - TransparentFX

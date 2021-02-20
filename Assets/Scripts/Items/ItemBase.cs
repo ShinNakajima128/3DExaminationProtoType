@@ -31,7 +31,8 @@ public class ItemBase : MonoBehaviour
     {
         // 効果音を鳴らし、アイテムをすぐに破棄する
         AudioSource.PlayClipAtPoint(m_sfx, Camera.main.transform.position);
-        StartCoroutine(DerayDestroy());
+        DestroyImmediate(this.gameObject);
+        //StartCoroutine(DerayDestroy());
     }
     IEnumerator DerayDestroy()
     {

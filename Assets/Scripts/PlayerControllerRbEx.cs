@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Rigidbody を使ってプレイヤーを動かすコンポーネント
@@ -29,6 +30,10 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera m_goalCamera;
     [SerializeField] Transform m_itemThrowPoint = null;
     [SerializeField] AudioClip m_getItemSfx = null;
+    [SerializeField] Text m_inventoryText = null;
+    [SerializeField] GameObject m_addTimeImage = null;
+    [SerializeField] GameObject m_highJumpImage = null;
+    [SerializeField] GameObject m_keyImage = null;
     ItemBase m_holdingItem = null;
     public bool m_playerOperation = true;
     Rigidbody m_rb;
@@ -73,7 +78,7 @@ public class PlayerControllerRbEx : MonoBehaviour
             {
                 Debug.Log("アイテムを使います");
                 m_holdingItem.Use();    // 変数 m_holdingItem が ItemBase 型であり、その Use() を呼んでいることに着目すること。ここで多態性を利用している。
-                //RefreshInventory();
+                RefreshInventory();
             }
             else
             {
@@ -156,6 +161,7 @@ public class PlayerControllerRbEx : MonoBehaviour
         m_anim.SetBool("Jump", true);
     }
 
+
     void OnCollisionEnter(Collision collision)
     {
         // アイテムに衝突したらそれを取得する
@@ -169,7 +175,34 @@ public class PlayerControllerRbEx : MonoBehaviour
             AudioSource.PlayClipAtPoint(m_getItemSfx, Camera.main.transform.position);
             item.Get();
             m_holdingItem = item;
-            //RefreshInventory();
+            RefreshInventory();
+        }
+    }
+    void RefreshInventory()
+    {
+        if (m_holdingItem)
+        {
+            m_inventoryText.text = m_holdingItem.gameObject.name;
+
+            if (m_holdingItem.gameObject.name == "Key")
+            {
+                m_keyImage.SetActive(true);
+            }
+            else if (m_holdingItem.gameObject.name == "HighJump")
+            {
+                m_highJumpImage.SetActive(true);
+            }
+            else if (m_holdingItem.gameObject.name == "AddTime")
+            {
+                m_addTimeImage.SetActive(true);
+            }
+        }
+        else
+        {
+            m_inventoryText.text = "Empty";
+            m_highJumpImage.SetActive(false);
+            m_addTimeImage.SetActive(false);
+            m_keyImage.SetActive(false);
         }
     }
 }

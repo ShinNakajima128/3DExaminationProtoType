@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
+  m_player: {fileID: 0}
+  m_jumpPower: 25
 --- !u!65 &391468352360265811
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -5,11 +5,13 @@ using System.Collections;
 [InitializeOnLoad]
 public static class TestGamepadEditor
 {
-
+    [System.Obsolete]
     static TestGamepadEditor()
     {
         EditorApplication.hierarchyWindowChanged += OnHierarchyChange;
     }
+
+    [System.Obsolete]
     static void OnHierarchyChange()
     {
 
