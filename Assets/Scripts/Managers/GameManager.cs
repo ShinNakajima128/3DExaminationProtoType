@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject m_GoalObject = null;
     [SerializeField] float m_gameTime = 60.0f;
     [SerializeField] Text m_timeUI = null;
+    [SerializeField] GameObject m_addTimeImage = null;
+    [SerializeField] Text m_addText = null;
     FadeController FC;
     AudioSource audioSource;
     int loadType;
@@ -91,6 +93,16 @@ public class GameManager : MonoBehaviour
             loadType = 5;
             StartCoroutine(LoadTimer());
         }
+
+        if (m_addTimeImage.activeSelf && Input.GetKeyDown(KeyCode.Joystick1Button1))
+        {
+            Invoke("DerayEnable", 2f);
+        }
+    }
+
+    void DerayEnable()
+    {
+        m_addText.enabled = false;
     }
 
     /// <summary>

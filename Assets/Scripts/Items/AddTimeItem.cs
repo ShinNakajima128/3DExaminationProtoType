@@ -15,12 +15,6 @@ public class AddTimeItem : ItemBase
         GM.m_currentTime += m_addTime;
         m_addText.enabled = true;
         m_addText.text = $"+{m_addTime}";
-        Invoke("DerayEnable", 2f);
         base.Use();
-    }
-
-    void DerayEnable()
-    {
-        m_addText.enabled = false;
     }
 }
