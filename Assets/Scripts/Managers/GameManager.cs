@@ -112,8 +112,16 @@ public class GameManager : MonoBehaviour
     {
         audioSource.PlayOneShot(m_selectSfx);
         FC.isFadeOut = true;
-        loadType = 1;
-        StartCoroutine(LoadTimer());
+        if (SceneManager.GetActiveScene().name == "Stage1")
+        {
+            loadType = 1;
+            StartCoroutine(LoadTimer());
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage2")
+        {
+            loadType = 2;
+            StartCoroutine(LoadTimer());
+        }
     }
 
     public void StageSelect()

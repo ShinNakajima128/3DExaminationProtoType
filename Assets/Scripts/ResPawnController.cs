@@ -9,10 +9,11 @@ public class RespawnController : MonoBehaviour
     [SerializeField] AudioClip m_vanishSfx = null;
     [SerializeField] AudioClip m_respawnSfx = null;
     [SerializeField] float m_respawnWaitTime = 4.0f;
+    [SerializeField] GameObject m_comeBackItemPoint;
     public GameObject m_respawnPoint;
-    private GameObject player;
-    private bool isRespawn = false;
-    private float m_timer;
+    GameObject player;
+    bool isRespawn = false;
+    float m_timer;
 
     void Start()
     {
@@ -42,6 +43,10 @@ public class RespawnController : MonoBehaviour
             AudioSource.PlayClipAtPoint(m_vanishSfx, collision.transform.position);
             collision.gameObject.SetActive(false);
             isRespawn = true;
+        }
+        else if (collision.gameObject.CompareTag("KeyItem"))
+        {
+            collision.transform.position = m_comeBackItemPoint.transform.position;
         }
     }
 }

@@ -272,6 +272,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &39186439
 MeshCollider:
@@ -618,6 +619,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &53003615
 MeshCollider:
@@ -1991,7 +1993,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265784330}
-  m_LocalRotation: {x: 0.012147041, y: -0.000000017196713, z: -2.0890462e-10, w: -0.99992627}
+  m_LocalRotation: {x: 0.012147041, y: 0.000000017221907, z: 2.0921065e-10, w: -0.99992627}
   m_LocalPosition: {x: 4, y: 1.87, z: -5.35}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
   m_Children: []
@@ -2277,7 +2279,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274039567}
-  m_LocalRotation: {x: -0.012146856, y: 0.000000017196713, z: 2.0890142e-10, w: 0.99992627}
+  m_LocalRotation: {x: -0.012146835, y: -0.000000017221907, z: -2.0920711e-10, w: 0.99992627}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7900,7 +7902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &593628977
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -9072,6 +9074,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &773641664
 MeshCollider:
@@ -11247,6 +11250,16 @@ PrefabInstance:
       propertyPath: m_respawnPoint
       value: 
       objectReference: {fileID: 1737865845879314744}
+    - target: {fileID: 7338977119844518693, guid: 2408f11729f9ff74d8294af290d37097,
+        type: 3}
+      propertyPath: m_comeBackItemPoint
+      value: 
+      objectReference: {fileID: 2717266376890378295}
+    - target: {fileID: 7338977119844518693, guid: 2408f11729f9ff74d8294af290d37097,
+        type: 3}
+      propertyPath: m_respawnSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
     - target: {fileID: 7338977121516994117, guid: 2408f11729f9ff74d8294af290d37097,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11385,7 +11398,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254431938}
-  m_LocalRotation: {x: -0.012146856, y: 0.000000017196713, z: 2.0890142e-10, w: 0.99992627}
+  m_LocalRotation: {x: -0.012146835, y: -0.000000017221907, z: -2.0920711e-10, w: 0.99992627}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12796,6 +12809,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &1655699838
 MeshCollider:
@@ -18063,6 +18077,12 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1760921215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7338977121516994137, guid: 2408f11729f9ff74d8294af290d37097,
+    type: 3}
+  m_PrefabInstance: {fileID: 1236701530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1763618035
 GameObject:
   m_ObjectHideFlags: 0
@@ -20017,6 +20037,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &2118361554
 MeshCollider:
@@ -20646,6 +20667,12 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 2717266376890378293}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2717266376890378295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2110035131, guid: c6f010e8519d72849ac1f8745b58c9b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2717266376890378293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4023596902412905921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20797,6 +20824,11 @@ PrefabInstance:
       propertyPath: m_checkSfx
       value: 
       objectReference: {fileID: 8300000, guid: bec3ee5ceb069d041ac39e90b02d4553, type: 3}
+    - target: {fileID: 4238493468739407391, guid: addfc6aae09b370438bf1e6bc511b3d5,
+        type: 3}
+      propertyPath: m_subrespawnSystem
+      value: 
+      objectReference: {fileID: 1760921215}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: addfc6aae09b370438bf1e6bc511b3d5, type: 3}
 --- !u!1001 &5151947331981127387
@@ -21028,6 +21060,11 @@ PrefabInstance:
       propertyPath: m_respawnSfx
       value: 
       objectReference: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
+    - target: {fileID: 7338977119844518693, guid: 2408f11729f9ff74d8294af290d37097,
+        type: 3}
+      propertyPath: m_comeBackItemPoint
+      value: 
+      objectReference: {fileID: 2717266376890378295}
     - target: {fileID: 7338977121516994117, guid: 2408f11729f9ff74d8294af290d37097,
         type: 3}
       propertyPath: m_LocalPosition.x
