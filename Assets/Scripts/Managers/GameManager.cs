@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     FadeController FC;
     AudioSource audioSource;
     int loadType;
-    float m_currentTime;
+    public float m_currentTime;
 
     void Start()
     {

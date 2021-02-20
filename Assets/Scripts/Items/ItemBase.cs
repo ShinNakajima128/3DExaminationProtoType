@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 /// <summary>
 /// アイテムの共通処理を実装したクラス
@@ -30,6 +31,12 @@ public class ItemBase : MonoBehaviour
     {
         // 効果音を鳴らし、アイテムをすぐに破棄する
         AudioSource.PlayClipAtPoint(m_sfx, Camera.main.transform.position);
+        StartCoroutine(DerayDestroy());
+    }
+    IEnumerator DerayDestroy()
+    {
+        yield return new WaitForSeconds(3.0f);
+
         DestroyImmediate(this.gameObject);
     }
 }
