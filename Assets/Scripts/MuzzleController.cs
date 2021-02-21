@@ -5,7 +5,7 @@ using UnityEngine;
 public class MuzzleController : MonoBehaviour
 {
     [SerializeField] float m_speed = 4f;
-    /// <summary>弾が回転する速さう</summary>
+    /// <summary>弾が回転する速さ</summary>
     [SerializeField] float m_rotateSpeed = 5f;
     /// <summary>弾の生存期間（単位: 秒）</summary>
     [SerializeField] float m_lifetime = 1f;
@@ -23,6 +23,5 @@ public class MuzzleController : MonoBehaviour
     {
         // 弾を回転させる
         this.transform.Rotate(Vector3.up, m_rotateSpeed);
-        //this.transform.Rotate(Vector3.right, m_rotateSpeed);
     }
 }

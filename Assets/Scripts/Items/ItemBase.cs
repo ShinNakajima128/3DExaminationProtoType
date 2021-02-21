@@ -7,7 +7,9 @@ using System.Collections;
 /// </summary>
 public class ItemBase : MonoBehaviour
 {
+    /// <summary> アイテムを使用した時のSE </summary>
     [SerializeField] AudioClip m_sfx = null;
+    /// <summary> アイテムを隠す場所 </summary>
     Vector3 m_swapPoint = new Vector3(0, -100, 0);
 
     /// <summary>アイテムを手に入れた時に呼ばれる</summary>
@@ -31,13 +33,6 @@ public class ItemBase : MonoBehaviour
     {
         // 効果音を鳴らし、アイテムをすぐに破棄する
         AudioSource.PlayClipAtPoint(m_sfx, Camera.main.transform.position);
-        DestroyImmediate(this.gameObject);
-        //StartCoroutine(DerayDestroy());
-    }
-    IEnumerator DerayDestroy()
-    {
-        yield return new WaitForSeconds(3.0f);
-
         DestroyImmediate(this.gameObject);
     }
 }
