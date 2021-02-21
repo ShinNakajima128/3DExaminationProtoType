@@ -47,9 +47,13 @@ public class GameManager : MonoBehaviour
         {
             m_timeUI.enabled = false;
         }
-        if (m_currentTime <= 30.0f)
+        if (m_currentTime < 30.0f)
         {
-            m_timeUI.color = new Color(1.0f, 0, 0, 1.0f);
+            m_timeUI.color = new Color(1, 0, 0, 1);
+        }
+        else if (m_currentTime >= 30.0f)
+        {
+            m_timeUI.color = new Color(1, 1, 1, 1);
         }
         if (m_currentTime <= 0.0f)
         {

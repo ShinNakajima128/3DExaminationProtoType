@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: <color=#ffd700>START</color><color=#ff0000>!!</color>
+  m_Text: <color=#00ff7f>START</color><color=#1e90ff>!!</color>
 --- !u!95 &2739578095226130269
 Animator:
   serializedVersion: 3
