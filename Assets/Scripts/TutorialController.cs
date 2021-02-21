@@ -19,7 +19,7 @@ public class TutorialController : MonoBehaviour
     void Start()
     {
         m_textUI.text = m_textString;
-        m_tutorialCanvas.gameObject.SetActive(false);
+        //m_tutorialCanvas.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
