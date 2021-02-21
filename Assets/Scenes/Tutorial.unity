@@ -16001,7 +16001,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134908543}
-  m_LocalRotation: {x: -0.012146835, y: -0.000000017221907, z: -2.0920711e-10, w: 0.99992627}
+  m_LocalRotation: {x: -0.012146856, y: 0.000000017196713, z: 2.0890142e-10, w: 0.99992627}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16091,6 +16091,11 @@ PrefabInstance:
       propertyPath: m_fadeController
       value: 
       objectReference: {fileID: 1086644281}
+    - target: {fileID: 3045261772501277207, guid: a4d88fb8f34e3c24db627f2383230e6a,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4d88fb8f34e3c24db627f2383230e6a, type: 3}
 --- !u!1001 &1664501414994820473
