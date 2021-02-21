@@ -8,24 +8,44 @@ using UnityEngine.Playables;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-
+    /// <summary> UI </summary>
     [SerializeField] GameObject m_UI;
+    /// <summary> メニュー </summary>
     [SerializeField] GameObject m_menuUI;
+    /// <summary> メニューの最初に選ばれるボタン </summary>
     [SerializeField] Button m_menuFirstButton;
+    /// <summary> ステージセレクトメニューのUI </summary>
     [SerializeField] GameObject m_stageSelectMenuUI;
+    /// <summary> ステージセレクトメニューの最初に選ばれるボタン </summary>
     [SerializeField] Button m_stageSelectFirstButton;
+    /// <summary> フェードインアウトをコントロールするオブジェクト </summary>
     [SerializeField] GameObject m_fadeController;
+    /// <summary> メニューを開いた時のSE </summary>
     [SerializeField] AudioClip m_menuSfx;
+    /// <summary> ボタンを選択した時のSE </summary>
     [SerializeField] AudioClip m_selectSfx;
+    /// <summary> ゴールオブジェクト </summary>
     [SerializeField] GameObject m_GoalObject = null;
+    /// <summary> ゲームの制限時間 </summary>
     [SerializeField] float m_gameTime = 60.0f;
+    /// <summary> 制限時間のテキスト </summary>
     [SerializeField] Text m_timeUI = null;
+    /// <summary> 制限時間が増えるアイテムのイメージ </summary>
     [SerializeField] GameObject m_addTimeImage = null;
+    /// <summary> 制限時間が増加した時に表示するテキスト </summary>
     [SerializeField] Text m_addText = null;
+    /// <summary> 制限時間が残り僅かになった時のSE </summary>
+    [SerializeField] AudioClip m_warningSfx;
+    /// <summary> ゲーム開始時のSE </summary>
+    [SerializeField] AudioClip m_startSfx;
     FadeController FC;
     AudioSource audioSource;
+    /// <summary> Sceneをロードする際にこの値によって読み込むSceneを切り替える変数 </summary>
     int loadType;
+    /// <summary> 残り時間 </summary>
     public float m_currentTime;
+    /// <summary> 再生できるかどうか </summary>
+    bool isAudioPlay = true;
 
     void Start()
     {
@@ -37,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        ///制限時間を表示し、残り30秒を切ったら文字を赤くする
+        ///制限時間を表示し、残り30秒を切ったら文字を赤くする。赤い状態で30秒を超えたら文字を白くする。
         if (m_UI.activeSelf)
         {
             m_timeUI.enabled = true;
@@ -49,11 +69,17 @@ public class GameManager : MonoBehaviour
         }
         if (m_currentTime < 30.0f)
         {
+            if (isAudioPlay)
+            {
+                AudioSource.PlayClipAtPoint(m_warningSfx, Camera.main.transform.position);
+                isAudioPlay = false;
+            }
             m_timeUI.color = new Color(1, 0, 0, 1);
         }
         else if (m_currentTime >= 30.0f)
         {
             m_timeUI.color = new Color(1, 1, 1, 1);
+            isAudioPlay = true;
         }
         if (m_currentTime <= 0.0f)
         {
@@ -89,7 +115,7 @@ public class GameManager : MonoBehaviour
             m_menuUI.SetActive(true);
             m_menuFirstButton.Select();
         }
-
+        //ゴールが消えたらClearSceneを読み込む
         if (!m_GoalObject.activeSelf)
         {
             m_UI.SetActive(false);
@@ -97,7 +123,7 @@ public class GameManager : MonoBehaviour
             loadType = 5;
             StartCoroutine(LoadTimer());
         }
-
+        //足した時間を表示した後、2秒後に非表示にする
         if (m_addTimeImage.activeSelf && Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             Invoke("DerayEnable", 2f);
@@ -127,7 +153,9 @@ public class GameManager : MonoBehaviour
             StartCoroutine(LoadTimer());
         }
     }
-
+    /// <summary>
+    /// ステージを選択する
+    /// </summary>
     public void StageSelect()
     {
         audioSource.PlayOneShot(m_menuSfx);
@@ -135,6 +163,9 @@ public class GameManager : MonoBehaviour
         m_stageSelectMenuUI.SetActive(true);
         m_stageSelectFirstButton.Select();
     }
+    /// <summary>
+    /// ステージ1に遷移する
+    /// </summary>
     public void Stage1()
     {
         audioSource.PlayOneShot(m_selectSfx);
@@ -142,6 +173,9 @@ public class GameManager : MonoBehaviour
         loadType = 1;
         StartCoroutine(LoadTimer());
     }
+    /// <summary>
+    /// ステージ2に遷移する
+    /// </summary>
     public void Stage2()
     {
         audioSource.PlayOneShot(m_selectSfx);
@@ -149,6 +183,9 @@ public class GameManager : MonoBehaviour
         loadType = 2;
         StartCoroutine(LoadTimer());
     }
+    /// <summary>
+    /// タイトルに戻る
+    /// </summary>
     public void GameExit()
     {
         audioSource.PlayOneShot(m_selectSfx);
@@ -156,7 +193,9 @@ public class GameManager : MonoBehaviour
         loadType = 3;
         StartCoroutine(LoadTimer());
     }
-
+    /// <summary>
+    /// チュートリアルに遷移する
+    /// </summary>
     public void Tutorial()
     {
         audioSource.PlayOneShot(m_selectSfx);
@@ -165,7 +204,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadTimer());
     }
 
-    //Sceneの遷移を2秒遅らせる
+    /// <summary>
+    /// Sceneの遷移を2秒遅らせる
+    /// </summary>
+    /// <returns> ロードするScene </returns>
     IEnumerator LoadTimer()
     {
         Time.timeScale = 1f;

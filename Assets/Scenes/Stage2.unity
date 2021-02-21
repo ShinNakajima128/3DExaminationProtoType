@@ -12349,6 +12349,11 @@ PrefabInstance:
       propertyPath: m_reticle
       value: 
       objectReference: {fileID: 1425720422}
+    - target: {fileID: 8099752779825048711, guid: c6f010e8519d72849ac1f8745b58c9b3,
+        type: 3}
+      propertyPath: m_wireMoveSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6f010e8519d72849ac1f8745b58c9b3, type: 3}
 --- !u!1001 &4023596902412905921

@@ -84,7 +84,7 @@ public class LeftHookshotController : MonoBehaviour
             float distanceFromPoint = Vector3.Distance(m_player.position, hookPoint);
 
             joint.minDistance = 0.2f;
-            joint.maxDistance = distanceFromPoint * 0.8f;
+            joint.maxDistance = distanceFromPoint;
 
             joint.spring = 1.0f;
             joint.damper = 1.0f;
