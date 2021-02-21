@@ -1,0 +1,28 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MuzzleController : MonoBehaviour
+{
+    [SerializeField] float m_speed = 4f;
+    /// <summary>弾が回転する速さう</summary>
+    [SerializeField] float m_rotateSpeed = 5f;
+    /// <summary>弾の生存期間（単位: 秒）</summary>
+    [SerializeField] float m_lifetime = 1f;
+    Rigidbody m_rb = null;
+
+    void Start()
+    {
+        // 弾を飛ばし、生存期間を設定する
+        m_rb = GetComponent<Rigidbody>();
+        m_rb.velocity = this.transform.up * m_speed;
+        Destroy(this.gameObject, m_lifetime);
+    }
+
+    void FixedUpdate()
+    {
+        // 弾を回転させる
+        this.transform.Rotate(Vector3.up, m_rotateSpeed);
+        //this.transform.Rotate(Vector3.right, m_rotateSpeed);
+    }
+}
