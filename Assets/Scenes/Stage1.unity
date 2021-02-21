@@ -13277,8 +13277,13 @@ PrefabInstance:
     - target: {fileID: 7348177243151333385, guid: bee09a5b26743c74c9de87493f7c642a,
         type: 3}
       propertyPath: m_jumpPower
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7348177243151333385, guid: bee09a5b26743c74c9de87493f7c642a,
+        type: 3}
+      propertyPath: m_sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 91613dfeb68394742a964e2c72857068, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bee09a5b26743c74c9de87493f7c642a, type: 3}
 --- !u!1 &1754774624
@@ -20313,7 +20318,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134908543}
-  m_LocalRotation: {x: -0.012146835, y: -0.000000017221907, z: -2.0920711e-10, w: 0.99992627}
+  m_LocalRotation: {x: -0.012146856, y: 0.000000017196713, z: 2.0890142e-10, w: 0.99992627}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

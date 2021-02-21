@@ -9,7 +9,7 @@ public class LeftHookshotController : MonoBehaviour
     [SerializeField] Transform m_muzzle;
     [SerializeField] Transform m_camera;
     [SerializeField] Transform m_player;
-    //[SerializeField] AudioClip m_flyingSfx = null;
+    [SerializeField] float m_wireMoveSpeed = 0.5f;
     [SerializeField] AudioClip m_hookHitSfx = null;
     [SerializeField] float m_maxDistance = 40f;
     [SerializeField] GameObject m_reticle;
@@ -57,7 +57,7 @@ public class LeftHookshotController : MonoBehaviour
                 //AudioSource.PlayClipAtPoint(m_flyingSfx, Camera.main.transform.position);
             }
             m_rb.velocity = new Vector3(0f, 0f, 0f);
-            m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, 0.2f);
+            m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, m_wireMoveSpeed);
             //m_rb.useGravity = false;
             audioOneshot = false;
         }
