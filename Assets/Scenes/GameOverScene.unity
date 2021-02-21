@@ -272,6 +272,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
 --- !u!64 &39186439
 MeshCollider:
@@ -618,6 +619,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
 --- !u!64 &53003615
 MeshCollider:
@@ -3499,6 +3501,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &750188945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7338977121516994137, guid: 2408f11729f9ff74d8294af290d37097,
+    type: 3}
+  m_PrefabInstance: {fileID: 1236701530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &773092839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4238493468371123196, guid: addfc6aae09b370438bf1e6bc511b3d5,
@@ -3656,6 +3664,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
 --- !u!64 &773641664
 MeshCollider:
@@ -7425,6 +7434,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
 --- !u!64 &1655699838
 MeshCollider:
@@ -9533,6 +9543,7 @@ MonoBehaviour:
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
   m_respawnWaitTime: 4
+  m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
 --- !u!64 &2118361554
 MeshCollider:
@@ -10146,6 +10157,11 @@ PrefabInstance:
       propertyPath: m_saveObjectUI
       value: 
       objectReference: {fileID: 1180710162}
+    - target: {fileID: 4238493468739407391, guid: addfc6aae09b370438bf1e6bc511b3d5,
+        type: 3}
+      propertyPath: m_subrespawnSystem
+      value: 
+      objectReference: {fileID: 750188945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: addfc6aae09b370438bf1e6bc511b3d5, type: 3}
 --- !u!1001 &5151947331981127387
