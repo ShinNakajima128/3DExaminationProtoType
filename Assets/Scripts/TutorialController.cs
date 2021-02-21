@@ -20,6 +20,7 @@ public class TutorialController : MonoBehaviour
     /// <summary>表示を消す時の効果音</summary>
     [SerializeField] AudioClip m_hideSfx = null;
     [SerializeField] Animator m_anim;
+    [SerializeField] GameObject m_startText = null;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class TutorialController : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(m_showSfx, Camera.main.transform.position);
             m_tutorialCanvas.gameObject.SetActive(true);
+            m_startText.SetActive(false);
             m_anim.Play("Open");
             m_UI.SetActive(false);
             m_itemCanvas.SetActive(false);
@@ -46,7 +48,6 @@ public class TutorialController : MonoBehaviour
         {
             m_anim.Play("Close");
             AudioSource.PlayClipAtPoint(m_hideSfx, Camera.main.transform.position);
-            //m_tutorialCanvas.gameObject.SetActive(false);
             m_UI.SetActive(true);
             m_itemCanvas.SetActive(true);
         }

@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         {
             m_timeUI.enabled = false;
         }
-        //ゲーム開始時に関数を指定した時間が経過後に実行する
+        ///ゲーム開始時に関数を指定した時間が経過後に実行する
         if (m_UI.activeSelf && isStartPlay)
         {
             Invoke("StartPlay", m_startTimer);
@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Xが押されました");
             Time.timeScale = 0f;
             audioSource.PlayOneShot(m_menuSfx);
+            m_startText.SetActive(false);
             m_UI.SetActive(false);
             m_menuUI.SetActive(true);
             m_menuFirstButton.Select();
