@@ -10,6 +10,7 @@ public class LeftHookshotController : MonoBehaviour
     [SerializeField] Transform m_camera;
     [SerializeField] Transform m_player;
     [SerializeField] float m_wireMoveSpeed = 0.5f;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip m_hookHitSfx = null;
     [SerializeField] float m_maxDistance = 40f;
     [SerializeField] GameObject m_reticle;
@@ -39,27 +40,19 @@ public class LeftHookshotController : MonoBehaviour
         {
             hookshotController.enabled = false;
             StartHookshot();
-            //m_rb.useGravity = true;
         }
         else if (Input.GetKeyUp(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = true;
             StopHookshot();
-            //m_rb.useGravity = true;
-            audioOneshot = true;
-            
+            audioSource.Stop();   
         }
 
         if (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.Joystick1Button5) && winderState)
         {
-            if (audioOneshot)
-            {
-                //AudioSource.PlayClipAtPoint(m_flyingSfx, Camera.main.transform.position);
-            }
+            audioSource.Play();
             m_rb.velocity = new Vector3(0f, 0f, 0f);
             m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, m_wireMoveSpeed);
-            //m_rb.useGravity = false;
-            audioOneshot = false;
         }
         
     }

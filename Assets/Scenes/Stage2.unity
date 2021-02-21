@@ -2448,6 +2448,12 @@ Transform:
   m_Father: {fileID: 106611494}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &281775142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2739578095226130265, guid: ec1e15688cb0fe14b84cb50b0478ceae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1999983542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &302190412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10272,7 +10278,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 06c9a1968f2cf97418e3ae8c68bc9c15, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.06
+  m_Volume: 0.107
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10609,6 +10615,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 108228459}
     m_Modifications:
+    - target: {fileID: 2739578095226130265, guid: ec1e15688cb0fe14b84cb50b0478ceae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2739578095793184336, guid: ec1e15688cb0fe14b84cb50b0478ceae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11361,7 +11372,11 @@ MonoBehaviour:
   m_timeUI: {fileID: 811851458}
   m_addTimeImage: {fileID: 1693857514}
   m_addText: {fileID: 1154455077}
+  m_warningSfx: {fileID: 8300000, guid: 4bd0a3c1a2c18ee4b9d75960772e3f97, type: 3}
+  m_startSfx: {fileID: 8300000, guid: acefb3fba85d1e34fb091d650f697d30, type: 3}
+  m_startText: {fileID: 281775142}
   m_currentTime: 0
+  m_startTimer: 10.5
 --- !u!4 &2105501760
 Transform:
   m_ObjectHideFlags: 0
@@ -12279,6 +12294,11 @@ PrefabInstance:
       propertyPath: m_keyImage
       value: 
       objectReference: {fileID: 947570456}
+    - target: {fileID: 2717266377219155303, guid: c6f010e8519d72849ac1f8745b58c9b3,
+        type: 3}
+      propertyPath: m_jumpPower
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8099752779825016996, guid: c6f010e8519d72849ac1f8745b58c9b3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12354,8 +12374,29 @@ PrefabInstance:
       propertyPath: m_wireMoveSpeed
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8099752779825048711, guid: c6f010e8519d72849ac1f8745b58c9b3,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2717266376890378294}
+    - target: {fileID: 8099752779825048714, guid: c6f010e8519d72849ac1f8745b58c9b3,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e0967d90442fa04b83db80657bed880, type: 3}
+    - target: {fileID: 8099752779825048714, guid: c6f010e8519d72849ac1f8745b58c9b3,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.67
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6f010e8519d72849ac1f8745b58c9b3, type: 3}
+--- !u!82 &2717266376890378294 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8099752779825048714, guid: c6f010e8519d72849ac1f8745b58c9b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2717266376890378293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4023596902412905921
 PrefabInstance:
   m_ObjectHideFlags: 0

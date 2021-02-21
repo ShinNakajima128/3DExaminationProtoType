@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip m_warningSfx;
     /// <summary> ゲーム開始時のSE </summary>
     [SerializeField] AudioClip m_startSfx;
+    /// <summary> スタート開始時に流れるアニメーションのオブジェクト </summary>
+    [SerializeField] GameObject m_startText;
     FadeController FC;
     AudioSource audioSource;
     /// <summary> Sceneをロードする際にこの値によって読み込むSceneを切り替える変数 </summary>
@@ -46,7 +48,10 @@ public class GameManager : MonoBehaviour
     public float m_currentTime;
     /// <summary> 再生できるかどうか </summary>
     bool isAudioPlay = true;
-
+    /// <summary> ゲーム開始時に一度だけSEやアニメーションを再生させる用の変数 </summary>
+    bool isStartPlay = true;
+    /// <summary>  </summary>
+    [SerializeField] float m_startTimer = 8f;
     void Start()
     {
         FC = m_fadeController.GetComponent<FadeController>();
@@ -67,6 +72,12 @@ public class GameManager : MonoBehaviour
         {
             m_timeUI.enabled = false;
         }
+        //ゲーム開始時に関数を指定した時間が経過後に実行する
+        if (m_UI.activeSelf && isStartPlay)
+        {
+            Invoke("StartPlay", m_startTimer);
+        }
+
         if (m_currentTime < 30.0f)
         {
             if (isAudioPlay)
@@ -128,6 +139,17 @@ public class GameManager : MonoBehaviour
         {
             Invoke("DerayEnable", 2f);
         }
+    }
+
+    /// <summary>
+    /// ゲーム開始時の処理
+    /// </summary>
+    void StartPlay()
+    {
+        Debug.Log("ゲーム開始");
+        m_startText.SetActive(true);
+        AudioSource.PlayClipAtPoint(m_startSfx, Camera.main.transform.position);
+        isStartPlay = false;
     }
 
     void DerayEnable()

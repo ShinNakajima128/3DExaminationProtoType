@@ -38,13 +38,11 @@ public class PlayerControllerRbEx : MonoBehaviour
     public bool m_playerOperation = true;
     Rigidbody m_rb;
     Animator m_anim;
-    AudioSource audioSource;
 
     void Start()
     {
         m_rb = GetComponent<Rigidbody>();
         m_anim = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
     public bool PlayerOperation
     {
@@ -156,7 +154,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     }
     void JumpMove()
     {
-        audioSource.PlayOneShot(m_jumpSfx);
+        AudioSource.PlayClipAtPoint(m_jumpSfx, Camera.main.transform.position);
         m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
         m_anim.SetBool("Jump", true);
     }
