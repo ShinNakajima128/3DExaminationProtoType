@@ -37,8 +37,8 @@ public class TutorialController : MonoBehaviour
             m_tutorialCanvas.gameObject.SetActive(true);
             m_startText.SetActive(false);
             m_anim.Play("Open");
-            m_UI.SetActive(false);
-            m_itemCanvas.SetActive(false);
+            //m_UI.SetActive(false);
+            //m_itemCanvas.SetActive(false);
         }
     }
     void OnTriggerExit(Collider other)
@@ -48,8 +48,8 @@ public class TutorialController : MonoBehaviour
         {
             m_anim.Play("Close");
             AudioSource.PlayClipAtPoint(m_hideSfx, Camera.main.transform.position);
-            m_UI.SetActive(true);
-            m_itemCanvas.SetActive(true);
+            //m_UI.SetActive(true);
+            //m_itemCanvas.SetActive(true);
         }
     }
 }
