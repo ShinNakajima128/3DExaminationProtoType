@@ -2390,7 +2390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_clearMenuUI: {fileID: 108900551}
-  m_menuButton: {fileID: 1827193106}
+  m_menuButton: {fileID: 2073667717}
   m_stageSelectMenuUI: {fileID: 546290056}
   m_stageSelectButton: {fileID: 1475769269}
   m_director: {fileID: 827148310}
@@ -3791,6 +3791,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
+--- !u!1 &794579728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7366217966549157559, guid: 5dffedfa68e202c42935882f0145ee19,
+    type: 3}
+  m_PrefabInstance: {fileID: 1867265715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &800999457
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,7 +4242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1827193104}
+  m_FirstSelected: {fileID: 2073667715}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &929285574
@@ -6487,7 +6493,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2105501759}
-        m_MethodName: Restart
+        m_MethodName: Tutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6560,7 +6566,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1867265715}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 794579728}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -9137,7 +9143,11 @@ MonoBehaviour:
   m_timeUI: {fileID: 117610699}
   m_addTimeImage: {fileID: 1616711121}
   m_addText: {fileID: 1477558912}
+  m_warningSfx: {fileID: 8300000, guid: 067c6f084a4df2e47834d5bd86d6be66, type: 3}
+  m_startSfx: {fileID: 8300000, guid: acefb3fba85d1e34fb091d650f697d30, type: 3}
+  m_startText: {fileID: 794579728}
   m_currentTime: 0
+  m_startTimer: 8
 --- !u!4 &2105501760
 Transform:
   m_ObjectHideFlags: 0

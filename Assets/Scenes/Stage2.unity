@@ -11497,7 +11497,7 @@ MonoBehaviour:
   m_menuSfx: {fileID: 8300000, guid: 7a86ddeec5517864ea18846134253a3a, type: 3}
   m_selectSfx: {fileID: 8300000, guid: cf49b137eaedb4c46af19ac4087ddde2, type: 3}
   m_GoalObject: {fileID: 1690421869}
-  m_gameTime: 90
+  m_gameTime: 1
   m_timeUI: {fileID: 811851458}
   m_addTimeImage: {fileID: 1693857514}
   m_addText: {fileID: 1154455077}
