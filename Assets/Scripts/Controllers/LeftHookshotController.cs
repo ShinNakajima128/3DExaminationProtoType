@@ -112,6 +112,11 @@ public class LeftHookshotController : MonoBehaviour
                 reticleImage.color = new Color(1.0f, 0, 0, 1.0f);
                 m_reticle.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
+            else
+            {
+                reticleImage.color = new Color(0, 1.0f, 1.0f, 1.0f);
+                m_reticle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            }
         }
         else if (Physics.Raycast(m_camera.position, m_camera.forward, out reticleHit, 300f))
         {
@@ -123,7 +128,5 @@ public class LeftHookshotController : MonoBehaviour
                 m_reticle.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             }
         }
-
-
     }
 }
