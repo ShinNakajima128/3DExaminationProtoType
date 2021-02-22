@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 6191143125656091515}
   - component: {fileID: 6191143125656091495}
   m_Layer: 5
-  m_Name: KeepoutCanvas 1
+  m_Name: KeepoutCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

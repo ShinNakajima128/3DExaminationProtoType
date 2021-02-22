@@ -10270,7 +10270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &929285575
 MonoBehaviour:
@@ -16647,7 +16647,7 @@ PrefabInstance:
     - target: {fileID: 2991119616695564859, guid: ceba9be014a0f0c4fbe1194fc4b64e02,
         type: 3}
       propertyPath: m_textString
-      value: "<size=70><color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color></size>\n\n<size=60><color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306B\u8FD1\u3065\u304F\u3068\u30B9\u30C6\u30FC\u30B8\u304B\u3089\u843D\u4E0B\u3057\u305F\u5F8C\u306E\n\n\u30EA\u30B9\u30DD\u30FC\u30F3\u5730\u70B9\u304C\u305D\u306E<color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306E\u524D\u306B<color=#9c2ce2>\u66F4\u65B0</color>\u3055\u308C\u308B\n\n\u5FD8\u308C\u305A\u306B<color=#9c2ce2>\u66F4\u65B0</color>\u3057\u3066\u304A\u3053\u3046!</size>\n\n\n\n\n\n\n\n  
+      value: "<size=70><color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color></size>\n\n<size=50><color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306B\u8FD1\u3065\u304F\u3068\u30B9\u30C6\u30FC\u30B8\u304B\u3089\u843D\u4E0B\u3057\u305F\u5F8C\u306E\n\n\u30EA\u30B9\u30DD\u30FC\u30F3\u5730\u70B9\u304C\u305D\u306E<color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306E\u524D\u306B<color=#9c2ce2>\u66F4\u65B0</color>\u3055\u308C\u308B\n\n\u5FD8\u308C\u305A\u306B<color=#9c2ce2>\u66F4\u65B0</color>\u3057\u3066\u304A\u3053\u3046!</size>\n\n\n\n\n\n\n\n  
         \n <color=#33b6ff>\u66F4\u65B0\u524D </color>                      <color=#9c2ce2>\u66F4\u65B0\u5F8C</color>"
       objectReference: {fileID: 0}
     - target: {fileID: 2991119617020168419, guid: ceba9be014a0f0c4fbe1194fc4b64e02,
@@ -17865,26 +17865,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8575388155365614630, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -11.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575388155365614630, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575388155365614630, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 3.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575388155365614630, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 4171.861
-      objectReference: {fileID: 0}
     - target: {fileID: 8575388155970401975, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17923,7 +17903,7 @@ PrefabInstance:
     - target: {fileID: 8575388155970401975, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 8575388155970401975, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
         type: 3}
@@ -17940,20 +17920,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8575388155970402120, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8575388155970402122, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
         type: 3}
       propertyPath: m_Name
       value: h1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575388155970402122, guid: 9a54039ac9c4ae14da6c75b060ec8c13,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a54039ac9c4ae14da6c75b060ec8c13, type: 3}
