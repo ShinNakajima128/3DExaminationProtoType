@@ -1878,7 +1878,7 @@ PrefabInstance:
     - target: {fileID: 3165301737677123564, guid: 6d82193b83894a34cb7b498a8a67cb82,
         type: 3}
       propertyPath: m_Name
-      value: AddTime
+      value: "\u5236\u9650\u6642\u9593+30"
       objectReference: {fileID: 0}
     - target: {fileID: 3165301737677354832, guid: 6d82193b83894a34cb7b498a8a67cb82,
         type: 3}
@@ -2524,7 +2524,7 @@ PrefabInstance:
     - target: {fileID: 7699561566191397076, guid: 14eadf7300fcb9345b1996c867ff93af,
         type: 3}
       propertyPath: m_Name
-      value: Breaker
+      value: "\u30D6\u30EC\u30A4\u30AB\u30FC"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14eadf7300fcb9345b1996c867ff93af, type: 3}
@@ -8075,7 +8075,7 @@ PrefabInstance:
     - target: {fileID: 2695643777870730613, guid: bee09a5b26743c74c9de87493f7c642a,
         type: 3}
       propertyPath: m_Name
-      value: HighJump
+      value: "\u30CF\u30A4\u30B8\u30E3\u30F3\u30D7"
       objectReference: {fileID: 0}
     - target: {fileID: 2695643777871023561, guid: bee09a5b26743c74c9de87493f7c642a,
         type: 3}
@@ -12775,6 +12775,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 108228459}
     m_Modifications:
+    - target: {fileID: 7267132509678701312, guid: 2378a2cdbbe23904dace1c5fb69c5c99,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u30A2\u30A4\u30C6\u30E0\u306A\u3057"
+      objectReference: {fileID: 0}
     - target: {fileID: 7267132510480988488, guid: 2378a2cdbbe23904dace1c5fb69c5c99,
         type: 3}
       propertyPath: m_Name
