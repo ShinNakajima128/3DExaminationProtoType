@@ -19125,10 +19125,9 @@ MonoBehaviour:
   m_itemCanvas: {fileID: 0}
   m_tutorialCanvas: {fileID: 778096485037147695}
   m_textUI: {fileID: 778096485210146874}
-  m_textString: "\n<size=70><color=#ffff00>\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u304A\u3046\uFF01</color></size>\n\n\u753B\u9762\u4E2D\u592E\u306E\u30DE\u30FC\u30AF\u3092<color=#dc143c>\u30BF\u30FC\u30B2\u30C3\u30C8</color>\u306B\u5F53\u3066\u308B\u3068\n\n\u3010LB\u30DC\u30BF\u30F3\u3011\u3067<color=#ffff00>\u30B7\u30E7\u30C3\u30C8</color>\u304C\u3067\u304D\u308B\u3088\u3046\u306B\u306A\u308B\n\n<color=#dc143c>\u30BF\u30FC\u30B2\u30C3\u30C8</color>\u306B<color=#ffff00>\u30B7\u30E7\u30C3\u30C8</color>\u3057\u305F\u72B6\u614B\u3067\u3010RB\u30DC\u30BF\u30F3\u3011\u3092\u62BC\u3059\u3068\n\n<color=#dc143c>\u30BF\u30FC\u30B2\u30C3\u30C8</color>\u306B<color=#ffff00>\u30EF\u30A4\u30F3\u30C0\u30FC</color>\u3055\u308C\u3066\u79FB\u52D5\u304C\u3067\u304D\u308B!\n\n\n\n\n\n  
-    \n\n  <size=30><color=#dc143c>\u30BF\u30FC\u30B2\u30C3\u30C8</color>  \u3000\u3000\u3000  
-    \u3000\u30B7\u30E7\u30C3\u30C8\u53EF\u80FD\u3000\u3000   \u3000\u3000\u3000\u3000<color=#ffff00>\u30B7\u30E7\u30C3\u30C8</color>\u3000\u3000
-    \u3000\u3000\u3000\u3000\u3000<color=#ffff00>\u30EF\u30A4\u30F3\u30C0\u30FC</color></size>"
+  m_textString: "\n<size=70><color=#ffff00>\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u304A\u3046\uFF01</color></size>\n\n\u30D5\u30A3\u30FC\u30EB\u30C9\u306B\u843D\u3061\u3066\u3044\u308B<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u3092\u6240\u6301\u3057\u305F\u72B6\u614B\u3067\n\n\u3010<color=#dc143c>B</color>\u30DC\u30BF\u30F3\u3011\u3092\u62BC\u3059\u3068\u305D\u306E<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u304C\u4F7F\u7528\u3067\u304D\u308B\n\n<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u306B\u306F\u69D8\u3005\u306A\u52B9\u679C\u304C\u3042\u308A\u3001\u30B9\u30C6\u30FC\u30B8\u306E\u653B\u7565\u306B\u5F79\u7ACB\u3066\u3088\u3046\uFF01\n\n\u3053\u3053\u3067\u306F2\u3064\u306E<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u3092\u7D39\u4ECB\u3059\u308B\u3088\n\n\n\n\n\n  
+    \n\n\u3000 \u5236\u9650\u6642\u9593\u304C\u5897\u3048\u308B\u3000\u3000\u3000
+    \u3000\u3000\u3000\u9AD8\u304F\u30B8\u30E3\u30F3\u30D7\u3067\u304D\u308B"
   m_showSfx: {fileID: 8300000, guid: c9246297008fb2b48af8fbd76e82bbb3, type: 3}
   m_hideSfx: {fileID: 8300000, guid: b7c44e67034785147a4819b68c87e8dd, type: 3}
   m_anim: {fileID: 778096485066771864}
@@ -38370,7 +38369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a050b2178765e284098f3975f421c5bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38d33cd9e189540489341225a40ce09b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38477,7 +38476,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e1cb8abd1192e5943a02b86964721d46, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5165e7b2b0fc44946bc81a7309a8389d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38716,7 +38715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 14}
+  m_AnchoredPosition: {x: -2, y: 20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &778096485210146869
@@ -38759,10 +38758,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\n<size=70><color=#ffff00>\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u304A\u3046\uFF01</color></size>\n\n\u753B\u9762\u4E2D\u592E\u306E\u30DE\u30FC\u30AF\u3092<color=#dc143c>\u30BF\u30FC\u30B2\u30C3\u30C8</color>\u306B\u5F53\u3066\u308B\u3068\n\n\u3010LB\u30DC\u30BF\u30F3\u3011\u3067<color=#ffff00>\u30B7\u30E7\u30C3\u30C8</color>\u304C\u3067\u304D\u308B\u3088\u3046\u306B\u306A\u308B\n\n<color=#dc143c>\u30BF\u30FC\u30B2\u30C3\u30C8</color>\u306B<color=#ffff00>\u30B7\u30E7\u30C3\u30C8</color>\u3057\u305F\u72B6\u614B\u3067\u3010RB\u30DC\u30BF\u30F3\u3011\u3092\u62BC\u3059\u3068\n\n<color=#dc143c>\u30BF\u30FC\u30B2\u30C3\u30C8</color>\u306B<color=#ffff00>\u30EF\u30A4\u30F3\u30C0\u30FC</color>\u3055\u308C\u3066\u79FB\u52D5\u304C\u3067\u304D\u308B!\n\n\n\n\n\n  
-    \n\n  <size=30><color=#dc143c>\u30BF\u30FC\u30B2\u30C3\u30C8</color>  \u3000\u3000\u3000  
-    \u3000\u30B7\u30E7\u30C3\u30C8\u53EF\u80FD\u3000\u3000   \u3000\u3000\u3000\u3000<color=#ffff00>\u30B7\u30E7\u30C3\u30C8</color>\u3000\u3000
-    \u3000\u3000\u3000\u3000\u3000<color=#ffff00>\u30EF\u30A4\u30F3\u30C0\u30FC</color></size>"
+  m_Text: "\n<size=70><color=#ffff00>\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u304A\u3046\uFF01</color></size>\n\n\u30D5\u30A3\u30FC\u30EB\u30C9\u306B\u843D\u3061\u3066\u3044\u308B<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u3092\u6240\u6301\u3057\u305F\u72B6\u614B\u3067\n\n\u3010<color=#dc143c>B</color>\u30DC\u30BF\u30F3\u3011\u3092\u62BC\u3059\u3068\u305D\u306E<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u304C\u4F7F\u7528\u3067\u304D\u308B\n\n<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u306B\u306F\u69D8\u3005\u306A\u52B9\u679C\u304C\u3042\u308A\u3001\u30B9\u30C6\u30FC\u30B8\u306E\u653B\u7565\u306B\u5F79\u7ACB\u3066\u3088\u3046\uFF01\n\n\n\n\n\n  
+    \n\n\u3000 \u5236\u9650\u6642\u9593\u304C\u5897\u3048\u308B\u3000\u3000\u3000
+    \u3000\u3000\u3000\u9AD8\u304F\u30B8\u30E3\u30F3\u30D7\u3067\u304D\u308B"
 --- !u!1 &3985350099265520875
 GameObject:
   m_ObjectHideFlags: 0
@@ -38853,10 +38851,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 113
-    m_Right: 77
-    m_Top: -107
-    m_Bottom: -51
+    m_Left: 184
+    m_Right: 164
+    m_Top: -248
+    m_Bottom: -38
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
