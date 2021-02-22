@@ -182,22 +182,22 @@ public class PlayerControllerRbEx : MonoBehaviour
         {
             m_inventoryText.text = m_holdingItem.gameObject.name;
 
-            if (m_holdingItem.gameObject.name == "Key")
+            if (m_holdingItem.gameObject.name == "ブレイカー")
             {
                 m_keyImage.SetActive(true);
             }
-            else if (m_holdingItem.gameObject.name == "HighJump")
+            else if (m_holdingItem.gameObject.name == "ハイジャンプ")
             {
                 m_highJumpImage.SetActive(true);
             }
-            else if (m_holdingItem.gameObject.name == "AddTime")
+            else if (m_holdingItem.gameObject.name == "残り時間+30")
             {
                 m_addTimeImage.SetActive(true);
             }
         }
         else
         {
-            m_inventoryText.text = "Empty";
+            m_inventoryText.text = "アイテムなし";
             m_highJumpImage.SetActive(false);
             m_addTimeImage.SetActive(false);
             m_keyImage.SetActive(false);
