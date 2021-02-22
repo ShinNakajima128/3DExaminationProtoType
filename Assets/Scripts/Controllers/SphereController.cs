@@ -9,7 +9,7 @@ public class SphereController : MonoBehaviour
     [SerializeField] AudioClip m_explosionSfx = null;
     [SerializeField] GameObject m_fadeController;
    
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("KeyItem"))
         {
@@ -17,6 +17,5 @@ public class SphereController : MonoBehaviour
             AudioSource.PlayClipAtPoint(m_explosionSfx, collision.transform.position);
             this.gameObject.SetActive(false);
         }
-    }
-            
+    }           
 }

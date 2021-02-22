@@ -9,6 +9,7 @@ TagManager:
   - Stage
   - Item
   - KeyItem
+  - Goal
   layers:
   - Default
   - TransparentFX

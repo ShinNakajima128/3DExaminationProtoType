@@ -18,4 +18,14 @@ public class KeyItem : ItemBase
         m_rb.useGravity = true;
         m_rb.AddForce(transform.forward * m_throwPower, ForceMode.Impulse);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Goal"))
+        {
+            //Instantiate(m_explosion, this.transform.position, this.transform.rotation);
+            //AudioSource.PlayClipAtPoint(m_explosionSfx, collision.transform.position);
+            this.gameObject.SetActive(false);
+        }
+    }
 }

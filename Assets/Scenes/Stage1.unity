@@ -20606,7 +20606,7 @@ PrefabInstance:
     - target: {fileID: 335783435897363618, guid: a4d88fb8f34e3c24db627f2383230e6a,
         type: 3}
       propertyPath: m_TagString
-      value: Stage
+      value: Goal
       objectReference: {fileID: 0}
     - target: {fileID: 335783435969210810, guid: a4d88fb8f34e3c24db627f2383230e6a,
         type: 3}
