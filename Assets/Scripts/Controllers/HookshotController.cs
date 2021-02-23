@@ -7,7 +7,7 @@ public class HookshotController : MonoBehaviour
     [SerializeField] Camera m_playerCamera;
     [SerializeField] float m_maxWireDistance = 100f;
     [SerializeField] float m_hookshotSpeed = 5f;
-    [SerializeField] AudioClip m_flyingSfx = null;
+    //[SerializeField] AudioClip m_flyingSfx = null;
     private Rigidbody m_rb;
     private LineRenderer m_line;
     private Vector3 hookshotPosition;
@@ -72,7 +72,7 @@ public class HookshotController : MonoBehaviour
         //m_rb.useGravity = false;
         m_line.SetPosition(0, m_muzzle.position);
         m_line.SetPosition(1, hookshotPosition);
-        AudioSource.PlayClipAtPoint(m_flyingSfx, hookshotPosition);
+        //AudioSource.PlayClipAtPoint(m_flyingSfx, hookshotPosition);
         //m_rb.transform.position = Vector3.Lerp(m_rb.transform.position, hookshotPosition, Time.deltaTime * m_hookshotSpeed);
         state = State.Normal;
     }
