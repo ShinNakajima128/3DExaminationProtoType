@@ -10,7 +10,7 @@ public class FadeController : MonoBehaviour
     /// <summary> フェードインするか否か </summary>
     public bool isFadeIn = false;
     /// <summary> フェードするスピード </summary>
-    float fadeSpeed = 0.01f;
+    [SerializeField] float fadeSpeed = 0.01f;
     /// <summary> PanelのRGBa </summary>
     float red, green, blue, alfa;
     /// <summary> フェードするPanelのImage </summary>

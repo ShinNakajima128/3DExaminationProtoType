@@ -2447,6 +2447,11 @@ PrefabInstance:
       propertyPath: m_noHitSfx
       value: 
       objectReference: {fileID: 8300000, guid: 845b2642b27312f49a3e9ddafc62ebf1, type: 3}
+    - target: {fileID: 4916793573202904021, guid: 14eadf7300fcb9345b1996c867ff93af,
+        type: 3}
+      propertyPath: m_explosion
+      value: 
+      objectReference: {fileID: 100002, guid: 3a5b05b2d69dd004d93b271cc48d2668, type: 3}
     - target: {fileID: 7699561566191104104, guid: 14eadf7300fcb9345b1996c867ff93af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9290,6 +9295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFadeOut: 0
   isFadeIn: 0
+  fadeSpeed: 0.005
 --- !u!114 &800999460
 MonoBehaviour:
   m_ObjectHideFlags: 0
