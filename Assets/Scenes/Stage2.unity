@@ -5089,7 +5089,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811664493}
-  m_LocalRotation: {x: -0.06696293, y: 0.008607726, z: 0.0005777166, w: 0.9977182}
+  m_LocalRotation: {x: -0.06532956, y: -0.013495947, z: -0.000883653, w: 0.9977721}
   m_LocalPosition: {x: 4, y: 40, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5743,12 +5743,12 @@ PrefabInstance:
     - target: {fileID: 5324954758222239308, guid: 403720c4545fec34ea23920ffbb6b5d6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.735
+      value: -9.77
       objectReference: {fileID: 0}
     - target: {fileID: 5324954758222239308, guid: 403720c4545fec34ea23920ffbb6b5d6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 2673.9287
+      value: 4731.7314
       objectReference: {fileID: 0}
     - target: {fileID: 5324954758874981756, guid: 403720c4545fec34ea23920ffbb6b5d6,
         type: 3}
@@ -9035,7 +9035,7 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 0
   m_Waypoints:
-  - position: {x: 1.5367279, y: 22.302414, z: 57.58593}
+  - position: {x: -6.81915, y: 22.302414, z: 57.58593}
     roll: 0
   - position: {x: -5.5438633, y: 10.837372, z: 1.0871658}
     roll: 0
@@ -10113,7 +10113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903376883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.03, y: 63.68, z: 165.59}
+  m_LocalPosition: {x: -0.87, y: 63.68, z: 169.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11497,7 +11497,7 @@ MonoBehaviour:
   m_menuSfx: {fileID: 8300000, guid: 7a86ddeec5517864ea18846134253a3a, type: 3}
   m_selectSfx: {fileID: 8300000, guid: cf49b137eaedb4c46af19ac4087ddde2, type: 3}
   m_GoalObject: {fileID: 1690421869}
-  m_gameTime: 1
+  m_gameTime: 90
   m_timeUI: {fileID: 811851458}
   m_addTimeImage: {fileID: 1693857514}
   m_addText: {fileID: 1154455077}
