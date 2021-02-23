@@ -5009,7 +5009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFadeOut: 0
   isFadeIn: 0
-  fadeSpeed: 0.005
+  fadeSpeed: 0.01
 --- !u!114 &800999460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12601,7 +12601,7 @@ PrefabInstance:
     - target: {fileID: 8099752779825048711, guid: c6f010e8519d72849ac1f8745b58c9b3,
         type: 3}
       propertyPath: m_wireMoveSpeed
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8099752779825048711, guid: c6f010e8519d72849ac1f8745b58c9b3,
         type: 3}

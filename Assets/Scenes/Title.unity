@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFadeOut: 0
   isFadeIn: 0
-  fadeSpeed: 0.005
+  fadeSpeed: 0.01
 --- !u!114 &950900033
 MonoBehaviour:
   m_ObjectHideFlags: 0
