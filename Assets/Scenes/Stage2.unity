@@ -2466,6 +2466,16 @@ PrefabInstance:
       propertyPath: m_throwPosition
       value: 
       objectReference: {fileID: 2110035132}
+    - target: {fileID: 4916793573202904021, guid: 14eadf7300fcb9345b1996c867ff93af,
+        type: 3}
+      propertyPath: m_sfx
+      value: 
+      objectReference: {fileID: 8300000, guid: bd899b2ba66500f4388e58ac46ce5415, type: 3}
+    - target: {fileID: 4916793573202904021, guid: 14eadf7300fcb9345b1996c867ff93af,
+        type: 3}
+      propertyPath: m_noHitSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 845b2642b27312f49a3e9ddafc62ebf1, type: 3}
     - target: {fileID: 7699561566191104104, guid: 14eadf7300fcb9345b1996c867ff93af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4095,6 +4105,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Stage
       objectReference: {fileID: 0}
+    - target: {fileID: 11687632016494845, guid: 0f6c703b04114c1438b5db118f193981,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 754558115442528402, guid: 0f6c703b04114c1438b5db118f193981,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4891,10 +4906,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scifi Rock Blue 1 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 182420, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
-      propertyPath: m_TagString
-      value: Stage
-      objectReference: {fileID: 0}
     - target: {fileID: 413816, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
       propertyPath: m_LocalPosition.x
       value: 64.30182
@@ -5089,7 +5100,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811664493}
-  m_LocalRotation: {x: -0.0653296, y: -0.013495935, z: -0.0008836527, w: 0.9977721}
+  m_LocalRotation: {x: -0.065329574, y: -0.0134959, z: -0.00088365003, w: 0.9977721}
   m_LocalPosition: {x: 4, y: 40, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6407,6 +6418,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1067168920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 104480, guid: 6fc4272394cb0c04eaf8f49754445e7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 637365261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1067168921
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067168920}
+  m_Material: {fileID: 13400000, guid: 66489029b3375cd42a597298b04ede40, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000145, y: 4.2555, z: 2.000017}
+  m_Center: {x: 0, y: 0.09962177, z: 0}
 --- !u!1 &1086644281
 GameObject:
   m_ObjectHideFlags: 0
@@ -8067,7 +8097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1574795948
 Transform:
   m_ObjectHideFlags: 0
@@ -9318,20 +9348,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Stage
       objectReference: {fileID: 0}
+    - target: {fileID: 1664501414625599075, guid: 010a86e4f439768419b494a1fd7c2970,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0308228
+      value: -1.031
       objectReference: {fileID: 0}
     - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.478104
+      value: 29.44
       objectReference: {fileID: 0}
     - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -115.43523
+      value: -135.568
       objectReference: {fileID: 0}
     - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
         type: 3}
@@ -9376,7 +9411,17 @@ PrefabInstance:
     - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 7.9222865
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.735037
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.0000005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 010a86e4f439768419b494a1fd7c2970, type: 3}
@@ -11092,10 +11137,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scifi Rock Blue 1 (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 182420, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
-      propertyPath: m_TagString
-      value: Stage
-      objectReference: {fileID: 0}
     - target: {fileID: 413816, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.472885
@@ -11138,6 +11179,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 413816, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150207652455931209, guid: a71b17274ba052d4cb6ec8a1602dc086,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330584343249329537, guid: a71b17274ba052d4cb6ec8a1602dc086,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347426800323509753, guid: a71b17274ba052d4cb6ec8a1602dc086,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241339226799636328, guid: a71b17274ba052d4cb6ec8a1602dc086,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11694,10 +11755,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scifi Rock Blue 1 (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 182420, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
-      propertyPath: m_TagString
-      value: Stage
-      objectReference: {fileID: 0}
     - target: {fileID: 413816, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.472885
@@ -11742,7 +11799,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1150207652455931209, guid: a71b17274ba052d4cb6ec8a1602dc086,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330584343249329537, guid: a71b17274ba052d4cb6ec8a1602dc086,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7330584343249329537, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a71b17274ba052d4cb6ec8a1602dc086, type: 3}
 --- !u!1001 &2118361550
 PrefabInstance:
@@ -12243,20 +12311,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Stage
       objectReference: {fileID: 0}
+    - target: {fileID: 1664501414625599075, guid: 010a86e4f439768419b494a1fd7c2970,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.030823
+      value: -23.03
       objectReference: {fileID: 0}
     - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.478104
+      value: 29.506
       objectReference: {fileID: 0}
     - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -115.43523
+      value: -135.36
       objectReference: {fileID: 0}
     - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
         type: 3}
@@ -12297,6 +12370,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10.141671
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664501414625599079, guid: 010a86e4f439768419b494a1fd7c2970,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.052249
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 010a86e4f439768419b494a1fd7c2970, type: 3}
@@ -12822,6 +12910,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VerticalWallPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 11687632016494845, guid: 0f6c703b04114c1438b5db118f193981,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 754558115442528402, guid: 0f6c703b04114c1438b5db118f193981,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13024,6 +13117,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267132510585281501, guid: 2378a2cdbbe23904dace1c5fb69c5c99,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 52f7368d8b9b90744a77b0be79b0abfa,
+        type: 3}
+    - target: {fileID: 7267132510585281501, guid: 2378a2cdbbe23904dace1c5fb69c5c99,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267132510585281501, guid: 2378a2cdbbe23904dace1c5fb69c5c99,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267132510585281501, guid: 2378a2cdbbe23904dace1c5fb69c5c99,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267132510585281501, guid: 2378a2cdbbe23904dace1c5fb69c5c99,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7267132510585281501, guid: 2378a2cdbbe23904dace1c5fb69c5c99,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2378a2cdbbe23904dace1c5fb69c5c99, type: 3}

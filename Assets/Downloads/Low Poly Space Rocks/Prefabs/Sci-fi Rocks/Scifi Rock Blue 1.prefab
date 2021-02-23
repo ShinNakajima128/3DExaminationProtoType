@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 413816}
   - component: {fileID: 3385820}
   - component: {fileID: 2390334}
+  - component: {fileID: 7347426800323509753}
   m_Layer: 0
   m_Name: Scifi Rock Blue 1
   m_TagString: Stage
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7347426800323509753
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182420}
+  m_Material: {fileID: 13400000, guid: 66489029b3375cd42a597298b04ede40, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.0767384, y: 5.880503, z: 4.9685025}
+  m_Center: {x: -0.42457294, y: 0.22230077, z: -0.19154048}

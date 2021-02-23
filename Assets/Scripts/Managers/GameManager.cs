@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(LoadTimer());
         }
 
+        ///残り時間のTextに現在の残り時間を表示する
         m_timeUI.text = $"残り時間：{m_currentTime:F1}";
 
         ///Xボタンが押されたらメニューを開き、ゲームを一時停止する

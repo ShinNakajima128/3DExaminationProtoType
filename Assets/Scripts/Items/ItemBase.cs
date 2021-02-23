@@ -8,7 +8,7 @@ using System.Collections;
 public class ItemBase : MonoBehaviour
 {
     /// <summary> アイテムを使用した時のSE </summary>
-    [SerializeField] AudioClip m_sfx = null;
+    public AudioClip m_sfx = null;
     /// <summary> アイテムを隠す場所 </summary>
     Vector3 m_swapPoint = new Vector3(0, -100, 0);
 

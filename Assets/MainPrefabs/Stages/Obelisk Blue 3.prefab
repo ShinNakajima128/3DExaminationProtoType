@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3388682}
   - component: {fileID: 2379210}
   - component: {fileID: 8825891903895321090}
+  - component: {fileID: 1111746226}
   m_Layer: 0
   m_Name: Obelisk Blue 3
   m_TagString: Stage
@@ -95,3 +96,16 @@ MonoBehaviour:
   m_rotateX: 0
   m_rotateY: 0.5
   m_rotateZ: 0
+--- !u!65 &1111746226
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104480}
+  m_Material: {fileID: 13400000, guid: 66489029b3375cd42a597298b04ede40, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000145, y: 4.2509203, z: 2.000017}
+  m_Center: {x: 0, y: 0.101911545, z: 0}
