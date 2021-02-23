@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 4574552996879485925, guid: 694989b3d7ee4eb458ba92c82d973d33,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -108.7404
+      value: -93.2404
       objectReference: {fileID: 0}
     - target: {fileID: 4574552996879485925, guid: 694989b3d7ee4eb458ba92c82d973d33,
         type: 3}
@@ -229,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39186437}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -2.6685143, y: 14.77, z: -108.7404}
+  m_LocalPosition: {x: -2.6685143, y: 14.77, z: -93.2404}
   m_LocalScale: {x: 18.504347, y: 0.99999994, z: 18.039886}
   m_Children: []
   m_Father: {fileID: 1644247164}
@@ -270,9 +270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
-  m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
   m_respawnWaitTime: 4
-  m_comeBackItemPoint: {fileID: 0}
+  m_comeBackItemPoint: {fileID: 2717266376890378295}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &39186439
 MeshCollider:
@@ -617,9 +617,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
-  m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
   m_respawnWaitTime: 4
-  m_comeBackItemPoint: {fileID: 0}
+  m_comeBackItemPoint: {fileID: 2717266376890378295}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &53003615
 MeshCollider:
@@ -1994,7 +1994,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265784330}
-  m_LocalRotation: {x: 0.012147041, y: -0.000000017196713, z: -2.0890462e-10, w: -0.99992627}
+  m_LocalRotation: {x: 0.012147041, y: 0.000000017196713, z: 2.0890462e-10, w: -0.99992627}
   m_LocalPosition: {x: 4, y: 1.87, z: -5.35}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
   m_Children: []
@@ -2280,7 +2280,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274039567}
-  m_LocalRotation: {x: -0.012146856, y: 0.000000017196713, z: 2.0890142e-10, w: 0.99992627}
+  m_LocalRotation: {x: -0.012146856, y: -0.000000017196713, z: -2.0890142e-10, w: 0.99992627}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9114,9 +9114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
-  m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
   m_respawnWaitTime: 4
-  m_comeBackItemPoint: {fileID: 0}
+  m_comeBackItemPoint: {fileID: 2717266376890378295}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &773641664
 MeshCollider:
@@ -11582,7 +11582,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254431938}
-  m_LocalRotation: {x: -0.012146856, y: 0.000000017196713, z: 2.0890142e-10, w: 0.99992627}
+  m_LocalRotation: {x: -0.012146856, y: -0.000000017196713, z: -2.0890142e-10, w: 0.99992627}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13033,9 +13033,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
-  m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
   m_respawnWaitTime: 4
-  m_comeBackItemPoint: {fileID: 0}
+  m_comeBackItemPoint: {fileID: 2717266376890378295}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &1655699838
 MeshCollider:
@@ -13478,6 +13478,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191143125656091494, guid: 403720c4545fec34ea23920ffbb6b5d6,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 3.3775158
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191143125656091494, guid: 403720c4545fec34ea23920ffbb6b5d6,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.029504776
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191143125656091494, guid: 403720c4545fec34ea23920ffbb6b5d6,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -11.500394
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 403720c4545fec34ea23920ffbb6b5d6, type: 3}
@@ -20396,9 +20411,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
-  m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
   m_respawnWaitTime: 4
-  m_comeBackItemPoint: {fileID: 0}
+  m_comeBackItemPoint: {fileID: 2717266376890378295}
   m_respawnPoint: {fileID: 1737865845879314744}
 --- !u!64 &2118361554
 MeshCollider:
@@ -20632,7 +20647,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134908543}
-  m_LocalRotation: {x: -0.012146856, y: 0.000000017196713, z: 2.0890142e-10, w: 0.99992627}
+  m_LocalRotation: {x: -0.012146835, y: -0.000000017221907, z: -2.0920711e-10, w: 0.99992627}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
