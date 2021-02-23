@@ -21,7 +21,9 @@ public class GameManager : MonoBehaviour
     /// <summary> フェードインアウトをコントロールするオブジェクト </summary>
     [SerializeField] GameObject m_fadeController;
     /// <summary> メニューを開いた時のSE </summary>
-    [SerializeField] AudioClip m_menuSfx;
+    [SerializeField] AudioClip m_openMenuSfx;
+    /// <summary> メニューを閉じた時のSE </summary>
+    [SerializeField] AudioClip m_closeMenuSfx;
     /// <summary> ボタンを選択した時のSE </summary>
     [SerializeField] AudioClip m_selectSfx;
     /// <summary> ゴールオブジェクト </summary>
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
     bool isStartPlay = true;
     /// <summary> Sceneが始まってからの時間 </summary>
     [SerializeField] float m_startTimer = 8f;
+
     void Start()
     {
         FC = m_fadeController.GetComponent<FadeController>();
@@ -107,22 +110,23 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Xが押されました");
             Time.timeScale = 0f;
-            audioSource.PlayOneShot(m_menuSfx);
+            audioSource.PlayOneShot(m_openMenuSfx);
             m_startText.SetActive(false);
             m_UI.SetActive(false);
             m_menuUI.SetActive(true);
             m_menuFirstButton.Select();
-        }//メニューを開いた状態でもう一度Xボタンを押すと、メニューを閉じる
+        }
+        //メニューを開いた状態でもう一度Xボタンを押すと、メニューを閉じる
         else if (m_menuUI.activeSelf && Input.GetKeyDown(KeyCode.JoystickButton2))
         {
             Time.timeScale = 1f;
-            audioSource.PlayOneShot(m_menuSfx);
+            audioSource.PlayOneShot(m_closeMenuSfx);
             m_UI.SetActive(true);
             m_menuUI.SetActive(false);
         }
         else if (m_stageSelectMenuUI.activeSelf && Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
-            audioSource.PlayOneShot(m_menuSfx);
+            audioSource.PlayOneShot(m_openMenuSfx);
             m_stageSelectMenuUI.SetActive(false);
             m_menuUI.SetActive(true);
             m_menuFirstButton.Select();
@@ -179,16 +183,18 @@ public class GameManager : MonoBehaviour
             StartCoroutine(LoadTimer());
         }
     }
+
     /// <summary>
     /// ステージを選択する
     /// </summary>
     public void StageSelect()
     {
-        audioSource.PlayOneShot(m_menuSfx);
+        audioSource.PlayOneShot(m_openMenuSfx);
         m_menuUI.SetActive(false);
         m_stageSelectMenuUI.SetActive(true);
         m_stageSelectFirstButton.Select();
     }
+
     /// <summary>
     /// ステージ1に遷移する
     /// </summary>
@@ -199,6 +205,7 @@ public class GameManager : MonoBehaviour
         loadType = 1;
         StartCoroutine(LoadTimer());
     }
+
     /// <summary>
     /// ステージ2に遷移する
     /// </summary>
@@ -209,6 +216,7 @@ public class GameManager : MonoBehaviour
         loadType = 2;
         StartCoroutine(LoadTimer());
     }
+
     /// <summary>
     /// タイトルに戻る
     /// </summary>
@@ -219,6 +227,7 @@ public class GameManager : MonoBehaviour
         loadType = 3;
         StartCoroutine(LoadTimer());
     }
+
     /// <summary>
     /// チュートリアルに遷移する
     /// </summary>

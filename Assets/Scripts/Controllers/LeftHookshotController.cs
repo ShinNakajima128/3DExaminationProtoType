@@ -5,25 +5,40 @@ using UnityEngine.UI;
 
 public class LeftHookshotController : MonoBehaviour
 {
+    /// <summary> RayCastが衝突するオブジェクトを制限するMask </summary>
     [SerializeField] LayerMask whatIsHookshot;
+    /// <summary> ワイヤーを飛ばす位置 </summary>
     [SerializeField] Transform m_muzzle;
+    /// <summary> カメラ </summary>
     [SerializeField] Transform m_camera;
+    /// <summary> プレイヤー </summary>
     [SerializeField] Transform m_player;
+    /// <summary> ワイヤーで移動してる時の速度 </summary>
     [SerializeField] float m_wireMoveSpeed = 0.5f;
+    /// <summary> プレイヤーのオーディオ </summary>
     [SerializeField] AudioSource audioSource;
+    /// <summary> ショットがターゲットに当たった時のSE </summary>
     [SerializeField] AudioClip m_hookHitSfx = null;
+    /// <summary> ワイヤーが届く距離 </summary>
     [SerializeField] float m_maxDistance = 40f;
+    /// <summary> 画面中央のレティクル </summary>
     [SerializeField] GameObject m_reticle;
+    /// <summary> ターゲットとプレイヤーを繋ぐジョイント </summary>
     SpringJoint joint;
+    /// <summary> レティクルのImage </summary>
     Image reticleImage;
+    /// <summary> ワイヤーのRenderer </summary>
     LineRenderer lr;
+    /// <summary> Rayが当たった時のターゲットの場所 </summary>
     Vector3 hookPoint;
+    /// <summary> ワイヤーを飛ばしているクラス </summary>
     HookshotController hookshotController;
+    /// <summary> レティクルのRayの当たり判定 </summary>
     RaycastHit reticleHit;
+    /// <summary> プレイヤーのRigidbody </summary>
     Rigidbody m_rb;
-
+    /// <summary> ワインダーが可能か否か </summary>
     bool winderState = false;
-    bool audioOneshot = true;
 
     void Start()
     {
@@ -32,22 +47,25 @@ public class LeftHookshotController : MonoBehaviour
         reticleImage = m_reticle.GetComponent<Image>();
         m_rb = GetComponent<Rigidbody>();
     }
+
     void Update()
     {
         ReticleHitAnim();
 
+        ///LBを押したらターゲットへワイヤーを飛ばす
         if (Input.GetKeyDown(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = false;
             StartHookshot();
         }
+        ///LBを離したらターゲットからワイヤーを外す
         else if (Input.GetKeyUp(KeyCode.JoystickButton4))
         {
             hookshotController.enabled = true;
             StopHookshot();
             audioSource.Stop();   
         }
-
+        ///ターゲットにワイヤーを飛ばした状態でLBとRBを押すとターゲットの位置へ移動する
         if (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.Joystick1Button5) && winderState)
         {
             audioSource.Play();
@@ -57,11 +75,17 @@ public class LeftHookshotController : MonoBehaviour
         
     }
 
-    private void LateUpdate()
+    /// <summary>
+    /// ワイヤーを表示する
+    /// </summary>
+    void LateUpdate()
     {
         DrawRope();
     }
 
+    /// <summary>
+    /// Rayが
+    /// </summary>
     void StartHookshot()
     {
         RaycastHit hit;
