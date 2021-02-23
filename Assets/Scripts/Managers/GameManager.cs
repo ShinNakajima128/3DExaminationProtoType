@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject m_GoalObject = null;
     /// <summary> ゲームの制限時間 </summary>
     [SerializeField] float m_gameTime = 60.0f;
-    /// <summary> 制限時間のテキスト </summary>
+    /// <summary> 制限時間のテキストUI </summary>
     [SerializeField] Text m_timeUI = null;
     /// <summary> 制限時間が増えるアイテムのイメージ </summary>
     [SerializeField] GameObject m_addTimeImage = null;
@@ -44,13 +44,13 @@ public class GameManager : MonoBehaviour
     AudioSource audioSource;
     /// <summary> Sceneをロードする際にこの値によって読み込むSceneを切り替える変数 </summary>
     int loadType;
-    /// <summary> 残り時間 </summary>
+    /// <summary> 現在の残り時間 </summary>
     public float m_currentTime;
     /// <summary> 再生できるかどうか </summary>
     bool isAudioPlay = true;
     /// <summary> ゲーム開始時に一度だけSEやアニメーションを再生させる用の変数 </summary>
     bool isStartPlay = true;
-    /// <summary>  </summary>
+    /// <summary> Sceneが始まってからの時間 </summary>
     [SerializeField] float m_startTimer = 8f;
     void Start()
     {
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         {
             m_timeUI.enabled = false;
         }
-        ///ゲーム開始時に関数を指定した時間が経過後に実行する
+        ///ゲーム開始時にInvoke関数に指定した時間を経過後に実行する
         if (m_UI.activeSelf && isStartPlay)
         {
             Invoke("StartPlay", m_startTimer);
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
             m_UI.SetActive(false);
             m_menuUI.SetActive(true);
             m_menuFirstButton.Select();
-        }
+        }//メニューを開いた状態でもう一度Xボタンを押すと、メニューを閉じる
         else if (m_menuUI.activeSelf && Input.GetKeyDown(KeyCode.JoystickButton2))
         {
             Time.timeScale = 1f;
@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
             loadType = 5;
             StartCoroutine(LoadTimer());
         }
-        //足した時間を表示した後、2秒後に非表示にする
+        //残り時間+30を使って足した時間を表示した後、2秒後に非表示にする
         if (m_addTimeImage.activeSelf && Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             Invoke("DerayEnable", 2f);
@@ -153,6 +153,9 @@ public class GameManager : MonoBehaviour
         isStartPlay = false;
     }
 
+    /// <summary>
+    /// 残り時間を足したお知らせを非表示にする
+    /// </summary>
     void DerayEnable()
     {
         m_addText.enabled = false;
