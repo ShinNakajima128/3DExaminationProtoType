@@ -49,11 +49,12 @@ public class HookshotController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.JoystickButton5))
         {
-            if (Physics.Raycast(m_playerCamera.transform.position, m_playerCamera.transform.forward, out RaycastHit Hit, m_maxWireDistance))
-            {
-                hookshotPosition = Hit.point;
-                state = State.HookshotFlyingPlayer;
-            }
+            state = State.HookshotFlyingPlayer;
+            //if (Physics.Raycast(m_playerCamera.transform.position, m_playerCamera.transform.forward, out RaycastHit Hit, m_maxWireDistance))
+            //{
+            //    hookshotPosition = Hit.point;
+            //    state = State.HookshotFlyingPlayer;
+            //}
         }
         else
         {
