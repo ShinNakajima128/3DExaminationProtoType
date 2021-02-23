@@ -26,10 +26,7 @@ public class HookshotController : MonoBehaviour
         state = State.Normal;
         
     }
-    void Update()
-    {
-        
-    }
+
     private void FixedUpdate()
     {
         switch (state)

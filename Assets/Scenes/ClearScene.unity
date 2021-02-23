@@ -12929,6 +12929,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1435859893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7267132509678701342, guid: 2378a2cdbbe23904dace1c5fb69c5c99,
+    type: 3}
+  m_PrefabInstance: {fileID: 205075829}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1475769268
 GameObject:
   m_ObjectHideFlags: 0
@@ -20474,17 +20480,17 @@ MonoBehaviour:
   m_stageSelectMenuUI: {fileID: 546290056}
   m_stageSelectFirstButton: {fileID: 1475769269}
   m_fadeController: {fileID: 800999457}
-  m_openMenuSfx: {fileID: 0}
-  m_closeMenuSfx: {fileID: 0}
+  m_openMenuSfx: {fileID: 8300000, guid: c9246297008fb2b48af8fbd76e82bbb3, type: 3}
+  m_closeMenuSfx: {fileID: 8300000, guid: b7c44e67034785147a4819b68c87e8dd, type: 3}
   m_selectSfx: {fileID: 8300000, guid: cf49b137eaedb4c46af19ac4087ddde2, type: 3}
   m_GoalObject: {fileID: 1690421869}
   m_gameTime: 60
   m_timeUI: {fileID: 1715726503}
   m_addTimeImage: {fileID: 205075830}
   m_addText: {fileID: 1715726501}
-  m_warningSfx: {fileID: 0}
-  m_startSfx: {fileID: 0}
-  m_startText: {fileID: 0}
+  m_warningSfx: {fileID: 8300000, guid: 067c6f084a4df2e47834d5bd86d6be66, type: 3}
+  m_startSfx: {fileID: 8300000, guid: acefb3fba85d1e34fb091d650f697d30, type: 3}
+  m_startText: {fileID: 1435859893}
   m_currentTime: 0
   m_startTimer: 8
 --- !u!4 &2105501760
@@ -21126,7 +21132,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134908543}
-  m_LocalRotation: {x: -0.012146856, y: 0.000000017196713, z: 2.0890142e-10, w: 0.99992627}
+  m_LocalRotation: {x: -0.012146835, y: -0.000000017221907, z: -2.0920711e-10, w: 0.99992627}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

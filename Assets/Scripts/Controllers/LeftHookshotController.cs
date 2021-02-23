@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LeftHookshotController : MonoBehaviour
 {
-    /// <summary> RayCastが衝突するオブジェクトを制限するMask </summary>
+    /// <summary> ショットが衝突するオブジェクトを制限するMask </summary>
     [SerializeField] LayerMask whatIsHookshot;
     /// <summary> ワイヤーを飛ばす位置 </summary>
     [SerializeField] Transform m_muzzle;
