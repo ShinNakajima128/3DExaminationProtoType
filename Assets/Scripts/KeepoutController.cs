@@ -6,22 +6,16 @@ using DG.Tweening;
 
 public class KeepoutController : MonoBehaviour
 {
-    //[SerializeField] GameObject m_keepout;
-    [SerializeField] Animator m_anim;
+    [SerializeField] Transform m_target;
     [SerializeField] Image m_keepImage;
-    AudioSource audioSource;
-    //[SerializeField] float m_timer = 0;
-    //bool isinvisible = false;
+    [SerializeField] float m_duration = 3f;
+    [SerializeField] float m_fadeDuration = 1f;
+    [SerializeField] AudioSource audioSource;
 
     void Start()
     {
-        //m_keepout.SetActive(true);
-        audioSource = GetComponent<AudioSource>();
-        //m_anim.Play("Keepout");
-        //m_keepImage.color = new Color(0, 0, 0, 0);
-        //Color color = m_keepImage.gameObject.GetComponent<Renderer>().material.color;        
-        //m_anim.Play("OFF");
-        //m_anim.Play("Keepout");
+        Fade(0);
+        Keepout();
     }
 
     void OnTriggerEnter(Collider other)
@@ -30,18 +24,7 @@ public class KeepoutController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             audioSource.Play();
-            //m_keepout.SetActive(true);
-            //m_anim.Play("ON");
-
-            //isinvisible = true;
-
-            //m_keepImage.DOFade(0, 1);
-
             Fade(1);
-            //Sequence seq = DOTween.Sequence();
-
-            //seq.Append(m_keepImage.DOFade(1, 1));
-            //seq.Play();
         }
     }
 
@@ -51,29 +34,26 @@ public class KeepoutController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             audioSource.Stop();
-            //m_anim.Play("OFF");
-            //isinvisible = false;
-
             Fade(0);
-            //m_keepImage.DOFade(0, 1);
-            //Sequence seq = DOTween.Sequence();
-            //seq.Append(m_keepImage.DOFade(0, 1));
-            //seq.Play();
         }
     }
 
     void Fade(float targetAlpha)
     {
         Sequence s = DOTween.Sequence();
-        s.Append(DOTween.ToAlpha(
+        s.Join(DOTween.ToAlpha(
             () => m_keepImage.color,
             color => m_keepImage.color = color,
             targetAlpha,
-            1.0f));
+            m_fadeDuration));
+        s.Play();
+    }
 
-        //s.Append(this.transform.DOMove(m_target.position, 1).SetEase(Ease.Linear))
-        //    .Append(this.transform.DOMove(m_target.position, 1).SetEase(Ease.Linear))
-        //    .SetLoops(-1);
+    void Keepout()
+    {
+        Sequence s = DOTween.Sequence();
+        s.Append(m_keepImage.transform.DOMove(m_target.position, m_duration).SetEase(Ease.Linear))
+            .SetLoops(-1);
         s.Play();
     }
 }
