@@ -78,10 +78,10 @@ public class GameManager : MonoBehaviour
             m_timeUI.enabled = false;
         }
         ///ゲーム開始時にInvoke関数に指定した時間を経過後に実行する
-        if (m_UI.activeSelf && isStartPlay)
-        {
-            Invoke("StartPlay", m_startTimer);
-        }
+        //if (m_UI.activeSelf && isStartPlay)
+        //{
+        //    Invoke("StartPlay", m_startTimer);
+        //}
 
         ///残り時間が30秒未満になったら残り時間のテキストを赤くする
         if (m_currentTime < 30.0f)
