@@ -392,6 +392,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
+  m_respawnEffect: {fileID: 100000, guid: 5a7de8ead76644c7684f675f9cf58f04, type: 3}
+  m_respawnEffectSfx: {fileID: 8300000, guid: 29694c9a170b0d346902663c7e743c3c, type: 3}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 76972205}
   m_respawnPoint: {fileID: 1737865845879314744}
@@ -739,6 +741,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
+  m_respawnEffect: {fileID: 100000, guid: 5a7de8ead76644c7684f675f9cf58f04, type: 3}
+  m_respawnEffectSfx: {fileID: 8300000, guid: 29694c9a170b0d346902663c7e743c3c, type: 3}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 76972205}
   m_respawnPoint: {fileID: 1737865845879314744}
@@ -4837,6 +4841,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
+  m_respawnEffect: {fileID: 100000, guid: 5a7de8ead76644c7684f675f9cf58f04, type: 3}
+  m_respawnEffectSfx: {fileID: 8300000, guid: 29694c9a170b0d346902663c7e743c3c, type: 3}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 76972205}
   m_respawnPoint: {fileID: 1737865845879314744}
@@ -5110,7 +5116,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811664493}
-  m_LocalRotation: {x: -0.0653296, y: -0.013495935, z: -0.0008836527, w: 0.9977721}
+  m_LocalRotation: {x: -0.065329574, y: -0.0134959, z: -0.00088365003, w: 0.9977721}
   m_LocalPosition: {x: 4, y: 40, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6925,6 +6931,16 @@ PrefabInstance:
       propertyPath: m_comeBackItemPoint
       value: 
       objectReference: {fileID: 76972205}
+    - target: {fileID: 7338977119844518693, guid: 2408f11729f9ff74d8294af290d37097,
+        type: 3}
+      propertyPath: m_respawnEffect
+      value: 
+      objectReference: {fileID: 100000, guid: 5a7de8ead76644c7684f675f9cf58f04, type: 3}
+    - target: {fileID: 7338977119844518693, guid: 2408f11729f9ff74d8294af290d37097,
+        type: 3}
+      propertyPath: m_respawnEffectSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 29694c9a170b0d346902663c7e743c3c, type: 3}
     - target: {fileID: 7338977121516994117, guid: 2408f11729f9ff74d8294af290d37097,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8752,6 +8768,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
+  m_respawnEffect: {fileID: 100000, guid: 5a7de8ead76644c7684f675f9cf58f04, type: 3}
+  m_respawnEffectSfx: {fileID: 8300000, guid: 29694c9a170b0d346902663c7e743c3c, type: 3}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 76972205}
   m_respawnPoint: {fileID: 1737865845879314744}
@@ -11906,6 +11924,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: fdb1ba7ba760bff4f90e9b5a73ad2e09, type: 3}
+  m_respawnEffect: {fileID: 100000, guid: 5a7de8ead76644c7684f675f9cf58f04, type: 3}
+  m_respawnEffectSfx: {fileID: 8300000, guid: 29694c9a170b0d346902663c7e743c3c, type: 3}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 76972205}
   m_respawnPoint: {fileID: 1737865845879314744}
@@ -12654,7 +12674,7 @@ PrefabInstance:
     - target: {fileID: 4238493468371123196, guid: addfc6aae09b370438bf1e6bc511b3d5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39.22208
+      value: 39.56
       objectReference: {fileID: 0}
     - target: {fileID: 4238493468371123196, guid: addfc6aae09b370438bf1e6bc511b3d5,
         type: 3}
@@ -13033,6 +13053,16 @@ PrefabInstance:
       propertyPath: m_comeBackItemPoint
       value: 
       objectReference: {fileID: 76972205}
+    - target: {fileID: 7338977119844518693, guid: 2408f11729f9ff74d8294af290d37097,
+        type: 3}
+      propertyPath: m_respawnEffect
+      value: 
+      objectReference: {fileID: 100000, guid: 5a7de8ead76644c7684f675f9cf58f04, type: 3}
+    - target: {fileID: 7338977119844518693, guid: 2408f11729f9ff74d8294af290d37097,
+        type: 3}
+      propertyPath: m_respawnEffectSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 29694c9a170b0d346902663c7e743c3c, type: 3}
     - target: {fileID: 7338977121516994117, guid: 2408f11729f9ff74d8294af290d37097,
         type: 3}
       propertyPath: m_LocalPosition.x

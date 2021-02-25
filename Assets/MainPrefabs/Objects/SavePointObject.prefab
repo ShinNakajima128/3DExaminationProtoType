@@ -37,7 +37,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4238493467370803362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.37, y: 39, z: 32.80603}
+  m_LocalPosition: {x: 53.37, y: 38.366, z: 32.80603}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4238493468371123196}
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_respawnSystem: {fileID: 0}
+  m_subrespawnSystem: {fileID: 0}
   m_newRespawnPoint: {fileID: 4238493467370803362}
   m_onCheckPointEffect: {fileID: 4238493467354821401}
   m_checkSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}

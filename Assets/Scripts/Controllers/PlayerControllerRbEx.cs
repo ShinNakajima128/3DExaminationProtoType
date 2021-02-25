@@ -55,11 +55,8 @@ public class PlayerControllerRbEx : MonoBehaviour
         if (m_playerOperation)
         {
             PlayerMove();
-
-            if (IsGrounded())
-            {
-                playerAnimation();
-            }
+            playerAnimation();
+            
             if (Input.GetKeyDown(KeyCode.Joystick1Button3))
             {
                 m_goalCamera.Priority = 11;

@@ -10,6 +10,10 @@ public class RespawnController : MonoBehaviour
     [SerializeField] AudioClip m_vanishSfx = null;
     /// <summary> リスポーンした時のSE </summary>
     [SerializeField] AudioClip m_respawnSfx = null;
+    /// <summary> リスポーンした時のエフェクト </summary>
+    [SerializeField] GameObject m_respawnEffect = null;
+    /// <summary> リスポーンした時のエフェクトのSE </summary>
+    [SerializeField] AudioClip m_respawnEffectSfx = null;
     /// <summary> リスポーンするまでの時間 </summary>
     [SerializeField] float m_respawnWaitTime = 4.0f;
     /// <summary> アイテムを落とした時に帰ってくる場所 </summary>
@@ -41,15 +45,11 @@ public class RespawnController : MonoBehaviour
                 player.SetActive(true);
                 player.transform.position = m_respawnPoint.transform.position;
                 AudioSource.PlayClipAtPoint(m_respawnSfx, m_respawnPoint.transform.position);
-                //Invoke("Respawn", 4);
+                AudioSource.PlayClipAtPoint(m_respawnEffectSfx, m_respawnPoint.transform.position);
+                Instantiate(m_respawnEffect, player.transform.position, Quaternion.identity);
             }
         }
     }
-
-    //void Respawn()
-    //{
-
-    //}
 
     /// <summary>
     /// プレイヤーが当たったら設定した時間後にリスポーン地点に復活し、アイテムが当たったら設定した地点にアイテムを移動させる
