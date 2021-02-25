@@ -11,7 +11,12 @@ public class ItemBase : MonoBehaviour
     public AudioClip m_sfx = null;
     /// <summary> アイテムを隠す場所 </summary>
     Vector3 m_swapPoint = new Vector3(0, -100, 0);
+    AudioSource audioSource;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     /// <summary>アイテムを手に入れた時に呼ばれる</summary>
     public void Get()
     {
@@ -32,6 +37,7 @@ public class ItemBase : MonoBehaviour
     public virtual void Use()
     {
         // 効果音を鳴らし、アイテムをすぐに破棄する
+        //audioSource.PlayOneShot(m_sfx);
         AudioSource.PlayClipAtPoint(m_sfx, Camera.main.transform.position);
         DestroyImmediate(this.gameObject);
     }

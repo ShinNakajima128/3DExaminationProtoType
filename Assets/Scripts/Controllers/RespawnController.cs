@@ -26,10 +26,13 @@ public class RespawnController : MonoBehaviour
     bool isRespawn = false;
     /// <summary> タイマー </summary>
     float m_timer;
+    /// <summary>  </summary>
+    AudioSource audioSource;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -44,8 +47,8 @@ public class RespawnController : MonoBehaviour
                 isRespawn = false;
                 player.SetActive(true);
                 player.transform.position = m_respawnPoint.transform.position;
-                AudioSource.PlayClipAtPoint(m_respawnSfx, m_respawnPoint.transform.position);
-                AudioSource.PlayClipAtPoint(m_respawnEffectSfx, m_respawnPoint.transform.position);
+                audioSource.PlayOneShot(m_respawnSfx);
+                audioSource.PlayOneShot(m_respawnEffectSfx);
                 Instantiate(m_respawnEffect, player.transform.position, Quaternion.identity);
             }
         }
@@ -60,7 +63,7 @@ public class RespawnController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(m_deathEffect, collision.transform.position, Quaternion.identity);
-            AudioSource.PlayClipAtPoint(m_vanishSfx, collision.transform.position);
+            AudioSource.PlayClipAtPoint(m_vanishSfx, collision.transform.position, 0.5f);
             collision.gameObject.SetActive(false);
             isRespawn = true;
         }
