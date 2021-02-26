@@ -14,10 +14,6 @@ public class ResultManager : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name != "ClearScene")
-        {
-            m_playTimer = 0;
-        }
         resultTime = m_playTimer;
     }
 
@@ -31,7 +27,7 @@ public class ResultManager : MonoBehaviour
             {
                 if (resultTime < 15f)
                 {
-                    m_clearRank.text = "Test";
+                    m_clearRank.text = "S";
                 }
                 else if (resultTime >= 15f && resultTime < 30f)
                 {
@@ -48,7 +44,22 @@ public class ResultManager : MonoBehaviour
             }
             else if (SceneManager.GetActiveScene().name == "Stage2")
             {
-
+                if (resultTime < 30f)
+                {
+                    m_clearRank.text = "S";
+                }
+                else if (resultTime >= 30f && resultTime < 45f)
+                {
+                    m_clearRank.text = "A";
+                }
+                else if (resultTime >= 45f && resultTime < 60f)
+                {
+                    m_clearRank.text = "B";
+                }
+                else
+                {
+                    m_clearRank.text = "C";
+                }
             }
         }
     }

@@ -8064,6 +8064,8 @@ PlayableDirector:
     value: {fileID: 108228458}
   - key: {fileID: -6913522984978150476, guid: 2b6deeae6fde7dc4e8fbfedc9de748d6, type: 2}
     value: {fileID: 1763618037}
+  - key: {fileID: 6165921269138218671, guid: 2b6deeae6fde7dc4e8fbfedc9de748d6, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 06d6fb89d483e1f49a7fff05df9b12d0: {fileID: 106611493}
@@ -12268,7 +12270,7 @@ PrefabInstance:
     - target: {fileID: 5371217122562718352, guid: 41bcf053e7e66c8489a2f9066fce1af8,
         type: 3}
       propertyPath: m_Text
-      value: 
+      value: a
       objectReference: {fileID: 0}
     - target: {fileID: 5371217122562718352, guid: 41bcf053e7e66c8489a2f9066fce1af8,
         type: 3}
@@ -12329,7 +12331,7 @@ PrefabInstance:
     - target: {fileID: 6791356474576569302, guid: 41bcf053e7e66c8489a2f9066fce1af8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -574.7
+      value: -553.4
       objectReference: {fileID: 0}
     - target: {fileID: 6791356474576569302, guid: 41bcf053e7e66c8489a2f9066fce1af8,
         type: 3}

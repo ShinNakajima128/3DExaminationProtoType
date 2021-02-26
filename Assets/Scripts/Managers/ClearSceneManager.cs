@@ -13,7 +13,6 @@ public class ClearSceneManager : MonoBehaviour
     [SerializeField] PlayableDirector m_director;
     int m_state = 0;
 
-
     void Update()
     {
         if (m_director.state != PlayState.Playing && m_state == 0)

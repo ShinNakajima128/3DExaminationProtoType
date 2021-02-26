@@ -54,8 +54,6 @@ public class GameManager : MonoBehaviour
     bool isAudioPlay = true;
     /// <summary> ゲーム開始時に一度だけSEやアニメーションを再生させる用の変数 </summary>
     bool isStart = true;
-    /// <summary> Sceneが始まってからの時間 </summary>
-    public static float m_playTimer;
 
     void Start()
     {
@@ -63,6 +61,11 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         FC.isFadeIn = true;
         m_currentTime = m_gameTime;
+
+        if (SceneManager.GetActiveScene().name != "ClearScene")
+        {
+            ResultManager.m_playTimer = 0;
+        }
     }
 
     void Update()
