@@ -15,37 +15,37 @@ public class ResultManager : MonoBehaviour
 
     void Start()
     {
-        resultTime = m_playTimer;
-        //m_clearRank.text = "S";
+        //resultTime = 20;
+        resultTime = m_playTimer - 2;
     }
 
     void Update()
     {
         if (SceneManager.GetActiveScene().name == "ClearScene" && isDisPlay)
         {
-            m_resultTimeText.text = $"クリアタイム : {resultTime:F1}";
+            m_resultTimeText.text = $"<color=#>クリアタイム : {resultTime:F1}</color>";
 
             if (resultTime < 20f)
             {
                 Debug.Log("クリアランクSS");
-                m_clearRank.text = "SS";
+                m_clearRank.text = "<color=#ffd700>SS</color>";
             }
-            else if (resultTime >= 20f && resultTime < 25)
+            else if (resultTime >= 20f && resultTime < 30f)
             {
                 Debug.Log("クリアランクS");
-                m_clearRank.text = "S";
+                m_clearRank.text = "<color=#87ceeb>S</color>";
             }
-            else if (resultTime >= 25f && resultTime < 40f)
+            else if (resultTime >= 30f && resultTime < 40f)
             {
-                m_clearRank.text = "A";
+                m_clearRank.text = "<color=#dc143c>A</color>";
             }
             else if (resultTime >= 40f && resultTime < 60f)
             {
-                m_clearRank.text = "B";
+                m_clearRank.text = "<color=#4169e1>B</color>";
             }
             else
             {
-                m_clearRank.text = "C";
+                m_clearRank.text = "<color=#00fa9a>C</color>";
             }
 
             isDisPlay = false;
