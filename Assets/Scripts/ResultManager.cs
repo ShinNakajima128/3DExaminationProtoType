@@ -25,16 +25,21 @@ public class ResultManager : MonoBehaviour
         {
             m_resultTimeText.text = $"クリアタイム : {resultTime:F1}";
 
-            if (resultTime < 15f)
+            if (resultTime < 20f)
+            {
+                Debug.Log("クリアランクSS");
+                m_clearRank.text = "SS";
+            }
+            else if (resultTime >= 20f && resultTime < 25)
             {
                 Debug.Log("クリアランクS");
                 m_clearRank.text = "S";
             }
-            else if (resultTime >= 15f && resultTime < 30f)
+            else if (resultTime >= 25f && resultTime < 40f)
             {
                 m_clearRank.text = "A";
             }
-            else if (resultTime >= 30f && resultTime < 60f)
+            else if (resultTime >= 40f && resultTime < 60f)
             {
                 m_clearRank.text = "B";
             }

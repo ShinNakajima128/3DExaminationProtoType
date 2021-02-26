@@ -271,6 +271,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnEffect: {fileID: 0}
+  m_respawnEffectSfx: {fileID: 0}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
@@ -618,6 +620,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnEffect: {fileID: 0}
+  m_respawnEffectSfx: {fileID: 0}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
@@ -2394,6 +2398,7 @@ MonoBehaviour:
   m_stageSelectMenuUI: {fileID: 546290056}
   m_stageSelectButton: {fileID: 1475769269}
   m_director: {fileID: 827148310}
+  m_resultUI: {fileID: 970916391}
 --- !u!4 &341531096
 Transform:
   m_ObjectHideFlags: 0
@@ -3663,6 +3668,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnEffect: {fileID: 0}
+  m_respawnEffectSfx: {fileID: 0}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
@@ -3849,6 +3856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFadeOut: 0
   isFadeIn: 0
+  fadeSpeed: 0.01
 --- !u!114 &800999460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4549,6 +4557,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 968230477}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &970916391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970916392}
+  m_Layer: 0
+  m_Name: Empty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &970916392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970916391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 887.23987, y: 991.33777, z: -22.836918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983594484
 GameObject:
   m_ObjectHideFlags: 0
@@ -7445,6 +7483,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnEffect: {fileID: 0}
+  m_respawnEffectSfx: {fileID: 0}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
@@ -9136,7 +9176,8 @@ MonoBehaviour:
   m_stageSelectMenuUI: {fileID: 546290056}
   m_stageSelectFirstButton: {fileID: 1475769269}
   m_fadeController: {fileID: 800999457}
-  m_menuSfx: {fileID: 8300000, guid: 7a86ddeec5517864ea18846134253a3a, type: 3}
+  m_openMenuSfx: {fileID: 0}
+  m_closeMenuSfx: {fileID: 0}
   m_selectSfx: {fileID: 8300000, guid: cf49b137eaedb4c46af19ac4087ddde2, type: 3}
   m_GoalObject: {fileID: 1690421869}
   m_gameTime: 60
@@ -9147,7 +9188,6 @@ MonoBehaviour:
   m_startSfx: {fileID: 8300000, guid: acefb3fba85d1e34fb091d650f697d30, type: 3}
   m_startText: {fileID: 794579728}
   m_currentTime: 0
-  m_startTimer: 8
 --- !u!4 &2105501760
 Transform:
   m_ObjectHideFlags: 0
@@ -9558,6 +9598,8 @@ MonoBehaviour:
   m_deathEffect: {fileID: 100006, guid: 44dd4fdbb6f10429a844c51183a4c84e, type: 3}
   m_vanishSfx: {fileID: 8300000, guid: c202aaef5e9c65d4d9abed27fdaec59d, type: 3}
   m_respawnSfx: {fileID: 8300000, guid: 09e796917418b7345886762484188c67, type: 3}
+  m_respawnEffect: {fileID: 0}
+  m_respawnEffectSfx: {fileID: 0}
   m_respawnWaitTime: 4
   m_comeBackItemPoint: {fileID: 0}
   m_respawnPoint: {fileID: 0}
