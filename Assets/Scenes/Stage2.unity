@@ -3890,6 +3890,8 @@ PlayableDirector:
     value: {fileID: 1737865845879314744}
   - key: {fileID: -8048867990523849164, guid: abf6b04a57cdfce43aa130b66d8eb80d, type: 2}
     value: {fileID: 6187296500416873649}
+  - key: {fileID: -1876910673728468441, guid: abf6b04a57cdfce43aa130b66d8eb80d, type: 2}
+    value: {fileID: 2105501763}
   m_ExposedReferences:
     m_References:
     - 5f6251cfe00c50b4191df7d5d6f14291: {fileID: 1770642767}
@@ -5590,7 +5592,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811664493}
-  m_LocalRotation: {x: -0.065329574, y: -0.0134959, z: -0.00088365003, w: 0.9977721}
+  m_LocalRotation: {x: -0.0653296, y: -0.013495935, z: -0.0008836527, w: 0.9977721}
   m_LocalPosition: {x: 4, y: 40, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12059,6 +12061,7 @@ GameObject:
   - component: {fileID: 2105501759}
   - component: {fileID: 2105501761}
   - component: {fileID: 2105501762}
+  - component: {fileID: 2105501763}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12096,7 +12099,6 @@ MonoBehaviour:
   m_startSfx: {fileID: 8300000, guid: acefb3fba85d1e34fb091d650f697d30, type: 3}
   m_startText: {fileID: 281775142}
   m_currentTime: 0
-  m_startTimer: 10.5
 --- !u!4 &2105501760
 Transform:
   m_ObjectHideFlags: 0
@@ -12225,6 +12227,35 @@ MonoBehaviour:
   m_director: {fileID: 591620677}
   m_StartText: {fileID: 482552624}
   m_startSfx: {fileID: 8300000, guid: acefb3fba85d1e34fb091d650f697d30, type: 3}
+--- !u!114 &2105501763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105501758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: a1d643fed4535bd46b4151fbb311d81c, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2105501762}
+          m_MethodName: StartSfx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &2110035132 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2110035132, guid: c6f010e8519d72849ac1f8745b58c9b3,

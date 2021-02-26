@@ -25,17 +25,10 @@ public class TimelineController : MonoBehaviour
             audioSource.PlayOneShot(m_startSfx);
             isStartPlay = false;
         }
-        
-        if (IsDone())
-        {
-            Debug.Log("再生終了");
-            m_StartText.SetActive(true);
-            audioSource.PlayOneShot(m_startSfx);
-        }
     }
 
-    bool IsDone()
+    public void StartSfx()
     {
-        return m_director.time >= m_director.duration;
+        audioSource.PlayOneShot(m_startSfx);
     }
 }
