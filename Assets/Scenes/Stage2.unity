@@ -3398,7 +3398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d16f8c67987dce946a521c1ea213f915, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22cc2808c0d346c4cb4ce58048b30046, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4104,7 +4104,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d16f8c67987dce946a521c1ea213f915, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22cc2808c0d346c4cb4ce58048b30046, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7985,7 +7985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: -358}
+  m_AnchoredPosition: {x: 10.6, y: -332.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1353970229
@@ -8020,7 +8020,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u5341\u5B57\u30AD\u30FC\u3010\u2191\u2193\u3011\uFF1A\u9078\u629E\u3000X\u30DC\u30BF\u30F3\uFF1A\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"
+  m_Text: "\u5341\u5B57\u30AD\u30FC\u3010\u2191\u2193\u3011:\u9078\u629E\u3000X\u30DC\u30BF\u30F3:\u30E1\u30CB\u30E5\u30FC\u306B\u623B\u308B"
 --- !u!222 &1353970230
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9517,7 +9517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d16f8c67987dce946a521c1ea213f915, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22cc2808c0d346c4cb4ce58048b30046, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11773,7 +11773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: -360}
+  m_AnchoredPosition: {x: -9, y: -333}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057357168
@@ -11808,7 +11808,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u5341\u5B57\u30AD\u30FC\u3010\u2191\u2193\u3011\uFF1A\u9078\u629E\u3000X\u30DC\u30BF\u30F3\uFF1A\u30B2\u30FC\u30E0\u306B\u623B\u308B"
+  m_Text: "\u5341\u5B57\u30AD\u30FC\u3010\u2191\u2193\u3011:\u9078\u629E\u3000X\u30DC\u30BF\u30F3:\u30B2\u30FC\u30E0\u306B\u623B\u308B"
 --- !u!222 &2057357169
 CanvasRenderer:
   m_ObjectHideFlags: 0
