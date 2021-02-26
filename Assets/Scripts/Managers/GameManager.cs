@@ -53,9 +53,9 @@ public class GameManager : MonoBehaviour
     /// <summary> 再生できるかどうか </summary>
     bool isAudioPlay = true;
     /// <summary> ゲーム開始時に一度だけSEやアニメーションを再生させる用の変数 </summary>
-    bool isStartPlay = true;
+    bool isStart = true;
     /// <summary> Sceneが始まってからの時間 </summary>
-    [SerializeField] float m_startTimer = 8f;
+    public static float m_playTimer;
 
     void Start()
     {
@@ -67,6 +67,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (SceneManager.GetActiveScene().name != "ClearScene" || SceneManager.GetActiveScene().name != "GameOverScene")
+        {
+            ResultManager.m_playTimer += Time.deltaTime;
+        }
         ///制限時間を表示し、残り30秒を切ったら文字を赤くする。赤い状態で30秒を超えたら文字を白くする。
         if (m_UI.activeSelf)
         {
@@ -162,7 +166,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("ゲーム開始");
         m_startText.SetActive(true);
         AudioSource.PlayClipAtPoint(m_startSfx, Camera.main.transform.position);
-        isStartPlay = false;
     }
 
     /// <summary>
