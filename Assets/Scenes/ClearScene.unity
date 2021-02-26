@@ -1000,6 +1000,7 @@ MonoBehaviour:
   m_stageSelectMenuUI: {fileID: 546290056}
   m_stageSelectButton: {fileID: 1475769269}
   m_director: {fileID: 1677744571}
+  m_resultUI: {fileID: 140547874}
 --- !u!4 &94532243
 Transform:
   m_ObjectHideFlags: 0
@@ -1642,6 +1643,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &140547874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2688528334371972857, guid: 41bcf053e7e66c8489a2f9066fce1af8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1218136741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &141632460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8413,7 +8420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 423}
+  m_AnchoredPosition: {x: 0, y: 405}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635901879
@@ -12241,6 +12248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ResultManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688528334371972857, guid: 41bcf053e7e66c8489a2f9066fce1af8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3985750747269541829, guid: 41bcf053e7e66c8489a2f9066fce1af8,
         type: 3}

@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name != "ClearScene" || SceneManager.GetActiveScene().name != "GameOverScene")
+        if (SceneManager.GetActiveScene().name != "ClearScene" && SceneManager.GetActiveScene().name != "GameOverScene")
         {
             ResultManager.m_playTimer += Time.deltaTime;
         }
