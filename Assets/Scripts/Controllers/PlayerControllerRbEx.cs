@@ -25,18 +25,29 @@ public class PlayerControllerRbEx : MonoBehaviour
     [SerializeField] float m_jumpPower = 5f;
     /// <summary>接地判定の際、中心 (Pivot) からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 1.1f;
-    /// <summary> ジャンプ時のSE</summary>
+    /// <summary> ジャンプ時のSE </summary>
     [SerializeField] AudioClip m_jumpSfx = null;
+    /// <summary> ゴールを確認する用のカメラ </summary>
     [SerializeField] CinemachineVirtualCamera m_goalCamera;
+    /// <summary> アイテムを出す場所 </summary>
     [SerializeField] Transform m_itemThrowPoint = null;
+    /// <summary> アイテムを取得した時のSE </summary>
     [SerializeField] AudioClip m_getItemSfx = null;
+    /// <summary> 獲得したアイテムを表示するテキスト </summary>
     [SerializeField] Text m_inventoryText = null;
+    /// <summary> 制限時間を足すアイテムのImage </summary>
     [SerializeField] GameObject m_addTimeImage = null;
+    /// <summary> 高くジャンプできるアイテムのImage </summary>
     [SerializeField] GameObject m_highJumpImage = null;
+    /// <summary> クリアするためのアイテムのImage </summary>
     [SerializeField] GameObject m_keyImage = null;
+    /// <summary> 持っているアイテム </summary>
     ItemBase m_holdingItem = null;
+    /// <summary> プレイヤーが操作可能か否か </summary>
     public bool m_playerOperation = true;
+    /// <summary> プレイヤーのRigidbody </summary>
     Rigidbody m_rb;
+    /// <summary> プレイヤーのAnimator </summary>
     Animator m_anim;
 
     void Start()
