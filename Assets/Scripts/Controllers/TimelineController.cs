@@ -22,7 +22,7 @@ public class TimelineController : MonoBehaviour
         {
             m_director.playableGraph.GetRootPlayable(0).SetSpeed(300);
             m_StartText.SetActive(true);
-            audioSource.PlayOneShot(m_startSfx);
+            //audioSource.PlayOneShot(m_startSfx);
             isStartPlay = false;
         }
     }
