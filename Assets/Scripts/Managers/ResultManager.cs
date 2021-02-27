@@ -15,7 +15,6 @@ public class ResultManager : MonoBehaviour
 
     void Start()
     {
-        //resultTime = 20;
         resultTime = m_playTimer - 2;
     }
 

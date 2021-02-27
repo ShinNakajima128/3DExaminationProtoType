@@ -256,6 +256,13 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadTimer());
     }
 
+    public void GameOver()
+    {
+        audioSource.PlayOneShot(m_selectSfx);
+        FC.isFadeOut = true;
+        loadType = 6;
+        StartCoroutine(LoadTimer());
+    }
     /// <summary>
     /// Sceneの遷移を2秒遅らせる
     /// </summary>

@@ -55,7 +55,6 @@ public class LeftHookshotController : MonoBehaviour
         ///LBを押したらターゲットへワイヤーを飛ばす
         if (Input.GetKeyDown(KeyCode.JoystickButton4))
         {
-            //audioSource.Play();
             hookshotController.enabled = false;
             StartHookshot();
         }
@@ -64,7 +63,6 @@ public class LeftHookshotController : MonoBehaviour
         {
             hookshotController.enabled = true;
             StopHookshot();
-            //audioSource.Stop();
         }
         ///ターゲットにワイヤーを飛ばした状態でLBとRBを押すとターゲットの位置へ移動する
         if (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.Joystick1Button5) && winderState)
