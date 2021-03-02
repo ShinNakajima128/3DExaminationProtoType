@@ -338,6 +338,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7334445003675072816, guid: 61026b2421004a64a9faeccaecb42561,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334445003675072816, guid: 61026b2421004a64a9faeccaecb42561,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[3].key
+      value: 
+      objectReference: {fileID: -99873772453973865, guid: 074f8fb0295653748858d3fca2a5c18c,
+        type: 2}
+    - target: {fileID: 7334445003675072816, guid: 61026b2421004a64a9faeccaecb42561,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[4].key
+      value: 
+      objectReference: {fileID: 9216951761767443177, guid: 074f8fb0295653748858d3fca2a5c18c,
+        type: 2}
+    - target: {fileID: 7334445003675072816, guid: 61026b2421004a64a9faeccaecb42561,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[5].key
+      value: 
+      objectReference: {fileID: -3083938054466435412, guid: 074f8fb0295653748858d3fca2a5c18c,
+        type: 2}
     - target: {fileID: 7334445003675072817, guid: 61026b2421004a64a9faeccaecb42561,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -397,6 +420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOverDirector
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334445003675072819, guid: 61026b2421004a64a9faeccaecb42561,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7889529810975664129, guid: 61026b2421004a64a9faeccaecb42561,
         type: 3}
