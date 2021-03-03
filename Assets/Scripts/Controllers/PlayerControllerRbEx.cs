@@ -103,19 +103,6 @@ public class PlayerControllerRbEx : MonoBehaviour
         }
     }
 
-    //void LateUpdate()
-    //{
-    //    if (m_anim)
-    //    {
-    //        if (IsGrounded())
-    //        {
-    //            Vector3 velo = m_rb.velocity;
-    //            velo.y = 0;
-    //            m_anim.SetFloat("Speed", velo.magnitude);
-    //        }
-    //    }
-    //}
-
     /// <summary>
     /// 地面に接触しているか判定する
     /// </summary>
@@ -161,7 +148,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     }
     void playerAnimation()
     {
-        //Aボタンの入力を取得し、接地している時か、1回目のジャンプ中に押されていたらジャンプする
+        //Aボタンの入力を取得し、接地している時にジャンプする
         if (Input.GetButtonDown("A"))
         {
             if (IsGrounded())
