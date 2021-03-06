@@ -63,10 +63,11 @@ public class PlayerControllerRbEx : MonoBehaviour
 
     void Update()
     {
+        playerAnimation();
+
         if (m_playerOperation)
         {
             PlayerMove();
-            playerAnimation();
             
             if (Input.GetKeyDown(KeyCode.Joystick1Button3))
             {

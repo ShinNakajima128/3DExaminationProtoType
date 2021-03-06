@@ -6,6 +6,8 @@ using Cinemachine;
 public class DollyCartController : MonoBehaviour
 {
     CinemachineDollyCart dollyCart;
+    PlayerControllerRbEx player;
+    
 
     void Start()
     {
@@ -17,6 +19,8 @@ public class DollyCartController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            player = other.gameObject.GetComponent<PlayerControllerRbEx>();
+            player.PlayerOperation = false;
             other.gameObject.transform.SetParent(this.transform);
             dollyCart.m_Speed = 15f;
         }
@@ -26,7 +30,9 @@ public class DollyCartController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            player.PlayerOperation = true;
             other.gameObject.transform.SetParent(null);
+            dollyCart.m_Speed = 0f;
         }
     }
 }
