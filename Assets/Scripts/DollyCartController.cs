@@ -6,6 +6,7 @@ using Cinemachine;
 public class DollyCartController : MonoBehaviour
 {
     [SerializeField] float m_grindSpeed = 15f;
+    [SerializeField] CinemachineSmoothPath m_RailPath = null;
     CinemachineDollyCart dollyCart;
     PlayerControllerRbEx player;
     Rigidbody m_rb;
@@ -20,6 +21,13 @@ public class DollyCartController : MonoBehaviour
         dollyCart.m_Position = 0f;
     }
 
+    void Update()
+    {
+        if (dollyCart.m_Position == m_RailPath.PathLength)
+        {
+            player.PlayerOperation = true;
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
