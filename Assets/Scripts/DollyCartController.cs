@@ -26,7 +26,7 @@ public class DollyCartController : MonoBehaviour
             player.PlayerOperation = false;
             m_rb.velocity = new Vector3(0f, 0f, 0f);
             other.gameObject.transform.SetParent(this.transform);
-            dollyCart.m_Speed = 15f;
+            dollyCart.m_Speed = 200f;
         }
     }
 
