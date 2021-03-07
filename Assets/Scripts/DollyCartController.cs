@@ -14,6 +14,7 @@ public class DollyCartController : MonoBehaviour
     {
         dollyCart = this.gameObject.GetComponent<CinemachineDollyCart>();
         dollyCart.m_Speed = 0f;
+        dollyCart.m_Position = 0f;
     }
 
     void OnTriggerEnter(Collider other)
@@ -23,9 +24,9 @@ public class DollyCartController : MonoBehaviour
             player = other.gameObject.GetComponent<PlayerControllerRbEx>();
             m_rb = other.gameObject.GetComponent<Rigidbody>();
             player.PlayerOperation = false;
-            m_rb.useGravity = false;
+            m_rb.velocity = new Vector3(0f, 0f, 0f);
             other.gameObject.transform.SetParent(this.transform);
-            dollyCart.m_Speed = 0f;
+            dollyCart.m_Speed = 15f;
         }
     }
 
@@ -34,9 +35,9 @@ public class DollyCartController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             player.PlayerOperation = true;
-            m_rb.useGravity = true;
             other.gameObject.transform.SetParent(null);
             dollyCart.m_Speed = 0f;
+            dollyCart.m_Position = 0f;
         }
     }
 }
