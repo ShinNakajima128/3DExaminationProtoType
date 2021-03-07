@@ -5,13 +5,16 @@ using Cinemachine;
 
 public class DollyCartController : MonoBehaviour
 {
+    [SerializeField] float m_grindSpeed = 15f;
     CinemachineDollyCart dollyCart;
     PlayerControllerRbEx player;
     Rigidbody m_rb;
+    AudioSource audioSource;
     
 
     void Start()
     {
+        audioSource = this.GetComponent<AudioSource>();
         dollyCart = this.gameObject.GetComponent<CinemachineDollyCart>();
         dollyCart.m_Speed = 0f;
         dollyCart.m_Position = 0f;
@@ -26,7 +29,8 @@ public class DollyCartController : MonoBehaviour
             player.PlayerOperation = false;
             m_rb.velocity = new Vector3(0f, 0f, 0f);
             other.gameObject.transform.SetParent(this.transform);
-            dollyCart.m_Speed = 200f;
+            dollyCart.m_Speed = m_grindSpeed;
+            audioSource.Play();
         }
     }
 
@@ -38,6 +42,7 @@ public class DollyCartController : MonoBehaviour
             other.gameObject.transform.SetParent(null);
             dollyCart.m_Speed = 0f;
             dollyCart.m_Position = 0f;
+            audioSource.Stop();
         }
     }
 }
