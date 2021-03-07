@@ -7,6 +7,7 @@ public class DollyCartController : MonoBehaviour
 {
     CinemachineDollyCart dollyCart;
     PlayerControllerRbEx player;
+    Rigidbody m_rb;
     
 
     void Start()
@@ -20,9 +21,11 @@ public class DollyCartController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             player = other.gameObject.GetComponent<PlayerControllerRbEx>();
+            m_rb = other.gameObject.GetComponent<Rigidbody>();
             player.PlayerOperation = false;
+            m_rb.useGravity = false;
             other.gameObject.transform.SetParent(this.transform);
-            dollyCart.m_Speed = 15f;
+            dollyCart.m_Speed = 0f;
         }
     }
 
@@ -31,6 +34,7 @@ public class DollyCartController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             player.PlayerOperation = true;
+            m_rb.useGravity = true;
             other.gameObject.transform.SetParent(null);
             dollyCart.m_Speed = 0f;
         }
