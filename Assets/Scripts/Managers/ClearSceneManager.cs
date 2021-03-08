@@ -13,9 +13,16 @@ public class ClearSceneManager : MonoBehaviour
     [SerializeField] PlayableDirector m_director;
     [SerializeField] GameObject m_resultUI;
     int m_state = 0;
+    bool isStartPlay = true;
 
     void Update()
     {
+        if (Input.anyKey && isStartPlay)
+        {
+            m_director.playableGraph.GetRootPlayable(0).SetSpeed(300);
+            isStartPlay = false;
+        }
+
         if (m_director.state != PlayState.Playing && m_state == 0)
         {
             m_clearMenuUI.SetActive(true);

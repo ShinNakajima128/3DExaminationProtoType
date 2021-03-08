@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "ClearScene")
         {
             ResultManager.m_playTimer = 0;
+            ResultManager.m_stageName = SceneManager.GetActiveScene().name;
+            Debug.Log(ResultManager.m_stageName);
         }
     }
 
