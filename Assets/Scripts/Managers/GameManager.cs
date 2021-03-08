@@ -143,6 +143,7 @@ public class GameManager : MonoBehaviour
         ///ステージセレクトメニューが開いた状態でXボタンを押すと、メニューに戻る
         else if (m_stageSelectMenuUI.activeSelf && Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
+            Debug.Log("メニューに戻る");
             audioSource.PlayOneShot(m_openMenuSfx);
             m_stageSelectMenuUI.SetActive(false);
             m_menuUI.SetActive(true);
