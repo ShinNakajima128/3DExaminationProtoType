@@ -194,10 +194,12 @@ public class PlayerControllerRbEx : MonoBehaviour
             }
             else if (m_holdingItem.gameObject.name == "ハイジャンプ")
             {
+                m_keyImage.SetActive(false);
                 m_highJumpImage.SetActive(true);
             }
             else if (m_holdingItem.gameObject.name == "残り時間+30")
             {
+                m_keyImage.SetActive(false);
                 m_addTimeImage.SetActive(true);
             }
         }
