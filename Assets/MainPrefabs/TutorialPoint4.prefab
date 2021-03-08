@@ -481,8 +481,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\n<size=70><color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color></size>\n\n<color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306B\u8FD1\u3065\u304F\u3068\u30B9\u30C6\u30FC\u30B8\u304B\u3089\u843D\u4E0B\u3057\u305F\u5F8C\u306E\n\n\u30EA\u30B9\u30DD\u30FC\u30F3\u5730\u70B9\u304C\u305D\u306E<color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306E\u524D\u306B\u66F4\u65B0\u3055\u308C\u308B\n\n\u5FD8\u308C\u305A\u306B<color>\u66F4\u65B0</color>\u3057\u3066\u304A\u3053\u3046!\n\n\n\n\n\n\n  
-    \n <color>\u66F4\u65B0\u524D </color>                      <color>\u66F4\u65B0\u5F8C</color>"
+  m_Text: "<size=70><color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color></size>\n\n<size=50><color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306B\u8FD1\u3065\u304F\u3068\u30B9\u30C6\u30FC\u30B8\u304B\u3089\u843D\u4E0B\u3057\u305F\u5F8C\u306E\n\n\u30EA\u30B9\u30DD\u30FC\u30F3\u5730\u70B9\u304C\u305D\u306E<color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306E\u524D\u306B<color=#9c2ce2>\u66F4\u65B0</color>\u3055\u308C\u308B\n\n\u5FD8\u308C\u305A\u306B<color=#9c2ce2>\u66F4\u65B0</color>\u3057\u3066\u304A\u3053\u3046!</size>\n\n\n\n\n\n\n\n  
+    \n <color=#33b6ff>\u66F4\u65B0\u524D </color>                      <color=#9c2ce2>\u66F4\u65B0\u5F8C</color>"
 --- !u!1 &2991119617663187306
 GameObject:
   m_ObjectHideFlags: 0
@@ -29274,9 +29274,8 @@ MonoBehaviour:
   m_itemCanvas: {fileID: 0}
   m_tutorialCanvas: {fileID: 2991119617026785154}
   m_textUI: {fileID: 2991119617266921879}
-  m_textString: "\n<size=70><color=#ffff00>\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u304A\u3046\uFF01</color></size>\n\n\u30D5\u30A3\u30FC\u30EB\u30C9\u306B\u843D\u3061\u3066\u3044\u308B<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u3092\u6240\u6301\u3057\u305F\u72B6\u614B\u3067\n\n\u3010<color=#dc143c>B</color>\u30DC\u30BF\u30F3\u3011\u3092\u62BC\u3059\u3068\u305D\u306E<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u304C\u4F7F\u7528\u3067\u304D\u308B\n\n<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u306B\u306F\u69D8\u3005\u306A\u52B9\u679C\u304C\u3042\u308A\u3001\u30B9\u30C6\u30FC\u30B8\u306E\u653B\u7565\u306B\u5F79\u7ACB\u3066\u3088\u3046\uFF01\n\n\u3053\u3053\u3067\u306F2\u3064\u306E<color=#adff2f>\u30A2\u30A4\u30C6\u30E0</color>\u3092\u7D39\u4ECB\u3059\u308B\u3088\n\n\n\n\n\n  
-    \n\n\u3000 \u5236\u9650\u6642\u9593\u304C\u5897\u3048\u308B\u3000\u3000\u3000
-    \u3000\u3000\u3000\u9AD8\u304F\u30B8\u30E3\u30F3\u30D7\u3067\u304D\u308B"
+  m_textString: "<size=70><color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color></size>\n\n<size=50><color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306B\u8FD1\u3065\u304F\u3068\u30B9\u30C6\u30FC\u30B8\u304B\u3089\u843D\u4E0B\u3057\u305F\u5F8C\u306E\n\n\u30EA\u30B9\u30DD\u30FC\u30F3\u5730\u70B9\u304C\u305D\u306E<color=#ffff00>\u30C1\u30A7\u30C3\u30AF\u30DD\u30A4\u30F3\u30C8</color>\u306E\u524D\u306B<color=#9c2ce2>\u66F4\u65B0</color>\u3055\u308C\u308B\n\n\u5FD8\u308C\u305A\u306B<color=#9c2ce2>\u66F4\u65B0</color>\u3057\u3066\u304A\u3053\u3046!</size>\n\n\n\n\n\n\n\n  
+    \n <color=#33b6ff>\u66F4\u65B0\u524D </color>                      <color=#9c2ce2>\u66F4\u65B0\u5F8C</color>"
   m_showSfx: {fileID: 8300000, guid: c9246297008fb2b48af8fbd76e82bbb3, type: 3}
   m_hideSfx: {fileID: 8300000, guid: b7c44e67034785147a4819b68c87e8dd, type: 3}
   m_anim: {fileID: 2991119617124561973}
