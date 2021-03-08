@@ -26,6 +26,7 @@ public class DollyCartController : MonoBehaviour
         if (dollyCart.m_Position == m_RailPath.PathLength)
         {
             player.PlayerOperation = true;
+            audioSource.Stop();
         }
     }
     void OnTriggerEnter(Collider other)
