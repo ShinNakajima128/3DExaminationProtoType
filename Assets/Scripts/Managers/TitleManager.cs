@@ -33,12 +33,16 @@ public class TitleManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKey && isFirstPlay)
+        if (Input.anyKeyDown && isFirstPlay)
         {
             m_director.playableGraph.GetRootPlayable(0).SetSpeed(300);
             isFirstPlay = false;
         }
 
+        if (m_director.state != PlayState.Playing)
+        {
+            isFirstPlay = false;
+        }
         if (Input.anyKeyDown && m_pressAnyButtonText.activeSelf)
         {
             audioSource.PlayOneShot(m_decisionSfx);

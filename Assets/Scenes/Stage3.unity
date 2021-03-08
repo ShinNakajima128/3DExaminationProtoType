@@ -3948,17 +3948,17 @@ PrefabInstance:
     - target: {fileID: 3165301737677354832, guid: 6d82193b83894a34cb7b498a8a67cb82,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.219999
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 3165301737677354832, guid: 6d82193b83894a34cb7b498a8a67cb82,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 52.079998
+      value: 51.39
       objectReference: {fileID: 0}
     - target: {fileID: 3165301737677354832, guid: 6d82193b83894a34cb7b498a8a67cb82,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 93.49
+      value: 93.27
       objectReference: {fileID: 0}
     - target: {fileID: 3165301737677354832, guid: 6d82193b83894a34cb7b498a8a67cb82,
         type: 3}
@@ -22799,7 +22799,7 @@ MonoBehaviour:
   m_closeMenuSfx: {fileID: 8300000, guid: b7c44e67034785147a4819b68c87e8dd, type: 3}
   m_selectSfx: {fileID: 8300000, guid: cf49b137eaedb4c46af19ac4087ddde2, type: 3}
   m_GoalObject: {fileID: 1690421869}
-  m_gameTime: 1000
+  m_gameTime: 150
   m_timeUI: {fileID: 811851458}
   m_addTimeImage: {fileID: 1693857514}
   m_addText: {fileID: 1154455077}
@@ -22836,7 +22836,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0

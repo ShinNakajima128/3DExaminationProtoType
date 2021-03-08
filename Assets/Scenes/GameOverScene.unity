@@ -1695,7 +1695,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C6\u30FC\u30B82"
+  m_Text: "\u30B9\u30C6\u30FC\u30B83"
 --- !u!222 &221863239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2159,7 +2159,7 @@ GameObject:
   - component: {fileID: 336344238}
   - component: {fileID: 336344237}
   m_Layer: 5
-  m_Name: Stage2
+  m_Name: Stage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2229,7 +2229,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2105501759}
-        m_MethodName: Stage2
+        m_MethodName: Stage3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5081,7 +5081,7 @@ GameObject:
   - component: {fileID: 1068950290}
   - component: {fileID: 1068950289}
   m_Layer: 5
-  m_Name: Stage1
+  m_Name: Stage2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5151,7 +5151,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2105501759}
-        m_MethodName: Stage1
+        m_MethodName: Stage2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5267,7 +5267,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30C6\u30FC\u30B81"
+  m_Text: "\u30B9\u30C6\u30FC\u30B82"
 --- !u!222 &1076849625
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5866,7 +5866,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u30C1\u30E5\u30FC\u30C8\u30EA\u30A2\u30EB"
+  m_Text: "\u30B9\u30C6\u30FC\u30B81"
 --- !u!222 &1310548820
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6483,7 +6483,7 @@ GameObject:
   - component: {fileID: 1475769270}
   - component: {fileID: 1475769269}
   m_Layer: 5
-  m_Name: Tutorial
+  m_Name: Stage1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6533,7 +6533,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2105501759}
-        m_MethodName: Tutorial
+        m_MethodName: Stage1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
