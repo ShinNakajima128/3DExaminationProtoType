@@ -173,7 +173,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 691065925e02a5d4d9ff8807ca362d73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757462f410791a64a85ccd585422bf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_grindSpeed: 15
+  m_grindSpeed: 20
   m_RailPath: {fileID: 4298742543881046376}
 --- !u!82 &4298742544165139474
 AudioSource:

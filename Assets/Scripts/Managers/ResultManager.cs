@@ -24,12 +24,12 @@ public class ResultManager : MonoBehaviour
         {
             m_resultTimeText.text = $"<color=#>クリアタイム : {resultTime:F1}</color>";
 
-            if (resultTime < 20f)
+            if (resultTime < 25f)
             {
                 Debug.Log("クリアランクSS");
                 m_clearRank.text = "<color=#ffd700>SS</color>";
             }
-            else if (resultTime >= 20f && resultTime < 30f)
+            else if (resultTime >= 25f && resultTime < 30f)
             {
                 Debug.Log("クリアランクS");
                 m_clearRank.text = "<color=#87ceeb>S</color>";
