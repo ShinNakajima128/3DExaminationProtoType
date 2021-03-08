@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class TitleManager : MonoBehaviour
 {
@@ -14,11 +15,13 @@ public class TitleManager : MonoBehaviour
     [SerializeField] AudioClip m_decisionSfx = null;
     [SerializeField] AudioClip m_loadSfx = null;
     [SerializeField] GameObject m_fadeController;
+    [SerializeField] PlayableDirector m_director = null;
     FadeController FC;
     AudioSource audioSource;
     int loadType = 0;
+    bool isFirstPlay = true;
 
-    private void Start()
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
         FC = m_fadeController.GetComponent<FadeController>();
@@ -30,6 +33,12 @@ public class TitleManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.anyKey && isFirstPlay)
+        {
+            m_director.playableGraph.GetRootPlayable(0).SetSpeed(300);
+            isFirstPlay = false;
+        }
+
         if (Input.anyKeyDown && m_pressAnyButtonText.activeSelf)
         {
             audioSource.PlayOneShot(m_decisionSfx);
@@ -88,6 +97,13 @@ public class TitleManager : MonoBehaviour
         StartCoroutine(loadTimer());
     }
 
+    public void Stage3()
+    {
+        audioSource.PlayOneShot(m_loadSfx);
+        FC.isFadeOut = true;
+        loadType = 6;
+        StartCoroutine(loadTimer());
+    }
     IEnumerator loadTimer()
     {
         yield return new WaitForSeconds(2.0f);
@@ -111,6 +127,10 @@ public class TitleManager : MonoBehaviour
         else if (loadType == 5)
         {
             SceneManager.LoadScene("Stage2");
+        }
+        else if (loadType == 6)
+        {
+            SceneManager.LoadScene("Stage3");
         }
     }
 }

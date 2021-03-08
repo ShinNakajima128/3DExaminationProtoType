@@ -199,6 +199,11 @@ public class GameManager : MonoBehaviour
             loadType = 2;
             StartCoroutine(LoadTimer());
         }
+        else if (SceneManager.GetActiveScene().name == "Stage3")
+        {
+            loadType = 2;
+            StartCoroutine(LoadTimer());
+        }
     }
 
     /// <summary>
@@ -234,6 +239,13 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadTimer());
     }
 
+    public void Stage3()
+    {
+        audioSource.PlayOneShot(m_selectSfx);
+        FC.isFadeOut = true;
+        loadType = 7;
+        StartCoroutine(LoadTimer());
+    }
     /// <summary>
     /// タイトルに戻る
     /// </summary>
@@ -301,6 +313,10 @@ public class GameManager : MonoBehaviour
         else if (loadType == 6)
         {
             SceneManager.LoadScene("GameOverScene");
+        }
+        else if (loadType == 7)
+        {
+            SceneManager.LoadScene("Stage3");
         }
     }
 }
