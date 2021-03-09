@@ -7,10 +7,9 @@ public class HookshotController : MonoBehaviour
     [SerializeField] Camera m_playerCamera;
     [SerializeField] float m_maxWireDistance = 100f;
     [SerializeField] float m_hookshotSpeed = 5f;
-    //[SerializeField] AudioClip m_flyingSfx = null;
-    private Rigidbody m_rb;
-    private LineRenderer m_line;
-    private Vector3 hookshotPosition;
+    Rigidbody m_rb;
+    LineRenderer m_line;
+    Vector3 hookshotPosition;
     State state;
 
     enum State
@@ -50,16 +49,10 @@ public class HookshotController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.JoystickButton5))
         {
             state = State.HookshotFlyingPlayer;
-            //if (Physics.Raycast(m_playerCamera.transform.position, m_playerCamera.transform.forward, out RaycastHit Hit, m_maxWireDistance))
-            //{
-            //    hookshotPosition = Hit.point;
-            //    state = State.HookshotFlyingPlayer;
-            //}
         }
         else
         {
             m_line.positionCount = 0;
-            //m_rb.useGravity = true;
         }
     }
     /// <summary>
@@ -70,8 +63,6 @@ public class HookshotController : MonoBehaviour
         //m_rb.useGravity = false;
         m_line.SetPosition(0, m_muzzle.position);
         m_line.SetPosition(1, hookshotPosition);
-        //AudioSource.PlayClipAtPoint(m_flyingSfx, hookshotPosition);
-        //m_rb.transform.position = Vector3.Lerp(m_rb.transform.position, hookshotPosition, Time.deltaTime * m_hookshotSpeed);
         state = State.Normal;
     }
 }

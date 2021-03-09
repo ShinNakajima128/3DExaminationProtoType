@@ -60,16 +60,16 @@ public class ResultManager : MonoBehaviour
                     Debug.Log("クリアランクSS");
                     m_clearRank.text = "<color=#ffd700>SS</color>";
                 }
-                else if (resultTime >= 25f && resultTime < 30f)
+                else if (resultTime >= 25f && resultTime < 35f)
                 {
                     Debug.Log("クリアランクS");
                     m_clearRank.text = "<color=#87ceeb>S</color>";
                 }
-                else if (resultTime >= 30f && resultTime < 40f)
+                else if (resultTime >= 35f && resultTime < 50f)
                 {
                     m_clearRank.text = "<color=#dc143c>A</color>";
                 }
-                else if (resultTime >= 40f && resultTime < 60f)
+                else if (resultTime >= 50f && resultTime < 70f)
                 {
                     m_clearRank.text = "<color=#4169e1>B</color>";
                 }

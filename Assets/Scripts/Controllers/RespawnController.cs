@@ -63,7 +63,7 @@ public class RespawnController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(m_deathEffect, collision.transform.position, Quaternion.identity);
-            AudioSource.PlayClipAtPoint(m_vanishSfx, collision.transform.position, 0.5f);
+            AudioSource.PlayClipAtPoint(m_vanishSfx, collision.transform.position, 0.8f);
             collision.gameObject.SetActive(false);
             isRespawn = true;
         }

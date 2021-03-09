@@ -64,13 +64,13 @@ public class LeftHookshotController : MonoBehaviour
             hookshotController.enabled = true;
             StopHookshot();
         }
+
         ///ターゲットにワイヤーを飛ばした状態でLBとRBを押すとターゲットの位置へ移動する
         if (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.Joystick1Button5) && winderState)
         {
             m_rb.velocity = new Vector3(0f, 0f, 0f);
             m_rb.transform.position = Vector3.MoveTowards(transform.position, hookPoint, m_wireMoveSpeed);
         }
-        
     }
 
     /// <summary>
