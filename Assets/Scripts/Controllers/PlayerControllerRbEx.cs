@@ -163,7 +163,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     }
     void JumpMove()
     {
-        AudioSource.PlayClipAtPoint(m_jumpSfx, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(m_jumpSfx, Camera.main.transform.position, 1f);
         m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
         m_anim.SetBool("Jump", true);
     }
