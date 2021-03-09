@@ -58,7 +58,7 @@ public class RespawnController : MonoBehaviour
     /// プレイヤーが当たったら設定した時間後にリスポーン地点に復活し、アイテムが当たったら設定した地点にアイテムを移動させる
     /// </summary>
     /// <param name="collision"></param>
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -66,10 +66,6 @@ public class RespawnController : MonoBehaviour
             AudioSource.PlayClipAtPoint(m_vanishSfx, collision.transform.position, 0.5f);
             collision.gameObject.SetActive(false);
             isRespawn = true;
-        }
-        else if (collision.gameObject.CompareTag("KeyItem"))
-        {
-            collision.transform.position = m_comeBackItemPoint.transform.position;
         }
     }
 }

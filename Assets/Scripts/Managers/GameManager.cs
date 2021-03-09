@@ -52,8 +52,7 @@ public class GameManager : MonoBehaviour
     public float m_currentTime;
     /// <summary> 再生できるかどうか </summary>
     bool isAudioPlay = true;
-    /// <summary> ゲーム開始時に一度だけSEやアニメーションを再生させる用の変数 </summary>
-    bool isStart = true;
+    string beforeScene = "";
 
     void Start()
     {
@@ -61,12 +60,19 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         FC.isFadeIn = true;
         m_currentTime = m_gameTime;
+        beforeScene = ResultManager.m_stageName;
 
         if (SceneManager.GetActiveScene().name != "ClearScene")
         {
             ResultManager.m_playTimer = 0;
             ResultManager.m_stageName = SceneManager.GetActiveScene().name;
             Debug.Log(ResultManager.m_stageName);
+
+            if (SceneManager.GetActiveScene().name == "GameOverScene")
+            {
+                ResultManager.m_stageName = beforeScene;
+                Debug.Log(ResultManager.m_stageName);
+            }
         }
     }
 
@@ -86,11 +92,6 @@ public class GameManager : MonoBehaviour
         {
             m_timeUI.enabled = false;
         }
-        ///ゲーム開始時にInvoke関数に指定した時間を経過後に実行する
-        //if (m_UI.activeSelf && isStartPlay)
-        //{
-        //    Invoke("StartPlay", m_startTimer);
-        //}
 
         ///残り時間が30秒未満になったら残り時間のテキストを赤くする
         if (m_currentTime < 30.0f)
@@ -190,21 +191,22 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(m_selectSfx);
         FC.isFadeOut = true;
 
-        ///現在のSceneの名前がStage1だったら
+        ///現在のSceneがStage1だったら
         if (SceneManager.GetActiveScene().name == "Stage1")
         {
             loadType = 1;
             StartCoroutine(LoadTimer());
         }
-        ///現在のSceneの名前がStage2だったら
+        ///現在のSceneがStage2だったら
         else if (SceneManager.GetActiveScene().name == "Stage2")
         {
             loadType = 2;
             StartCoroutine(LoadTimer());
         }
+        ///現在のSceneがStage3だったら
         else if (SceneManager.GetActiveScene().name == "Stage3")
         {
-            loadType = 2;
+            loadType = 7;
             StartCoroutine(LoadTimer());
         }
     }
@@ -258,6 +260,30 @@ public class GameManager : MonoBehaviour
         FC.isFadeOut = true;
         loadType = 3;
         StartCoroutine(LoadTimer());
+    }
+
+    public void GameOverRestart()
+    {
+        audioSource.PlayOneShot(m_selectSfx);
+        FC.isFadeOut = true;
+
+        ///現在のSceneの名前がStage1だったら
+        if (ResultManager.m_stageName == "Stage1")
+        {
+            loadType = 1;
+            StartCoroutine(LoadTimer());
+        }
+        ///現在のSceneの名前がStage2だったら
+        else if (ResultManager.m_stageName == "Stage2")
+        {
+            loadType = 2;
+            StartCoroutine(LoadTimer());
+        }
+        else if (ResultManager.m_stageName == "Stage3")
+        {
+            loadType = 7;
+            StartCoroutine(LoadTimer());
+        }
     }
 
     /// <summary>
