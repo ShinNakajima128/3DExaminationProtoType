@@ -63,8 +63,11 @@ public class PlayerControllerRbEx : MonoBehaviour
 
     void Update()
     {
-        playerAnimation();
-
+        if (Time.timeScale == 1f)
+        {
+            playerAnimation();
+        }
+      
         if (m_playerOperation)
         {
             PlayerMove();
