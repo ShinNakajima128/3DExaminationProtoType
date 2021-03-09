@@ -9,6 +9,11 @@ public class ResultManager : MonoBehaviour
     [SerializeField] Text m_resultTimeText = null;
     [SerializeField] Text m_clearRank = null;
     [SerializeField] AudioClip m_rankSfx = null;
+    [SerializeField] Image m_ssRankImage = null;
+    [SerializeField] Image m_sRankImage = null;
+    [SerializeField] Image m_aRankImage = null;
+    [SerializeField] Image m_bRankImage = null;
+    [SerializeField] Image m_cRankImage = null;
     /// <summary> Stageが始まってからの時間 </summary>
     public static float m_playTimer = 0;
     public static string m_stageName = "";
@@ -20,6 +25,11 @@ public class ResultManager : MonoBehaviour
     {
         resultTime = m_playTimer - 2;
         audioSource = this.gameObject.GetComponent<AudioSource>();
+        m_ssRankImage.enabled = false;
+        m_sRankImage.enabled = false;
+        m_aRankImage.enabled = false;
+        m_bRankImage.enabled = false;
+        m_cRankImage.enabled = false;
     }
 
     void Update()
@@ -32,54 +42,64 @@ public class ResultManager : MonoBehaviour
             
             if (m_stageName != "Stage3")
             {
+                audioSource.PlayOneShot(m_rankSfx, 0.5f);
+
                 if (resultTime < 20f)
                 {
-                    Debug.Log("クリアランクSS");
-                    m_clearRank.text = "<color=#ffd700>SS</color>";
-                    audioSource.PlayOneShot(m_rankSfx, 0.5f);
+                    m_ssRankImage.enabled = true;
+                    //m_clearRank.text = "<color=#ffd700>SS</color>";   
                 }
                 else if (resultTime >= 20f && resultTime < 30f)
                 {
                     Debug.Log("クリアランクS");
-                    m_clearRank.text = "<color=#87ceeb>S</color>";
+                    m_sRankImage.enabled = true;
+                    //m_clearRank.text = "<color=#87ceeb>S</color>";
                 }
                 else if (resultTime >= 30f && resultTime < 40f)
                 {
-                    m_clearRank.text = "<color=#dc143c>A</color>";
+                    m_aRankImage.enabled = true;
+                    //m_clearRank.text = "<color=#dc143c>A</color>";
                 }
                 else if (resultTime >= 40f && resultTime < 60f)
                 {
-                    m_clearRank.text = "<color=#4169e1>B</color>";
+                    m_bRankImage.enabled = true;
+                    //m_clearRank.text = "<color=#4169e1>B</color>";
                 }
                 else
                 {
-                    m_clearRank.text = "<color=#00fa9a>C</color>";
+                    m_cRankImage.enabled = true;
+                    //m_clearRank.text = "<color=#00fa9a>C</color>";
                 }
             }
             else
             {
+                audioSource.PlayOneShot(m_rankSfx, 0.5f);
+
                 ///Stage3のクリアタイムに応じてランクを表示する
                 if (resultTime < 25f)
                 {
-                    Debug.Log("クリアランクSS");
-                    m_clearRank.text = "<color=#ffd700>SS</color>";
+                    m_ssRankImage.enabled = true;
+                    //m_clearRank.text = "<color=#ffd700>SS</color>";
                 }
                 else if (resultTime >= 25f && resultTime < 35f)
                 {
-                    Debug.Log("クリアランクS");
-                    m_clearRank.text = "<color=#87ceeb>S</color>";
+                    m_sRankImage.enabled = true;
+                    //m_clearRank.text = "<color=#87ceeb>S</color>";
                 }
                 else if (resultTime >= 35f && resultTime < 50f)
                 {
-                    m_clearRank.text = "<color=#dc143c>A</color>";
+                    m_aRankImage.enabled = true;
+                    //m_clearRank.text = "<color=#dc143c>A</color>";
                 }
                 else if (resultTime >= 50f && resultTime < 70f)
                 {
-                    m_clearRank.text = "<color=#4169e1>B</color>";
+                    m_bRankImage.enabled = true;
+                    //.text = "<color=#4169e1>B</color>";
                 }
                 else
                 {
-                    m_clearRank.text = "<color=#00fa9a>C</color>";
+                    m_cRankImage.enabled = true;
+                    //m_clearRank.text = "<color=#00fa9a>C</color>";
                 }
             }  
             isDisPlay = false;
