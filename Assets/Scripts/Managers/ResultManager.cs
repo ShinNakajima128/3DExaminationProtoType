@@ -8,15 +8,18 @@ public class ResultManager : MonoBehaviour
 {
     [SerializeField] Text m_resultTimeText = null;
     [SerializeField] Text m_clearRank = null;
+    [SerializeField] AudioClip m_rankSfx = null;
     /// <summary> Stageが始まってからの時間 </summary>
     public static float m_playTimer = 0;
     public static string m_stageName = "";
     float resultTime;
     bool isDisPlay = true;
+    AudioSource audioSource;
 
     void Start()
     {
-        resultTime = m_playTimer - 2;   
+        resultTime = m_playTimer - 2;
+        audioSource = this.gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -33,6 +36,7 @@ public class ResultManager : MonoBehaviour
                 {
                     Debug.Log("クリアランクSS");
                     m_clearRank.text = "<color=#ffd700>SS</color>";
+                    audioSource.PlayOneShot(m_rankSfx, 0.5f);
                 }
                 else if (resultTime >= 20f && resultTime < 30f)
                 {
