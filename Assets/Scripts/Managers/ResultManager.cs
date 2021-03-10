@@ -63,11 +63,9 @@ public class ResultManager : MonoBehaviour
                 if (resultTime < 20f)
                 {
                     m_ssRankImage.enabled = true;
-
                 }
                 else if (resultTime >= 20f && resultTime < 30f)
                 {
-                    Debug.Log("クリアランクS");
                     m_sRankImage.enabled = true;
                 }
                 else if (resultTime >= 30f && resultTime < 40f)
@@ -116,23 +114,23 @@ public class ResultManager : MonoBehaviour
     {
         if (m_stageName == "Stage1")
         {
-            if (resultTime > PlayerPrefs.GetFloat("Stage1Score1", 0f))
+            if (resultTime < PlayerPrefs.GetFloat("Stage1Score1"))
             {
                 PlayerPrefs.SetFloat("Stage1Score1", resultTime);
             }
-            else if (resultTime <= PlayerPrefs.GetFloat("Stage1Score1") && resultTime > PlayerPrefs.GetFloat("Stage1Score2", 0f))
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score1") && resultTime < PlayerPrefs.GetFloat("Stage1Score2"))
             {
                 PlayerPrefs.SetFloat("Stage1Score2", resultTime);
             }
-            else if (resultTime <= PlayerPrefs.GetFloat("Stage1Score2") && resultTime > PlayerPrefs.GetFloat("Stage1Score3", 0f))
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score2") && resultTime < PlayerPrefs.GetFloat("Stage1Score3"))
             {
                 PlayerPrefs.SetFloat("Stage1Score3", resultTime);
             }
-            else if (resultTime <= PlayerPrefs.GetFloat("Stage1Score3") && resultTime > PlayerPrefs.GetFloat("Stage1Score4", 0f))
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score3") && resultTime < PlayerPrefs.GetFloat("Stage1Score4"))
             {
                 PlayerPrefs.SetFloat("Stage1Score4", resultTime);
             }
-            else if (resultTime <= PlayerPrefs.GetFloat("Stage1Score4") && resultTime > PlayerPrefs.GetFloat("Stage1Score5", 0f))
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score4") && resultTime < PlayerPrefs.GetFloat("Stage1Score5"))
             {
                 PlayerPrefs.SetFloat("Stage1Score5", resultTime);
             }
@@ -143,11 +141,57 @@ public class ResultManager : MonoBehaviour
         }
         else if (m_stageName == "Stage2")
         {
-
+            if (resultTime < PlayerPrefs.GetFloat("Stage2Score1"))
+            {
+                PlayerPrefs.SetFloat("Stage2Score1", resultTime);
+            }
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage2Score1") && resultTime < PlayerPrefs.GetFloat("Stage2Score2"))
+            {
+                PlayerPrefs.SetFloat("Stage2Score2", resultTime);
+            }
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage2Score2") && resultTime < PlayerPrefs.GetFloat("Stage2Score3"))
+            {
+                PlayerPrefs.SetFloat("Stage2Score3", resultTime);
+            }
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage2Score3") && resultTime < PlayerPrefs.GetFloat("Stage2Score4"))
+            {
+                PlayerPrefs.SetFloat("Stage2Score4", resultTime);
+            }
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage2Score4") && resultTime < PlayerPrefs.GetFloat("Stage2Score5"))
+            {
+                PlayerPrefs.SetFloat("Stage2Score5", resultTime);
+            }
+            else
+            {
+                return;
+            }
         }
         else if (m_stageName == "Stage3")
         {
-
+            if (resultTime < PlayerPrefs.GetFloat("Stage3Score1"))
+            {
+                PlayerPrefs.SetFloat("Stage3Score1", resultTime);
+            }
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage3Score1") && resultTime < PlayerPrefs.GetFloat("Stage3Score2"))
+            {
+                PlayerPrefs.SetFloat("Stage3Score2", resultTime);
+            }
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage3Score2") && resultTime < PlayerPrefs.GetFloat("Stage3Score3"))
+            {
+                PlayerPrefs.SetFloat("Stage3Score3", resultTime);
+            }
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage3Score3") && resultTime < PlayerPrefs.GetFloat("Stage3Score4"))
+            {
+                PlayerPrefs.SetFloat("Stage3Score4", resultTime);
+            }
+            else if (resultTime >= PlayerPrefs.GetFloat("Stage3Score4") && resultTime < PlayerPrefs.GetFloat("Stage3Score5"))
+            {
+                PlayerPrefs.SetFloat("Stage3Score5", resultTime);
+            }
+            else
+            {
+                return;
+            }
         }
         else
         {
