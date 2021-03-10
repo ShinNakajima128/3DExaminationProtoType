@@ -304,6 +304,7 @@ public class GameManager : MonoBehaviour
         loadType = 6;
         StartCoroutine(LoadTimer());
     }
+
     /// <summary>
     /// Sceneの遷移を2秒遅らせる
     /// </summary>

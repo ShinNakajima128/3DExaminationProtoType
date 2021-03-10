@@ -25,6 +25,7 @@ public class ResultManager : MonoBehaviour
     public static string m_stageName = "";
     float resultTime;
     bool isDisPlay = true;
+    bool isSaved = true;
     AudioSource audioSource;
 
     void Start()
@@ -45,6 +46,14 @@ public class ResultManager : MonoBehaviour
             ResultScore();
             isDisPlay = false;
         }   
+    }
+    void LateUpdate()
+    {
+        if (isSaved)
+        {
+            SaveClearTime();
+            isSaved = false;
+        }
     }
 
     void ResultScore()
@@ -138,6 +147,7 @@ public class ResultManager : MonoBehaviour
             {
                 return;
             }
+            PlayerPrefs.Save();
         }
         else if (m_stageName == "Stage2")
         {
@@ -165,6 +175,7 @@ public class ResultManager : MonoBehaviour
             {
                 return;
             }
+            PlayerPrefs.Save();
         }
         else if (m_stageName == "Stage3")
         {
@@ -192,6 +203,7 @@ public class ResultManager : MonoBehaviour
             {
                 return;
             }
+            PlayerPrefs.Save();
         }
         else
         {

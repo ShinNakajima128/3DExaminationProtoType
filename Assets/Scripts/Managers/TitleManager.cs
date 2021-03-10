@@ -16,6 +16,15 @@ public class TitleManager : MonoBehaviour
     [SerializeField] AudioClip m_loadSfx = null;
     [SerializeField] GameObject m_fadeController;
     [SerializeField] PlayableDirector m_director = null;
+    [SerializeField] GameObject m_Title = null;
+    [SerializeField] GameObject m_highScoreMenu = null;
+    [SerializeField] GameObject m_rankStageSelectMenu = null;
+    [SerializeField] Button m_rankStageMenuFirstButton = null;
+    [SerializeField] Text m_StageName;
+    [SerializeField] GameObject m_stage1Scores = null;
+    [SerializeField] GameObject m_stage2Scores = null;
+    [SerializeField] GameObject m_stage3Scores = null;
+
     FadeController FC;
     AudioSource audioSource;
     int loadType = 0;
@@ -43,6 +52,7 @@ public class TitleManager : MonoBehaviour
         {
             isFirstPlay = false;
         }
+
         if (Input.anyKeyDown && m_pressAnyButtonText.activeSelf)
         {
             audioSource.PlayOneShot(m_decisionSfx);
@@ -50,6 +60,7 @@ public class TitleManager : MonoBehaviour
             m_menu.SetActive(true);
             m_menuFirstButton.Select();
         }
+
         if (m_stageSelectMenu.activeSelf && Input.GetButtonDown("A"))
         {
             audioSource.PlayOneShot(m_decisionSfx);
@@ -57,7 +68,35 @@ public class TitleManager : MonoBehaviour
             m_menu.SetActive(true);
             m_menuFirstButton.Select();
         }
+
+        if (m_rankStageSelectMenu.activeSelf && Input.GetButtonDown("A"))
+        {
+            audioSource.PlayOneShot(m_decisionSfx);
+            m_rankStageSelectMenu.SetActive(false);
+            m_menu.SetActive(true);
+            m_menuFirstButton.Select();
+
+        }
+
+        if (m_highScoreMenu.activeSelf && Input.GetButtonDown("A"))
+        {
+            audioSource.PlayOneShot(m_decisionSfx);
+            m_stage1Scores.SetActive(false);
+            m_stage2Scores.SetActive(false);
+            m_stage3Scores.SetActive(false);
+            m_highScoreMenu.SetActive(false);
+            m_Title.SetActive(true);
+            m_rankStageSelectMenu.SetActive(true);
+            m_rankStageMenuFirstButton.Select();
+            
+        }
     }
+
+    public void Reset()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public void GameStart()
     {
         audioSource.PlayOneShot(m_loadSfx);
@@ -71,6 +110,13 @@ public class TitleManager : MonoBehaviour
         m_menu.SetActive(false);
         m_stageSelectMenu.SetActive(true);
         m_stagemenuFirstButton.Select();
+    }
+    public void Ranking()
+    {
+        audioSource.PlayOneShot(m_decisionSfx);
+        m_menu.SetActive(false);
+        m_rankStageSelectMenu.SetActive(true);
+        m_rankStageMenuFirstButton.Select();
     }
     public void GameExit()
     {
@@ -107,6 +153,39 @@ public class TitleManager : MonoBehaviour
         FC.isFadeOut = true;
         loadType = 6;
         StartCoroutine(loadTimer());
+    }
+
+    public void RankCheckStage1()
+    {
+        audioSource.PlayOneShot(m_decisionSfx);
+        m_Title.SetActive(false);
+        m_rankStageSelectMenu.SetActive(false);
+        m_highScoreMenu.SetActive(true);
+        m_stage1Scores.SetActive(true);
+        m_StageName.enabled = true;
+        m_StageName.text = "STAGE1";
+    }
+
+    public void RankCheckStage2()
+    {
+        audioSource.PlayOneShot(m_decisionSfx);
+        m_Title.SetActive(false);
+        m_rankStageSelectMenu.SetActive(false);
+        m_highScoreMenu.SetActive(true);
+        m_stage2Scores.SetActive(true);
+        m_StageName.enabled = true;
+        m_StageName.text = "STAGE2";
+    }
+
+    public void RankCheckStage3()
+    {
+        audioSource.PlayOneShot(m_decisionSfx);
+        m_Title.SetActive(false);
+        m_rankStageSelectMenu.SetActive(false);
+        m_highScoreMenu.SetActive(true);
+        m_stage3Scores.SetActive(true);
+        m_StageName.enabled = true;
+        m_StageName.text = "STAGE3";
     }
     IEnumerator loadTimer()
     {
