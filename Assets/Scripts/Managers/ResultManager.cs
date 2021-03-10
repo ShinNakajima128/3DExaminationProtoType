@@ -43,6 +43,7 @@ public class ResultManager : MonoBehaviour
         if (isDisPlay)
         {
             ResultScore();
+            isDisPlay = false;
         }   
     }
 
@@ -108,7 +109,49 @@ public class ResultManager : MonoBehaviour
                     m_cRankImage.enabled = true;
                 }
             }
-            isDisPlay = false;
+        }
+    }
+
+    void SaveClearTime()
+    {
+        if (m_stageName == "Stage1")
+        {
+            if (resultTime > PlayerPrefs.GetFloat("Stage1Score1", 0f))
+            {
+                PlayerPrefs.SetFloat("Stage1Score1", resultTime);
+            }
+            else if (resultTime <= PlayerPrefs.GetFloat("Stage1Score1") && resultTime > PlayerPrefs.GetFloat("Stage1Score2", 0f))
+            {
+                PlayerPrefs.SetFloat("Stage1Score2", resultTime);
+            }
+            else if (resultTime <= PlayerPrefs.GetFloat("Stage1Score2") && resultTime > PlayerPrefs.GetFloat("Stage1Score3", 0f))
+            {
+                PlayerPrefs.SetFloat("Stage1Score3", resultTime);
+            }
+            else if (resultTime <= PlayerPrefs.GetFloat("Stage1Score3") && resultTime > PlayerPrefs.GetFloat("Stage1Score4", 0f))
+            {
+                PlayerPrefs.SetFloat("Stage1Score4", resultTime);
+            }
+            else if (resultTime <= PlayerPrefs.GetFloat("Stage1Score4") && resultTime > PlayerPrefs.GetFloat("Stage1Score5", 0f))
+            {
+                PlayerPrefs.SetFloat("Stage1Score5", resultTime);
+            }
+            else
+            {
+                return;
+            }
+        }
+        else if (m_stageName == "Stage2")
+        {
+
+        }
+        else if (m_stageName == "Stage3")
+        {
+
+        }
+        else
+        {
+            return;
         }
     }
 }
