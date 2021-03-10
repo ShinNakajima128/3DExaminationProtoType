@@ -6,13 +6,19 @@ using UnityEngine.UI;
 
 public class ResultManager : MonoBehaviour
 {
+    /// <summary> クリアタイムのText </summary>
     [SerializeField] Text m_resultTimeText = null;
-    [SerializeField] Text m_clearRank = null;
+    /// <summary> SSランク時のSE </summary>
     [SerializeField] AudioClip m_rankSfx = null;
+    /// <summary> SSランクのImage </summary>
     [SerializeField] Image m_ssRankImage = null;
+    /// <summary> SランクのImage </summary>
     [SerializeField] Image m_sRankImage = null;
+    /// <summary> AランクのImage </summary>
     [SerializeField] Image m_aRankImage = null;
+    /// <summary> BランクのImage </summary>
     [SerializeField] Image m_bRankImage = null;
+    /// <summary> CランクのImage </summary>
     [SerializeField] Image m_cRankImage = null;
     /// <summary> Stageが始まってからの時間 </summary>
     public static float m_playTimer = 0;
@@ -34,12 +40,21 @@ public class ResultManager : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "ClearScene" && isDisPlay)
+        if (isDisPlay)
+        {
+            ResultScore();
+        }   
+    }
+
+    void ResultScore()
+    {
+        ///現在のSceneがClearSceneだったら、ランクとクリアタイムを表示する
+        if (SceneManager.GetActiveScene().name == "ClearScene")
         {
             m_resultTimeText.text = $"<color=#>クリアタイム : {resultTime:F1}</color>";
 
             ///Stage1、Stage2のクリアタイムに応じてランクを表示する
-            
+
             if (m_stageName != "Stage3")
             {
                 audioSource.PlayOneShot(m_rankSfx, 0.5f);
@@ -47,28 +62,24 @@ public class ResultManager : MonoBehaviour
                 if (resultTime < 20f)
                 {
                     m_ssRankImage.enabled = true;
-                    //m_clearRank.text = "<color=#ffd700>SS</color>";   
+
                 }
                 else if (resultTime >= 20f && resultTime < 30f)
                 {
                     Debug.Log("クリアランクS");
                     m_sRankImage.enabled = true;
-                    //m_clearRank.text = "<color=#87ceeb>S</color>";
                 }
                 else if (resultTime >= 30f && resultTime < 40f)
                 {
                     m_aRankImage.enabled = true;
-                    //m_clearRank.text = "<color=#dc143c>A</color>";
                 }
                 else if (resultTime >= 40f && resultTime < 60f)
                 {
                     m_bRankImage.enabled = true;
-                    //m_clearRank.text = "<color=#4169e1>B</color>";
                 }
                 else
                 {
                     m_cRankImage.enabled = true;
-                    //m_clearRank.text = "<color=#00fa9a>C</color>";
                 }
             }
             else
@@ -79,29 +90,24 @@ public class ResultManager : MonoBehaviour
                 if (resultTime < 25f)
                 {
                     m_ssRankImage.enabled = true;
-                    //m_clearRank.text = "<color=#ffd700>SS</color>";
                 }
                 else if (resultTime >= 25f && resultTime < 35f)
                 {
                     m_sRankImage.enabled = true;
-                    //m_clearRank.text = "<color=#87ceeb>S</color>";
                 }
                 else if (resultTime >= 35f && resultTime < 50f)
                 {
                     m_aRankImage.enabled = true;
-                    //m_clearRank.text = "<color=#dc143c>A</color>";
                 }
                 else if (resultTime >= 50f && resultTime < 70f)
                 {
                     m_bRankImage.enabled = true;
-                    //.text = "<color=#4169e1>B</color>";
                 }
                 else
                 {
                     m_cRankImage.enabled = true;
-                    //m_clearRank.text = "<color=#00fa9a>C</color>";
                 }
-            }  
+            }
             isDisPlay = false;
         }
     }
