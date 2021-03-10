@@ -32,11 +32,6 @@ public class ResultManager : MonoBehaviour
     {
         resultTime = m_playTimer - 2;
         audioSource = this.gameObject.GetComponent<AudioSource>();
-        m_ssRankImage.enabled = false;
-        m_sRankImage.enabled = false;
-        m_aRankImage.enabled = false;
-        m_bRankImage.enabled = false;
-        m_cRankImage.enabled = false;
     }
 
     void Update()
@@ -126,22 +121,27 @@ public class ResultManager : MonoBehaviour
             if (resultTime < PlayerPrefs.GetFloat("Stage1Score1"))
             {
                 PlayerPrefs.SetFloat("Stage1Score1", resultTime);
+                Debug.Log("Stage1の1位が更新されました");
             }
             else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score1") && resultTime < PlayerPrefs.GetFloat("Stage1Score2"))
             {
                 PlayerPrefs.SetFloat("Stage1Score2", resultTime);
+                Debug.Log("Stage1の2位が更新されました");
             }
             else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score2") && resultTime < PlayerPrefs.GetFloat("Stage1Score3"))
             {
                 PlayerPrefs.SetFloat("Stage1Score3", resultTime);
+                Debug.Log("Stage1の3位が更新されました");
             }
             else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score3") && resultTime < PlayerPrefs.GetFloat("Stage1Score4"))
             {
                 PlayerPrefs.SetFloat("Stage1Score4", resultTime);
+                Debug.Log("Stage1の4位が更新されました");
             }
             else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score4") && resultTime < PlayerPrefs.GetFloat("Stage1Score5"))
             {
                 PlayerPrefs.SetFloat("Stage1Score5", resultTime);
+                Debug.Log("Stage1の5位が更新されました");
             }
             else
             {
