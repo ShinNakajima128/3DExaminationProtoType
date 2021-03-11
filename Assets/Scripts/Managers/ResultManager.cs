@@ -116,94 +116,109 @@ public class ResultManager : MonoBehaviour
 
     void SaveClearTime()
     {
-        if (m_stageName == "Stage1")
+        if (SceneManager.GetActiveScene().name == "ClearScene" && m_stageName == "Stage1")
         {
-            if (resultTime < PlayerPrefs.GetFloat("Stage1Score1"))
+            if (resultTime < HIghScoreManager.m_Stage1Score[0])
             {
-                PlayerPrefs.SetFloat("Stage1Score1", resultTime);
-                Debug.Log("Stage1の1位が更新されました");
+                //PlayerPrefs.SetFloat("Stage1Score1", resultTime);
+                Debug.Log($"Stage1の1位が更新されました:{resultTime}");
+                HIghScoreManager.m_Stage1Score[0] = resultTime;
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score1") && resultTime < PlayerPrefs.GetFloat("Stage1Score2"))
+            else if (resultTime >= HIghScoreManager.m_Stage1Score[0] && resultTime < HIghScoreManager.m_Stage1Score[1])
             {
-                PlayerPrefs.SetFloat("Stage1Score2", resultTime);
+                //PlayerPrefs.SetFloat("Stage1Score2", resultTime);
+                HIghScoreManager.m_Stage1Score[1] = resultTime;
                 Debug.Log("Stage1の2位が更新されました");
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score2") && resultTime < PlayerPrefs.GetFloat("Stage1Score3"))
+            else if (resultTime >= HIghScoreManager.m_Stage1Score[1] && resultTime < HIghScoreManager.m_Stage1Score[2])
             {
-                PlayerPrefs.SetFloat("Stage1Score3", resultTime);
+                //PlayerPrefs.SetFloat("Stage1Score3", resultTime);
+                HIghScoreManager.m_Stage1Score[2] = resultTime;
                 Debug.Log("Stage1の3位が更新されました");
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score3") && resultTime < PlayerPrefs.GetFloat("Stage1Score4"))
+            else if (resultTime >= HIghScoreManager.m_Stage1Score[2] && resultTime < HIghScoreManager.m_Stage1Score[3])
             {
-                PlayerPrefs.SetFloat("Stage1Score4", resultTime);
+                //PlayerPrefs.SetFloat("Stage1Score4", resultTime);
+                HIghScoreManager.m_Stage1Score[3] = resultTime;
                 Debug.Log("Stage1の4位が更新されました");
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage1Score4") && resultTime < PlayerPrefs.GetFloat("Stage1Score5"))
+            else if (resultTime >= HIghScoreManager.m_Stage1Score[3] && resultTime < HIghScoreManager.m_Stage1Score[4])
             {
-                PlayerPrefs.SetFloat("Stage1Score5", resultTime);
+                //PlayerPrefs.SetFloat("Stage1Score5", resultTime);
+                HIghScoreManager.m_Stage1Score[4] = resultTime;
                 Debug.Log("Stage1の5位が更新されました");
             }
             else
             {
                 return;
             }
-            PlayerPrefs.Save();
+            //PlayerPrefs.Save();
         }
-        else if (m_stageName == "Stage2")
+        else if (SceneManager.GetActiveScene().name == "ClearScene" && m_stageName == "Stage2")
         {
-            if (resultTime < PlayerPrefs.GetFloat("Stage2Score1"))
+            if (resultTime < HIghScoreManager.m_Stage2Score[0])
             {
-                PlayerPrefs.SetFloat("Stage2Score1", resultTime);
+                //PlayerPrefs.SetFloat("Stage2Score1", resultTime);
+                HIghScoreManager.m_Stage2Score[0] = resultTime;
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage2Score1") && resultTime < PlayerPrefs.GetFloat("Stage2Score2"))
+            else if (resultTime >= HIghScoreManager.m_Stage2Score[0] && resultTime < HIghScoreManager.m_Stage2Score[1])
             {
-                PlayerPrefs.SetFloat("Stage2Score2", resultTime);
+                //PlayerPrefs.SetFloat("Stage2Score2", resultTime);
+                HIghScoreManager.m_Stage2Score[1] = resultTime;
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage2Score2") && resultTime < PlayerPrefs.GetFloat("Stage2Score3"))
+            else if (resultTime >= HIghScoreManager.m_Stage2Score[1] && resultTime < HIghScoreManager.m_Stage2Score[2])
             {
-                PlayerPrefs.SetFloat("Stage2Score3", resultTime);
+                //PlayerPrefs.SetFloat("Stage2Score3", resultTime);
+                HIghScoreManager.m_Stage2Score[2] = resultTime;
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage2Score3") && resultTime < PlayerPrefs.GetFloat("Stage2Score4"))
+            else if (resultTime >= HIghScoreManager.m_Stage2Score[2] && resultTime < HIghScoreManager.m_Stage2Score[3])
             {
-                PlayerPrefs.SetFloat("Stage2Score4", resultTime);
+                //PlayerPrefs.SetFloat("Stage2Score4", resultTime);
+                HIghScoreManager.m_Stage2Score[3] = resultTime;
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage2Score4") && resultTime < PlayerPrefs.GetFloat("Stage2Score5"))
+            else if (resultTime >= HIghScoreManager.m_Stage2Score[3] && resultTime < HIghScoreManager.m_Stage2Score[4])
             {
-                PlayerPrefs.SetFloat("Stage2Score5", resultTime);
+                //PlayerPrefs.SetFloat("Stage2Score5", resultTime);
+                HIghScoreManager.m_Stage2Score[4] = resultTime;
             }
             else
             {
                 return;
             }
-            PlayerPrefs.Save();
+            //PlayerPrefs.Save();
         }
-        else if (m_stageName == "Stage3")
+        else if (SceneManager.GetActiveScene().name == "ClearScene" && m_stageName == "Stage3")
         {
-            if (resultTime < PlayerPrefs.GetFloat("Stage3Score1"))
+            if (resultTime < HIghScoreManager.m_Stage3Score[0])
             {
-                PlayerPrefs.SetFloat("Stage3Score1", resultTime);
+                //PlayerPrefs.SetFloat("Stage3Score1", resultTime);
+                HIghScoreManager.m_Stage3Score[0] = resultTime;
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage3Score1") && resultTime < PlayerPrefs.GetFloat("Stage3Score2"))
+            else if (resultTime >= HIghScoreManager.m_Stage3Score[0] && resultTime < HIghScoreManager.m_Stage3Score[1])
             {
-                PlayerPrefs.SetFloat("Stage3Score2", resultTime);
+                //PlayerPrefs.SetFloat("Stage3Score2", resultTime);
+                HIghScoreManager.m_Stage3Score[1] = resultTime;
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage3Score2") && resultTime < PlayerPrefs.GetFloat("Stage3Score3"))
+            else if (resultTime >= HIghScoreManager.m_Stage3Score[1] && resultTime < HIghScoreManager.m_Stage3Score[2])
             {
-                PlayerPrefs.SetFloat("Stage3Score3", resultTime);
+                //PlayerPrefs.SetFloat("Stage3Score3", resultTime);
+                HIghScoreManager.m_Stage3Score[2] = resultTime;
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage3Score3") && resultTime < PlayerPrefs.GetFloat("Stage3Score4"))
+            else if (resultTime >= HIghScoreManager.m_Stage3Score[2] && resultTime < HIghScoreManager.m_Stage3Score[3])
             {
-                PlayerPrefs.SetFloat("Stage3Score4", resultTime);
+                //PlayerPrefs.SetFloat("Stage3Score4", resultTime);
+                HIghScoreManager.m_Stage3Score[3] = resultTime;
             }
-            else if (resultTime >= PlayerPrefs.GetFloat("Stage3Score4") && resultTime < PlayerPrefs.GetFloat("Stage3Score5"))
+            else if (resultTime >= HIghScoreManager.m_Stage3Score[3] && resultTime < HIghScoreManager.m_Stage3Score[4])
             {
-                PlayerPrefs.SetFloat("Stage3Score5", resultTime);
+                //PlayerPrefs.SetFloat("Stage3Score5", resultTime);
+                HIghScoreManager.m_Stage3Score[4] = resultTime;
             }
             else
             {
                 return;
             }
-            PlayerPrefs.Save();
+            //PlayerPrefs.Save();
         }
         else
         {

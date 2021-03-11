@@ -92,11 +92,6 @@ public class TitleManager : MonoBehaviour
         }
     }
 
-    public void Reset()
-    {
-        PlayerPrefs.DeleteAll();
-    }
-
     public void GameStart()
     {
         audioSource.PlayOneShot(m_loadSfx);

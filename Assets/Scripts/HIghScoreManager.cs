@@ -14,135 +14,242 @@ public class HIghScoreManager : MonoBehaviour
     [SerializeField] Text[] m_Stage2Scoretexts = null;
     [SerializeField] Text[] m_Stage3Scoretexts = null;
 
+    public static float[] m_Stage1Score = { 999.999f, 999.999f, 999.999f, 999.999f, 999.999f};
+    public static float[] m_Stage2Score = { 999.999f, 999.999f, 999.999f, 999.999f, 999.999f};
+    public static float[] m_Stage3Score = { 999.999f, 999.999f, 999.999f, 999.999f, 999.999f};
+
     void Start()
     {
         for (int i = 0; i < m_Stage1Scoretexts.Length; i++)
         {
-            m_Stage1Scoretexts[i].text =PlayerPrefs.GetFloat("Stage1Score" + i, 999.9f).ToString("F1");
+            m_Stage1Scoretexts[i].text = m_Stage1Score[i].ToString("F3");
         }
 
+        Debug.Log("Gradeを更新しました");
         Stage1SetGrade();
 
         for (int i = 0; i < m_Stage2Scoretexts.Length; i++)
         {
-            m_Stage2Scoretexts[i].text = PlayerPrefs.GetFloat("Stage2Score" + i, 999.9f).ToString("F1");
+            m_Stage2Scoretexts[i].text = m_Stage2Score[i].ToString("F3");
         }
 
         Stage2SetGrade();
 
         for (int i = 0; i < m_Stage3Scoretexts.Length; i++)
         {
-            m_Stage3Scoretexts[i].text = PlayerPrefs.GetFloat("Stage3Score" + i, 999.9f).ToString("F1");
+            m_Stage3Scoretexts[i].text = m_Stage3Score[i].ToString("F3");
         }
-
         Stage3SetGrade();
+        //Debug.Log(PlayerPrefs.GetFloat("StageScore1"));
+
     }
 
     void Stage1SetGrade()
     {
         ///Stage1の1位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage1Score1", 999.9f) < 20f)
+        if (m_Stage1Score[0] < 20f)
         {
             m_grade1Images[0].enabled = true;
+            m_grade1Images[1].enabled = false;
+            m_grade1Images[2].enabled = false;
+            m_grade1Images[3].enabled = false;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score1", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage1Score1", 999.9f) < 30f)
+        else if (m_Stage1Score[0] >= 20f && m_Stage1Score[0] < 30f)
         {
+            m_grade1Images[0].enabled = false;
             m_grade1Images[1].enabled = true;
+            m_grade1Images[2].enabled = false;
+            m_grade1Images[3].enabled = false;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score1", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage1Score1", 999.9f) < 40f)
+        else if (m_Stage1Score[0] >= 30f && m_Stage1Score[0] < 40f)
         {
+            m_grade1Images[0].enabled = false;
+            m_grade1Images[1].enabled = false;
             m_grade1Images[2].enabled = true;
+            m_grade1Images[3].enabled = false;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score1", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage1Score1", 999.9f) < 60f)
+        else if (m_Stage1Score[0] >= 40f && m_Stage1Score[0] < 60f)
         {
+            m_grade1Images[0].enabled = false;
+            m_grade1Images[1].enabled = false;
+            m_grade1Images[2].enabled = false;
             m_grade1Images[3].enabled = true;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score1", 999.9f) > 60f)
+        else if (m_Stage1Score[0] > 60f)
         {
+            m_grade1Images[0].enabled = false;
+            m_grade1Images[1].enabled = false;
+            m_grade1Images[2].enabled = false;
+            m_grade1Images[3].enabled = false;
             m_grade1Images[4].enabled = true;
         }
+
         ///Stage1の2位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage1Score2", 999.9f) < 20f)
+        if (m_Stage1Score[1] < 20f)
         {
             m_grade2Images[0].enabled = true;
+            m_grade2Images[1].enabled = false;
+            m_grade2Images[2].enabled = false;
+            m_grade2Images[3].enabled = false;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score2", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage1Score2", 999.9f) < 30f)
+        else if (m_Stage1Score[1] >= 20f && m_Stage1Score[1] < 30f)
         {
+            m_grade2Images[0].enabled = false;
             m_grade2Images[1].enabled = true;
+            m_grade2Images[2].enabled = false;
+            m_grade2Images[3].enabled = false;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score2", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage1Score2", 999.9f) < 40f)
+        else if (m_Stage1Score[1] >= 30f && m_Stage1Score[1] < 40f)
         {
+            m_grade2Images[0].enabled = false;
+            m_grade2Images[1].enabled = false;
             m_grade2Images[2].enabled = true;
+            m_grade2Images[3].enabled = false;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score2", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage1Score2", 999.9f) < 60f)
+        else if (m_Stage1Score[1] >= 40f && m_Stage1Score[1] < 60f)
         {
+            m_grade2Images[0].enabled = false;
+            m_grade2Images[1].enabled = false;
+            m_grade2Images[2].enabled = false;
             m_grade2Images[3].enabled = true;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score2", 999.9f) > 60f)
+        else if (m_Stage1Score[1] > 60f)
         {
+            m_grade2Images[0].enabled = false;
+            m_grade2Images[1].enabled = false;
+            m_grade2Images[2].enabled = false;
+            m_grade2Images[3].enabled = false;
             m_grade2Images[4].enabled = true;
         }
         ///Stage1の3位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage1Score3", 999.9f) < 20f)
+        if (m_Stage1Score[2] < 20f)
         {
             m_grade3Images[0].enabled = true;
+            m_grade3Images[1].enabled = false;
+            m_grade3Images[2].enabled = false;
+            m_grade3Images[3].enabled = false;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score3", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage1Score3", 999.9f) < 30f)
+        else if (m_Stage1Score[2] >= 20f && m_Stage1Score[2] < 30f)
         {
+            m_grade3Images[0].enabled = false;
             m_grade3Images[1].enabled = true;
+            m_grade3Images[2].enabled = false;
+            m_grade3Images[3].enabled = false;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score3", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage1Score3", 999.9f) < 40f)
+        else if (m_Stage1Score[2] >= 30f && m_Stage1Score[2] < 40f)
         {
+            m_grade3Images[0].enabled = false;
+            m_grade3Images[1].enabled = false;
             m_grade3Images[2].enabled = true;
+            m_grade3Images[3].enabled = false;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score3", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage1Score3", 999.9f) < 60f)
+        else if (m_Stage1Score[2] >= 40f && m_Stage1Score[2] < 60f)
         {
+            m_grade3Images[0].enabled = false;
+            m_grade3Images[1].enabled = false;
+            m_grade3Images[2].enabled = false;
             m_grade3Images[3].enabled = true;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score3", 999.9f) > 60f)
+        else if (m_Stage1Score[2] > 60f)
         {
+            m_grade3Images[0].enabled = false;
+            m_grade3Images[1].enabled = false;
+            m_grade3Images[2].enabled = false;
+            m_grade3Images[3].enabled = false;
             m_grade3Images[4].enabled = true;
         }
         ///Stage1の4位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage1Score4", 999.9f) < 20f)
+        if (m_Stage1Score[3] < 20f)
         {
             m_grade4Images[0].enabled = true;
+            m_grade4Images[1].enabled = false;
+            m_grade4Images[2].enabled = false;
+            m_grade4Images[3].enabled = false;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score4", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage1Score4", 999.9f) < 30f)
+        else if (m_Stage1Score[3] >= 20f && m_Stage1Score[3] < 30f)
         {
+            m_grade4Images[0].enabled = false;
             m_grade4Images[1].enabled = true;
+            m_grade4Images[2].enabled = false;
+            m_grade4Images[3].enabled = false;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score4", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage1Score4", 999.9f) < 40f)
+        else if (m_Stage1Score[3] >= 30f && m_Stage1Score[3] < 40f)
         {
+            m_grade4Images[0].enabled = false;
+            m_grade4Images[1].enabled = false;
             m_grade4Images[2].enabled = true;
+            m_grade4Images[3].enabled = false;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score4", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage1Score4", 999.9f) < 60f)
+        else if (m_Stage1Score[3] >= 40f && m_Stage1Score[3] < 60f)
         {
+            m_grade4Images[0].enabled = false;
+            m_grade4Images[1].enabled = false;
+            m_grade4Images[2].enabled = false;
             m_grade4Images[3].enabled = true;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score4", 999.9f) > 60f)
+        else if (m_Stage1Score[3] > 60f)
         {
+            m_grade4Images[0].enabled = false;
+            m_grade4Images[1].enabled = false;
+            m_grade4Images[2].enabled = false;
+            m_grade4Images[3].enabled = false;
             m_grade4Images[4].enabled = true;
         }
         ///Stage1の5位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage1Score5", 999.9f) < 20f)
+        if (m_Stage1Score[4] < 20f)
         {
             m_grade5Images[0].enabled = true;
+            m_grade5Images[1].enabled = false;
+            m_grade5Images[2].enabled = false;
+            m_grade5Images[3].enabled = false;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score5", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage1Score5", 999.9f) < 30f)
+        else if (m_Stage1Score[4] >= 20f && m_Stage1Score[4] < 30f)
         {
+            m_grade5Images[0].enabled = false;
             m_grade5Images[1].enabled = true;
+            m_grade5Images[2].enabled = false;
+            m_grade5Images[3].enabled = false;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score5", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage1Score5", 999.9f) < 40f)
+        else if (m_Stage1Score[4] >= 30f && m_Stage1Score[4] < 40f)
         {
+            m_grade5Images[0].enabled = false;
+            m_grade5Images[1].enabled = false;
             m_grade5Images[2].enabled = true;
+            m_grade5Images[3].enabled = false;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score5", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage1Score5", 999.9f) < 60f)
+        else if (m_Stage1Score[4] >= 40f && m_Stage1Score[4] < 60f)
         {
+            m_grade5Images[0].enabled = false;
+            m_grade5Images[1].enabled = false;
+            m_grade5Images[2].enabled = false;
             m_grade5Images[3].enabled = true;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage1Score5", 999.9f) > 60f)
+        else if (m_Stage1Score[4] > 60f)
         {
+            m_grade5Images[0].enabled = false;
+            m_grade5Images[1].enabled = false;
+            m_grade5Images[2].enabled = false;
+            m_grade5Images[3].enabled = false;
             m_grade5Images[4].enabled = true;
         }
     }
@@ -150,108 +257,209 @@ public class HIghScoreManager : MonoBehaviour
     void Stage2SetGrade()
     {
         ///Stage2の1位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage2Score1", 999.9f) < 20f)
+        if (m_Stage2Score[0] < 20f)
         {
             m_grade1Images[0].enabled = true;
+            m_grade1Images[1].enabled = false;
+            m_grade1Images[2].enabled = false;
+            m_grade1Images[3].enabled = false;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score1", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage2Score1", 999.9f) < 30f)
+        else if (m_Stage2Score[0] >= 20f && m_Stage2Score[0] < 30f)
         {
+            m_grade1Images[0].enabled = false;
             m_grade1Images[1].enabled = true;
+            m_grade1Images[2].enabled = false;
+            m_grade1Images[3].enabled = false;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score1", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage2Score1", 999.9f) < 40f)
+        else if (m_Stage2Score[0] >= 30f && m_Stage2Score[0] < 40f)
         {
+            m_grade1Images[0].enabled = false;
+            m_grade1Images[1].enabled = false;
             m_grade1Images[2].enabled = true;
+            m_grade1Images[3].enabled = false;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score1", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage2Score1", 999.9f) < 60f)
+        else if (m_Stage2Score[0] >= 40f && m_Stage2Score[0] < 60f)
         {
+            m_grade1Images[0].enabled = false;
+            m_grade1Images[1].enabled = false;
+            m_grade1Images[2].enabled = false;
             m_grade1Images[3].enabled = true;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score1", 999.9f) > 60f)
+        else if (m_Stage2Score[0] > 60f)
         {
+            m_grade1Images[0].enabled = false;
+            m_grade1Images[1].enabled = false;
+            m_grade1Images[2].enabled = false;
+            m_grade1Images[3].enabled = false;
             m_grade1Images[4].enabled = true;
         }
+
         ///Stage2の2位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage2Score2", 999.9f) < 20f)
+        if (m_Stage2Score[1] < 20f)
         {
             m_grade2Images[0].enabled = true;
+            m_grade2Images[1].enabled = false;
+            m_grade2Images[2].enabled = false;
+            m_grade2Images[3].enabled = false;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score2", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage2Score2", 999.9f) < 30f)
+        else if (m_Stage2Score[1] >= 20f && m_Stage2Score[1] < 30f)
         {
+            m_grade2Images[0].enabled = false;
             m_grade2Images[1].enabled = true;
+            m_grade2Images[2].enabled = false;
+            m_grade2Images[3].enabled = false;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score2", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage2Score2", 999.9f) < 40f)
+        else if (m_Stage2Score[1] >= 30f && m_Stage2Score[1] < 40f)
         {
+            m_grade2Images[0].enabled = false;
+            m_grade2Images[1].enabled = false;
             m_grade2Images[2].enabled = true;
+            m_grade2Images[3].enabled = false;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score2", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage2Score2", 999.9f) < 60f)
+        else if (m_Stage2Score[1] >= 40f && m_Stage2Score[1] < 60f)
         {
+            m_grade2Images[0].enabled = false;
+            m_grade2Images[1].enabled = false;
+            m_grade2Images[2].enabled = false;
             m_grade2Images[3].enabled = true;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score2", 999.9f) > 60f)
+        else if (m_Stage2Score[1] > 60f)
         {
+            m_grade2Images[0].enabled = false;
+            m_grade2Images[1].enabled = false;
+            m_grade2Images[2].enabled = false;
+            m_grade2Images[3].enabled = false;
             m_grade2Images[4].enabled = true;
         }
         ///Stage2の3位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage2Score3", 999.9f) < 20f)
+        if (m_Stage2Score[2] < 20f)
         {
             m_grade3Images[0].enabled = true;
+            m_grade3Images[1].enabled = false;
+            m_grade3Images[2].enabled = false;
+            m_grade3Images[3].enabled = false;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score3", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage2Score3", 999.9f) < 30f)
+        else if (m_Stage2Score[2] >= 20f && m_Stage2Score[2] < 30f)
         {
+            m_grade3Images[0].enabled = false;
             m_grade3Images[1].enabled = true;
+            m_grade3Images[2].enabled = false;
+            m_grade3Images[3].enabled = false;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score3", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage2Score3", 999.9f) < 40f)
+        else if (m_Stage2Score[2] >= 30f && m_Stage2Score[2] < 40f)
         {
+            m_grade3Images[0].enabled = false;
+            m_grade3Images[1].enabled = false;
             m_grade3Images[2].enabled = true;
+            m_grade3Images[3].enabled = false;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score3", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage2Score3", 999.9f) < 60f)
+        else if (m_Stage2Score[2] >= 40f && m_Stage2Score[2] < 60f)
         {
+            m_grade3Images[0].enabled = false;
+            m_grade3Images[1].enabled = false;
+            m_grade3Images[2].enabled = false;
             m_grade3Images[3].enabled = true;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score3", 999.9f) > 60f)
+        else if (m_Stage2Score[2] > 60f)
         {
+            m_grade3Images[0].enabled = false;
+            m_grade3Images[1].enabled = false;
+            m_grade3Images[2].enabled = false;
+            m_grade3Images[3].enabled = false;
             m_grade3Images[4].enabled = true;
         }
         ///Stage2の4位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage2Score4", 999.9f) < 20f)
+        if (m_Stage2Score[3] < 20f)
         {
             m_grade4Images[0].enabled = true;
+            m_grade4Images[1].enabled = false;
+            m_grade4Images[2].enabled = false;
+            m_grade4Images[3].enabled = false;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score4", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage2Score4", 999.9f) < 30f)
+        else if (m_Stage2Score[3] >= 20f && m_Stage2Score[3] < 30f)
         {
+            m_grade4Images[0].enabled = false;
             m_grade4Images[1].enabled = true;
+            m_grade4Images[2].enabled = false;
+            m_grade4Images[3].enabled = false;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score4", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage2Score4", 999.9f) < 40f)
+        else if (m_Stage2Score[3] >= 30f && m_Stage2Score[3] < 40f)
         {
+            m_grade4Images[0].enabled = false;
+            m_grade4Images[1].enabled = false;
             m_grade4Images[2].enabled = true;
+            m_grade4Images[3].enabled = false;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score4", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage2Score4", 999.9f) < 60f)
+        else if (m_Stage2Score[3] >= 40f && m_Stage2Score[3] < 60f)
         {
+            m_grade4Images[0].enabled = false;
+            m_grade4Images[1].enabled = false;
+            m_grade4Images[2].enabled = false;
             m_grade4Images[3].enabled = true;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score4", 999.9f) > 60f)
+        else if (m_Stage2Score[3] > 60f)
         {
+            m_grade4Images[0].enabled = false;
+            m_grade4Images[1].enabled = false;
+            m_grade4Images[2].enabled = false;
+            m_grade4Images[3].enabled = false;
             m_grade4Images[4].enabled = true;
         }
         ///Stage2の5位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage2Score5", 999.9f) < 20f)
+        if (m_Stage2Score[4] < 20f)
         {
             m_grade5Images[0].enabled = true;
+            m_grade5Images[1].enabled = false;
+            m_grade5Images[2].enabled = false;
+            m_grade5Images[3].enabled = false;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score5", 999.9f) >= 20f && PlayerPrefs.GetFloat("Stage2Score5", 999.9f) < 30f)
+        else if (m_Stage2Score[4] >= 20f && m_Stage2Score[4] < 30f)
         {
+            m_grade5Images[0].enabled = false;
             m_grade5Images[1].enabled = true;
+            m_grade5Images[2].enabled = false;
+            m_grade5Images[3].enabled = false;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score5", 999.9f) >= 30f && PlayerPrefs.GetFloat("Stage2Score5", 999.9f) < 40f)
+        else if (m_Stage2Score[4] >= 30f && m_Stage2Score[4] < 40f)
         {
+            m_grade5Images[0].enabled = false;
+            m_grade5Images[1].enabled = false;
             m_grade5Images[2].enabled = true;
+            m_grade5Images[3].enabled = false;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score5", 999.9f) >= 40f && PlayerPrefs.GetFloat("Stage2Score5", 999.9f) < 60f)
+        else if (m_Stage2Score[4] >= 40f && m_Stage2Score[4] < 60f)
         {
+            m_grade5Images[0].enabled = false;
+            m_grade5Images[1].enabled = false;
+            m_grade5Images[2].enabled = false;
             m_grade5Images[3].enabled = true;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage2Score5", 999.9f) > 60f)
+        else if (m_Stage2Score[4] > 60f)
         {
+            m_grade5Images[0].enabled = false;
+            m_grade5Images[1].enabled = false;
+            m_grade5Images[2].enabled = false;
+            m_grade5Images[3].enabled = false;
             m_grade5Images[4].enabled = true;
         }
     }
@@ -259,108 +467,212 @@ public class HIghScoreManager : MonoBehaviour
     void Stage3SetGrade()
     {
         ///Stage3の1位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage3Score1", 999.9f) < 25f)
+        if (m_Stage3Score[0] < 25f)
         {
             m_grade1Images[0].enabled = true;
+            m_grade1Images[1].enabled = false;
+            m_grade1Images[2].enabled = false;
+            m_grade1Images[3].enabled = false;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score1", 999.9f) >= 25f && PlayerPrefs.GetFloat("Stage3Score1", 999.9f) < 35f)
+        else if (m_Stage3Score[0] >= 25f && m_Stage3Score[0] < 35f)
         {
+            m_grade1Images[0].enabled = false;
             m_grade1Images[1].enabled = true;
+            m_grade1Images[2].enabled = false;
+            m_grade1Images[3].enabled = false;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score1", 999.9f) >= 35f && PlayerPrefs.GetFloat("Stage3Score1", 999.9f) < 50f)
+        else if (m_Stage3Score[0] >= 35f && m_Stage3Score[0] < 50f)
         {
+            m_grade1Images[0].enabled = false;
+            m_grade1Images[1].enabled = false;
             m_grade1Images[2].enabled = true;
+            m_grade1Images[3].enabled = false;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score1", 999.9f) >= 50f && PlayerPrefs.GetFloat("Stage3Score1", 999.9f) < 70f)
+        else if (m_Stage3Score[0] >= 50f && m_Stage3Score[0] < 70f)
         {
+            m_grade1Images[0].enabled = false;
+            m_grade1Images[1].enabled = false;
+            m_grade1Images[2].enabled = false;
             m_grade1Images[3].enabled = true;
+            m_grade1Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score1", 999.9f) > 70f)
+        else if (m_Stage3Score[0] > 70f)
         {
+            m_grade1Images[0].enabled = false;
+            m_grade1Images[1].enabled = false;
+            m_grade1Images[2].enabled = false;
+            m_grade1Images[3].enabled = false;
             m_grade1Images[4].enabled = true;
         }
+
         ///Stage3の2位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage3Score2", 999.9f) < 25f)
+        if (m_Stage3Score[1] < 25f)
         {
             m_grade2Images[0].enabled = true;
+            m_grade2Images[1].enabled = false;
+            m_grade2Images[2].enabled = false;
+            m_grade2Images[3].enabled = false;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score2", 999.9f) >= 25f && PlayerPrefs.GetFloat("Stage3Score2", 999.9f) < 35f)
+        else if (m_Stage3Score[1] >= 25f && m_Stage3Score[1] < 35f)
         {
+            m_grade2Images[0].enabled = false;
             m_grade2Images[1].enabled = true;
+            m_grade2Images[2].enabled = false;
+            m_grade2Images[3].enabled = false;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score2", 999.9f) >= 35f && PlayerPrefs.GetFloat("Stage3Score2", 999.9f) < 50f)
+        else if (m_Stage3Score[1] >= 35f && m_Stage3Score[1] < 50f)
         {
+            m_grade2Images[0].enabled = false;
+            m_grade2Images[1].enabled = false;
             m_grade2Images[2].enabled = true;
+            m_grade2Images[3].enabled = false;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score2", 999.9f) >= 50f && PlayerPrefs.GetFloat("Stage3Score2", 999.9f) < 70f)
+        else if (m_Stage3Score[1] >= 50f && m_Stage3Score[1] < 70f)
         {
+            m_grade2Images[0].enabled = false;
+            m_grade2Images[1].enabled = false;
+            m_grade2Images[2].enabled = false;
             m_grade2Images[3].enabled = true;
+            m_grade2Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score2", 999.9f) > 70f)
+        else if (m_Stage3Score[1] > 70f)
         {
+            m_grade2Images[0].enabled = false;
+            m_grade2Images[1].enabled = false;
+            m_grade2Images[2].enabled = false;
+            m_grade2Images[3].enabled = false;
             m_grade2Images[4].enabled = true;
         }
+
         ///Stage3の3位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage3Score3", 999.9f) < 25f)
+        if (m_Stage3Score[2] < 25f)
         {
             m_grade3Images[0].enabled = true;
+            m_grade3Images[1].enabled = false;
+            m_grade3Images[2].enabled = false;
+            m_grade3Images[3].enabled = false;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score3", 999.9f) >= 25f && PlayerPrefs.GetFloat("Stage3Score3", 999.9f) < 35f)
+        else if (m_Stage3Score[2] >= 25f && m_Stage3Score[2] < 35f)
         {
+            m_grade3Images[0].enabled = false;
             m_grade3Images[1].enabled = true;
+            m_grade3Images[2].enabled = false;
+            m_grade3Images[3].enabled = false;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score3", 999.9f) >= 35f && PlayerPrefs.GetFloat("Stage3Score3", 999.9f) < 50f)
+        else if (m_Stage3Score[2] >= 35f && m_Stage3Score[2] < 50f)
         {
+            m_grade3Images[0].enabled = false;
+            m_grade3Images[1].enabled = false;
             m_grade3Images[2].enabled = true;
+            m_grade3Images[3].enabled = false;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score3", 999.9f) >= 50f && PlayerPrefs.GetFloat("Stage3Score3", 999.9f) < 70f)
+        else if (m_Stage3Score[2] >= 50f && m_Stage3Score[2] < 70f)
         {
+            m_grade3Images[0].enabled = false;
+            m_grade3Images[1].enabled = false;
+            m_grade3Images[2].enabled = false;
             m_grade3Images[3].enabled = true;
+            m_grade3Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score3", 999.9f) > 70f)
+        else if (m_Stage3Score[2] > 70f)
         {
+            m_grade3Images[0].enabled = false;
+            m_grade3Images[1].enabled = false;
+            m_grade3Images[2].enabled = false;
+            m_grade3Images[3].enabled = false;
             m_grade3Images[4].enabled = true;
         }
+
         ///Stage3の4位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage3Score4", 999.9f) < 25f)
+        if (m_Stage3Score[3] < 25f)
         {
             m_grade4Images[0].enabled = true;
+            m_grade4Images[1].enabled = false;
+            m_grade4Images[2].enabled = false;
+            m_grade4Images[3].enabled = false;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score4", 999.9f) >= 25f && PlayerPrefs.GetFloat("Stage3Score4", 999.9f) < 35f)
+        else if (m_Stage3Score[3] >= 25f && m_Stage3Score[3] < 35f)
         {
+            m_grade4Images[0].enabled = false;
             m_grade4Images[1].enabled = true;
+            m_grade4Images[2].enabled = false;
+            m_grade4Images[3].enabled = false;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score4", 999.9f) >= 35f && PlayerPrefs.GetFloat("Stage3Score4", 999.9f) < 50f)
+        else if (m_Stage3Score[3] >= 35f && m_Stage3Score[3] < 50f)
         {
+            m_grade4Images[0].enabled = false;
+            m_grade4Images[1].enabled = false;
             m_grade4Images[2].enabled = true;
+            m_grade4Images[3].enabled = false;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score4", 999.9f) >= 50f && PlayerPrefs.GetFloat("Stage3Score4", 999.9f) < 70f)
+        else if (m_Stage3Score[3] >= 50f && m_Stage3Score[3] < 70f)
         {
+            m_grade4Images[0].enabled = false;
+            m_grade4Images[1].enabled = false;
+            m_grade4Images[2].enabled = false;
             m_grade4Images[3].enabled = true;
+            m_grade4Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score4", 999.9f) > 70f)
+        else if (m_Stage3Score[3] > 70f)
         {
+            m_grade4Images[0].enabled = false;
+            m_grade4Images[1].enabled = false;
+            m_grade4Images[2].enabled = false;
+            m_grade4Images[3].enabled = false;
             m_grade4Images[4].enabled = true;
         }
+
         ///Stage3の5位のグレードを表示する
-        if (PlayerPrefs.GetFloat("Stage3Score5", 999.9f) < 25f)
+        if (m_Stage3Score[4] < 25f)
         {
             m_grade5Images[0].enabled = true;
+            m_grade5Images[1].enabled = false;
+            m_grade5Images[2].enabled = false;
+            m_grade5Images[3].enabled = false;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score5", 999.9f) >= 25f && PlayerPrefs.GetFloat("Stage3Score5", 999.9f) < 35f)
+        else if (m_Stage3Score[4] >= 25f && m_Stage3Score[4] < 35f)
         {
+            m_grade5Images[0].enabled = false;
             m_grade5Images[1].enabled = true;
+            m_grade5Images[2].enabled = false;
+            m_grade5Images[3].enabled = false;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score5", 999.9f) >= 35f && PlayerPrefs.GetFloat("Stage3Score5", 999.9f) < 50f)
+        else if (m_Stage3Score[4] >= 35f && m_Stage3Score[4] < 50f)
         {
+            m_grade5Images[0].enabled = false;
+            m_grade5Images[1].enabled = false;
             m_grade5Images[2].enabled = true;
+            m_grade5Images[3].enabled = false;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score5", 999.9f) >= 50f && PlayerPrefs.GetFloat("Stage3Score5", 999.9f) < 70f)
+        else if (m_Stage3Score[4] >= 50f && m_Stage3Score[4] < 70f)
         {
+            m_grade5Images[0].enabled = false;
+            m_grade5Images[1].enabled = false;
+            m_grade5Images[2].enabled = false;
             m_grade5Images[3].enabled = true;
+            m_grade5Images[4].enabled = false;
         }
-        else if (PlayerPrefs.GetFloat("Stage3Score5", 999.9f) > 70f)
+        else if (m_Stage3Score[4] > 70f)
         {
+            m_grade5Images[0].enabled = false;
+            m_grade5Images[1].enabled = false;
+            m_grade5Images[2].enabled = false;
+            m_grade5Images[3].enabled = false;
             m_grade5Images[4].enabled = true;
         }
     }
