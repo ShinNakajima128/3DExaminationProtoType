@@ -122,23 +122,33 @@ public class ResultManager : MonoBehaviour
             {
                 //PlayerPrefs.SetFloat("Stage1Score1", resultTime);
                 Debug.Log($"Stage1の1位が更新されました:{resultTime}");
+                HIghScoreManager.m_Stage1Score[4] = HIghScoreManager.m_Stage1Score[3];
+                HIghScoreManager.m_Stage1Score[3] = HIghScoreManager.m_Stage1Score[2];
+                HIghScoreManager.m_Stage1Score[2] = HIghScoreManager.m_Stage1Score[1];
+                HIghScoreManager.m_Stage1Score[1] = HIghScoreManager.m_Stage1Score[0];
                 HIghScoreManager.m_Stage1Score[0] = resultTime;
             }
             else if (resultTime >= HIghScoreManager.m_Stage1Score[0] && resultTime < HIghScoreManager.m_Stage1Score[1])
             {
                 //PlayerPrefs.SetFloat("Stage1Score2", resultTime);
+                HIghScoreManager.m_Stage1Score[4] = HIghScoreManager.m_Stage1Score[3];
+                HIghScoreManager.m_Stage1Score[3] = HIghScoreManager.m_Stage1Score[2];
+                HIghScoreManager.m_Stage1Score[2] = HIghScoreManager.m_Stage1Score[1];
                 HIghScoreManager.m_Stage1Score[1] = resultTime;
                 Debug.Log("Stage1の2位が更新されました");
             }
             else if (resultTime >= HIghScoreManager.m_Stage1Score[1] && resultTime < HIghScoreManager.m_Stage1Score[2])
             {
                 //PlayerPrefs.SetFloat("Stage1Score3", resultTime);
+                HIghScoreManager.m_Stage1Score[4] = HIghScoreManager.m_Stage1Score[3];
+                HIghScoreManager.m_Stage1Score[3] = HIghScoreManager.m_Stage1Score[2];
                 HIghScoreManager.m_Stage1Score[2] = resultTime;
                 Debug.Log("Stage1の3位が更新されました");
             }
             else if (resultTime >= HIghScoreManager.m_Stage1Score[2] && resultTime < HIghScoreManager.m_Stage1Score[3])
             {
                 //PlayerPrefs.SetFloat("Stage1Score4", resultTime);
+                HIghScoreManager.m_Stage1Score[4] = HIghScoreManager.m_Stage1Score[3];
                 HIghScoreManager.m_Stage1Score[3] = resultTime;
                 Debug.Log("Stage1の4位が更新されました");
             }
@@ -159,21 +169,31 @@ public class ResultManager : MonoBehaviour
             if (resultTime < HIghScoreManager.m_Stage2Score[0])
             {
                 //PlayerPrefs.SetFloat("Stage2Score1", resultTime);
+                HIghScoreManager.m_Stage2Score[4] = HIghScoreManager.m_Stage2Score[3];
+                HIghScoreManager.m_Stage2Score[3] = HIghScoreManager.m_Stage2Score[2];
+                HIghScoreManager.m_Stage2Score[2] = HIghScoreManager.m_Stage2Score[1];
+                HIghScoreManager.m_Stage2Score[1] = HIghScoreManager.m_Stage2Score[0];
                 HIghScoreManager.m_Stage2Score[0] = resultTime;
             }
             else if (resultTime >= HIghScoreManager.m_Stage2Score[0] && resultTime < HIghScoreManager.m_Stage2Score[1])
             {
                 //PlayerPrefs.SetFloat("Stage2Score2", resultTime);
+                HIghScoreManager.m_Stage2Score[4] = HIghScoreManager.m_Stage2Score[3];
+                HIghScoreManager.m_Stage2Score[3] = HIghScoreManager.m_Stage2Score[2];
+                HIghScoreManager.m_Stage2Score[2] = HIghScoreManager.m_Stage2Score[1];
                 HIghScoreManager.m_Stage2Score[1] = resultTime;
             }
             else if (resultTime >= HIghScoreManager.m_Stage2Score[1] && resultTime < HIghScoreManager.m_Stage2Score[2])
             {
                 //PlayerPrefs.SetFloat("Stage2Score3", resultTime);
+                HIghScoreManager.m_Stage2Score[4] = HIghScoreManager.m_Stage2Score[3];
+                HIghScoreManager.m_Stage2Score[3] = HIghScoreManager.m_Stage2Score[2];
                 HIghScoreManager.m_Stage2Score[2] = resultTime;
             }
             else if (resultTime >= HIghScoreManager.m_Stage2Score[2] && resultTime < HIghScoreManager.m_Stage2Score[3])
             {
                 //PlayerPrefs.SetFloat("Stage2Score4", resultTime);
+                HIghScoreManager.m_Stage2Score[4] = HIghScoreManager.m_Stage2Score[3];
                 HIghScoreManager.m_Stage2Score[3] = resultTime;
             }
             else if (resultTime >= HIghScoreManager.m_Stage2Score[3] && resultTime < HIghScoreManager.m_Stage2Score[4])
@@ -192,21 +212,31 @@ public class ResultManager : MonoBehaviour
             if (resultTime < HIghScoreManager.m_Stage3Score[0])
             {
                 //PlayerPrefs.SetFloat("Stage3Score1", resultTime);
+                HIghScoreManager.m_Stage3Score[4] = HIghScoreManager.m_Stage3Score[3];
+                HIghScoreManager.m_Stage3Score[3] = HIghScoreManager.m_Stage3Score[2];
+                HIghScoreManager.m_Stage3Score[2] = HIghScoreManager.m_Stage3Score[1];
+                HIghScoreManager.m_Stage3Score[1] = HIghScoreManager.m_Stage3Score[0];
                 HIghScoreManager.m_Stage3Score[0] = resultTime;
             }
             else if (resultTime >= HIghScoreManager.m_Stage3Score[0] && resultTime < HIghScoreManager.m_Stage3Score[1])
             {
                 //PlayerPrefs.SetFloat("Stage3Score2", resultTime);
+                HIghScoreManager.m_Stage2Score[4] = HIghScoreManager.m_Stage2Score[3];
+                HIghScoreManager.m_Stage2Score[3] = HIghScoreManager.m_Stage2Score[2];
+                HIghScoreManager.m_Stage2Score[2] = HIghScoreManager.m_Stage2Score[1];
                 HIghScoreManager.m_Stage3Score[1] = resultTime;
             }
             else if (resultTime >= HIghScoreManager.m_Stage3Score[1] && resultTime < HIghScoreManager.m_Stage3Score[2])
             {
                 //PlayerPrefs.SetFloat("Stage3Score3", resultTime);
+                HIghScoreManager.m_Stage2Score[4] = HIghScoreManager.m_Stage2Score[3];
+                HIghScoreManager.m_Stage2Score[3] = HIghScoreManager.m_Stage2Score[2];
                 HIghScoreManager.m_Stage3Score[2] = resultTime;
             }
             else if (resultTime >= HIghScoreManager.m_Stage3Score[2] && resultTime < HIghScoreManager.m_Stage3Score[3])
             {
                 //PlayerPrefs.SetFloat("Stage3Score4", resultTime);
+                HIghScoreManager.m_Stage2Score[4] = HIghScoreManager.m_Stage2Score[3];
                 HIghScoreManager.m_Stage3Score[3] = resultTime;
             }
             else if (resultTime >= HIghScoreManager.m_Stage3Score[3] && resultTime < HIghScoreManager.m_Stage3Score[4])

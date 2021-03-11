@@ -24,7 +24,7 @@ public class TitleManager : MonoBehaviour
     [SerializeField] GameObject m_stage1Scores = null;
     [SerializeField] GameObject m_stage2Scores = null;
     [SerializeField] GameObject m_stage3Scores = null;
-
+    GameObject highScore;
     FadeController FC;
     AudioSource audioSource;
     int loadType = 0;
@@ -37,7 +37,10 @@ public class TitleManager : MonoBehaviour
         FC.isFadeIn = true;
         m_menu.SetActive(true);
         m_menuFirstButton.Select();
-        m_menu.SetActive(false);   
+        m_menu.SetActive(false);
+        highScore = GameObject.Find("HighScoreUI");
+        m_highScoreMenu.SetActive(false);
+        Debug.Log(highScore);
     }
 
     void Update()
@@ -157,6 +160,10 @@ public class TitleManager : MonoBehaviour
         m_rankStageSelectMenu.SetActive(false);
         m_highScoreMenu.SetActive(true);
         m_stage1Scores.SetActive(true);
+
+        HIghScoreManager h1 = highScore.GetComponent<HIghScoreManager>();
+        h1.Stage1SetGrade();
+
         m_StageName.enabled = true;
         m_StageName.text = "STAGE1";
     }
@@ -168,6 +175,10 @@ public class TitleManager : MonoBehaviour
         m_rankStageSelectMenu.SetActive(false);
         m_highScoreMenu.SetActive(true);
         m_stage2Scores.SetActive(true);
+
+        HIghScoreManager h2 = highScore.GetComponent<HIghScoreManager>();
+        h2.Stage2SetGrade();
+
         m_StageName.enabled = true;
         m_StageName.text = "STAGE2";
     }
@@ -179,6 +190,10 @@ public class TitleManager : MonoBehaviour
         m_rankStageSelectMenu.SetActive(false);
         m_highScoreMenu.SetActive(true);
         m_stage3Scores.SetActive(true);
+
+        HIghScoreManager h3 = highScore.GetComponent<HIghScoreManager>();
+        h3.Stage3SetGrade();
+        Debug.Log("Stage3のランキングを表示した");
         m_StageName.enabled = true;
         m_StageName.text = "STAGE3";
     }

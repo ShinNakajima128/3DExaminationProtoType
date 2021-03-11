@@ -20,32 +20,37 @@ public class HIghScoreManager : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < m_Stage1Scoretexts.Length; i++)
-        {
-            m_Stage1Scoretexts[i].text = m_Stage1Score[i].ToString("F3");
-        }
+        //for (int i = 0; i < m_Stage1Scoretexts.Length; i++)
+        //{
+        //    m_Stage1Scoretexts[i].text = m_Stage1Score[i].ToString("F3");
+        //}
 
-        Debug.Log("Gradeを更新しました");
-        Stage1SetGrade();
+        ////Debug.Log("Gradeを更新しました");
+        //Stage1SetGrade();
 
-        for (int i = 0; i < m_Stage2Scoretexts.Length; i++)
-        {
-            m_Stage2Scoretexts[i].text = m_Stage2Score[i].ToString("F3");
-        }
+        //for (int i = 0; i < m_Stage2Scoretexts.Length; i++)
+        //{
+        //    m_Stage2Scoretexts[i].text = m_Stage2Score[i].ToString("F3");
+        //}
 
-        Stage2SetGrade();
+        //Stage2SetGrade();
 
-        for (int i = 0; i < m_Stage3Scoretexts.Length; i++)
-        {
-            m_Stage3Scoretexts[i].text = m_Stage3Score[i].ToString("F3");
-        }
-        Stage3SetGrade();
+        //for (int i = 0; i < m_Stage3Scoretexts.Length; i++)
+        //{
+        //    m_Stage3Scoretexts[i].text = m_Stage3Score[i].ToString("F3");
+        //}
+        //Stage3SetGrade();
         //Debug.Log(PlayerPrefs.GetFloat("StageScore1"));
 
     }
 
-    void Stage1SetGrade()
+    public void Stage1SetGrade()
     {
+        for (int i = 0; i < m_Stage1Scoretexts.Length; i++)
+        {
+            m_Stage1Scoretexts[i].text = m_Stage1Score[i].ToString("F3");
+        }
+        Debug.Log("Stage1のGradeを更新しました");
         ///Stage1の1位のグレードを表示する
         if (m_Stage1Score[0] < 20f)
         {
@@ -254,8 +259,15 @@ public class HIghScoreManager : MonoBehaviour
         }
     }
 
-    void Stage2SetGrade()
+    public void Stage2SetGrade()
     {
+        for (int i = 0; i < m_Stage2Scoretexts.Length; i++)
+        {
+            m_Stage2Scoretexts[i].text = m_Stage2Score[i].ToString("F3");
+        }
+
+        Debug.Log("Stage2のGradeを更新しました");
+
         ///Stage2の1位のグレードを表示する
         if (m_Stage2Score[0] < 20f)
         {
@@ -464,8 +476,15 @@ public class HIghScoreManager : MonoBehaviour
         }
     }
 
-    void Stage3SetGrade()
+    public void Stage3SetGrade()
     {
+        for (int i = 0; i < m_Stage3Scoretexts.Length; i++)
+        {
+            m_Stage3Scoretexts[i].text = m_Stage3Score[i].ToString("F3");
+        }
+
+        Debug.Log("Stage3のGradeを更新しました");
+
         ///Stage3の1位のグレードを表示する
         if (m_Stage3Score[0] < 25f)
         {
