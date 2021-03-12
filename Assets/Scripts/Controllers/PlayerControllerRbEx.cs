@@ -49,12 +49,14 @@ public class PlayerControllerRbEx : MonoBehaviour
     Rigidbody m_rb;
     /// <summary> プレイヤーのAnimator </summary>
     Animator m_anim;
+    int isJumpTime = 0;
 
     void Start()
     {
         m_rb = GetComponent<Rigidbody>();
         m_anim = GetComponent<Animator>();
     }
+
     public bool PlayerOperation
     {
         get { return m_playerOperation; }
@@ -63,6 +65,9 @@ public class PlayerControllerRbEx : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(isJumpTime);
+        IsJumped();
+
         if (Time.timeScale == 1f)
         {
             playerAnimation();
@@ -113,14 +118,25 @@ public class PlayerControllerRbEx : MonoBehaviour
     /// <returns></returns>
     bool IsGrounded()
     {
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 3f);
+        bool isGrounded = hitColliders.Length > 0;
+        return isGrounded;
+    }
+
+    int IsJumped()
+    {
         // Physics.Linecast() を使って足元から線を張り、そこに何かが衝突していたら true とする
         Vector3 start = this.transform.position;   // start: オブジェクトの中心
         Vector3 end = start + Vector3.down * m_isGroundedLength;  // end: start から真下の地点
         Debug.DrawLine(start, end); // 動作確認用に Scene ウィンドウ上で線を表示する
         bool isGrounded = Physics.Linecast(start, end); // 引いたラインに何かがぶつかっていたら true とする
-        return isGrounded;
-    }
 
+        if (isGrounded)
+        {
+            isJumpTime = 0;
+        }
+        return isJumpTime;
+    }
     void PlayerMove()
     {
         // 方向の入力を取得し、方向を求める
@@ -155,9 +171,10 @@ public class PlayerControllerRbEx : MonoBehaviour
         //Aボタンの入力を取得し、接地している時にジャンプする
         if (Input.GetButtonDown("A"))
         {
-            if (IsGrounded())
+            if (IsGrounded() && IsJumped() == 0)
             {
                 JumpMove();
+                isJumpTime = 1;
             }
         }
     }

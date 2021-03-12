@@ -18,32 +18,6 @@ public class HIghScoreManager : MonoBehaviour
     public static float[] m_Stage2Score = { 999.999f, 999.999f, 999.999f, 999.999f, 999.999f};
     public static float[] m_Stage3Score = { 999.999f, 999.999f, 999.999f, 999.999f, 999.999f};
 
-    void Start()
-    {
-        //for (int i = 0; i < m_Stage1Scoretexts.Length; i++)
-        //{
-        //    m_Stage1Scoretexts[i].text = m_Stage1Score[i].ToString("F3");
-        //}
-
-        ////Debug.Log("Gradeを更新しました");
-        //Stage1SetGrade();
-
-        //for (int i = 0; i < m_Stage2Scoretexts.Length; i++)
-        //{
-        //    m_Stage2Scoretexts[i].text = m_Stage2Score[i].ToString("F3");
-        //}
-
-        //Stage2SetGrade();
-
-        //for (int i = 0; i < m_Stage3Scoretexts.Length; i++)
-        //{
-        //    m_Stage3Scoretexts[i].text = m_Stage3Score[i].ToString("F3");
-        //}
-        //Stage3SetGrade();
-        //Debug.Log(PlayerPrefs.GetFloat("StageScore1"));
-
-    }
-
     public void Stage1SetGrade()
     {
         for (int i = 0; i < m_Stage1Scoretexts.Length; i++)
