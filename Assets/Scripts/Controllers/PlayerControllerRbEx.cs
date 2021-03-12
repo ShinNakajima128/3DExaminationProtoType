@@ -65,7 +65,6 @@ public class PlayerControllerRbEx : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isJumpTime);
         IsJumped();
 
         if (Time.timeScale == 1f)
