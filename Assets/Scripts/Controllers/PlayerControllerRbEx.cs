@@ -118,7 +118,7 @@ public class PlayerControllerRbEx : MonoBehaviour
     /// <returns></returns>
     bool IsGrounded()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 3f);
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 1f);
         bool isGrounded = hitColliders.Length > 0;
         return isGrounded;
     }
