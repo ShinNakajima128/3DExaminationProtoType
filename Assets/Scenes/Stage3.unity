@@ -3013,7 +3013,7 @@ MonoBehaviour:
     m_SpeedMode: 0
     m_MaxSpeed: 1.5
     m_AccelTime: 0.1
-    m_DecelTime: 0.1
+    m_DecelTime: 0.05
     m_InputAxisName: RstickV
     m_InputAxisValue: 0
     m_InvertInput: 1
@@ -3037,7 +3037,7 @@ MonoBehaviour:
     m_SpeedMode: 0
     m_MaxSpeed: 150
     m_AccelTime: 0.1
-    m_DecelTime: 0.1
+    m_DecelTime: 0.05
     m_InputAxisName: RstickH
     m_InputAxisValue: 0
     m_InvertInput: 0
@@ -7673,7 +7673,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811664493}
-  m_LocalRotation: {x: -0.19969906, y: -0.013266319, z: -0.0027039906, w: 0.97976375}
+  m_LocalRotation: {x: -0.19969906, y: -0.013266353, z: -0.0027039975, w: 0.97976375}
   m_LocalPosition: {x: 4, y: 40, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
