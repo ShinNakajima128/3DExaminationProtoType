@@ -12,6 +12,7 @@ public class ClearSceneManager : MonoBehaviour
     [SerializeField] Button m_stageSelectButton;
     [SerializeField] PlayableDirector m_director;
     [SerializeField] GameObject m_resultUI;
+    [SerializeField] GameObject m_AutoTransitionUI = null;
     int m_state = 0;
     bool isStartPlay = true;
 
@@ -28,6 +29,7 @@ public class ClearSceneManager : MonoBehaviour
             m_clearMenuUI.SetActive(true);
             m_resultUI.SetActive(true);
             m_menuButton.Select();
+            m_AutoTransitionUI.SetActive(true);
             m_state = 1;
         }
     }
