@@ -6,7 +6,9 @@ using DG.Tweening;
 
 public class ArrowController : MonoBehaviour
 {
+    /// <summary> フェードにかける時間 </summary>
     [SerializeField] float m_fadeDuration = 1f;
+    /// <summary> 表示する矢印のImage </summary>
     [SerializeField] Image m_arrowImage = null;
 
     void Start()
@@ -16,7 +18,7 @@ public class ArrowController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Player が接触したら徐々に表示する
+        /// Player が接触したら徐々に表示する
         if (other.gameObject.CompareTag("Player"))
         {
             Fade(1);
@@ -25,7 +27,7 @@ public class ArrowController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        // Player が接触したら徐々に消える
+        /// Player が接触したら徐々に消える
         if (other.gameObject.CompareTag("Player"))
         {
             Fade(0);
