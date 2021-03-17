@@ -5,13 +5,21 @@ using UnityEngine.UI;
 
 public class HIghScoreManager : MonoBehaviour
 {
+    /// <summary> SSのImage </summary>
     [SerializeField] Image[] m_grade1Images = null;
+    /// <summary> SのImage </summary>
     [SerializeField] Image[] m_grade2Images = null;
+    /// <summary> AのImage </summary>
     [SerializeField] Image[] m_grade3Images = null;
+    /// <summary> BのImage </summary>
     [SerializeField] Image[] m_grade4Images = null;
+    /// <summary> CのImage </summary>
     [SerializeField] Image[] m_grade5Images = null;
+    /// <summary> Stage1のScoreを表示するText </summary>
     [SerializeField] Text[] m_Stage1Scoretexts = null;
+    /// <summary> Stage2のScoreを表示するText </summary>
     [SerializeField] Text[] m_Stage2Scoretexts = null;
+    /// <summary> Stage3のScoreを表示するText </summary>
     [SerializeField] Text[] m_Stage3Scoretexts = null;
 
     public static float[] m_Stage1Score = { 999.999f, 999.999f, 999.999f, 999.999f, 999.999f};
