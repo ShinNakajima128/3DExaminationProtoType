@@ -7,7 +7,9 @@ using UnityEngine.Playables;
 
 public class TitleManager : MonoBehaviour
 {
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_pressAnyButtonText = null;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_menu = null;
     [SerializeField] Button m_menuFirstButton = null;
     [SerializeField] GameObject m_stageSelectMenu = null;
