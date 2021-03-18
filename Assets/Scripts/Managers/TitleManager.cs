@@ -9,27 +9,47 @@ public class TitleManager : MonoBehaviour
 {
     /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_pressAnyButtonText = null;
-    /// <summary> 何かボタンを押すText </summary>
+    /// <summary> メニュー </summary>
     [SerializeField] GameObject m_menu = null;
+    /// <summary> メニューの最初に選択するButton </summary>
     [SerializeField] Button m_menuFirstButton = null;
+    /// <summary> ステージを選択するメニュー </summary>
     [SerializeField] GameObject m_stageSelectMenu = null;
+    /// <summary> ステージを選択するメニューの最初に選択するButton </summary>
     [SerializeField] Button m_stagemenuFirstButton = null;
+    /// <summary> 決定した時のSE </summary>
     [SerializeField] AudioClip m_decisionSfx = null;
+    /// <summary> ロードした時のSE </summary>
     [SerializeField] AudioClip m_loadSfx = null;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_fadeController;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] PlayableDirector m_director = null;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_Title = null;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_highScoreMenu = null;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_rankStageSelectMenu = null;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] Button m_rankStageMenuFirstButton = null;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] Text m_StageName;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_stage1Scores = null;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_stage2Scores = null;
+    /// <summary> 何かボタンを押すText </summary>
     [SerializeField] GameObject m_stage3Scores = null;
+    /// <summary> 何かボタンを押すText </summary>
     GameObject highScore;
+    /// <summary> 何かボタンを押すText </summary>
     FadeController FC;
+    /// <summary> 何かボタンを押すText </summary>
     AudioSource audioSource;
+    /// <summary> 何かボタンを押すText </summary>
     int loadType = 0;
+    /// <summary> 何かボタンを押すText </summary>
     bool isFirstPlay = true;
 
     void Start()
