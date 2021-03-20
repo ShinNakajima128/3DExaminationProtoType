@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class AddTimeItem : ItemBase
 {
+    /// <summary> ゲームマネージャー </summary>
     [SerializeField] GameManager GM = null;
+    /// <summary> 加算した制限時間のText </summary>
     [SerializeField] Text m_addText = null;
+    /// <summary> 加算する時間 </summary>
     [SerializeField] int m_addTime = 30;
 
     public override void Use()
